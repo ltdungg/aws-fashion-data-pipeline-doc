@@ -5,29 +5,33 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.143.1">
     <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
-    <meta name="description" content="">
+    <meta name="description" content="Tổng quan Đầu tiên là tạo một môi trường ảo, coi như đây là môi trường ứng dụng của cửa hàng. EC2 Instance sẽ là máy chủ giả, nơi tạo ra dữ liệu cho lab. RDS Instance sẽ là cơ sở dữ liệu, dành cho các giao dịch… S3 Bucket sẽ là Data Lake, bao gồm các bucket sau: fashion-landing-zone: Nơi lưu trữ dữ liệu thô từ các nguồn khác nhau. fashion-clean-zone: Nơi lưu trữ dữ liệu đã được xử lý và chuẩn bị cho việc phân tích. fashion-logic-zone: Nơi lưu trữ các script Lambda và mã nguồn cho các quy trình ETL (Extract, Transform, Load). Các bước triển khai Đảm bảo để Region là Singapore (ap-southeast-1) trước khi thực hiện các bước sau:">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="2. Các bước chuẩn bị :: AWS Fashion Pipeline">
+    <meta name="twitter:description" content="Tổng quan Đầu tiên là tạo một môi trường ảo, coi như đây là môi trường ứng dụng của cửa hàng. EC2 Instance sẽ là máy chủ giả, nơi tạo ra dữ liệu cho lab. RDS Instance sẽ là cơ sở dữ liệu, dành cho các giao dịch… S3 Bucket sẽ là Data Lake, bao gồm các bucket sau: fashion-landing-zone: Nơi lưu trữ dữ liệu thô từ các nguồn khác nhau. fashion-clean-zone: Nơi lưu trữ dữ liệu đã được xử lý và chuẩn bị cho việc phân tích. fashion-logic-zone: Nơi lưu trữ các script Lambda và mã nguồn cho các quy trình ETL (Extract, Transform, Load). Các bước triển khai Đảm bảo để Region là Singapore (ap-southeast-1) trước khi thực hiện các bước sau:">
     <meta property="og:url" content="http://localhost:1313/vi/prepareation/index.html">
     <meta property="og:site_name" content="AWS Fashion Pipeline">
     <meta property="og:title" content="2. Các bước chuẩn bị :: AWS Fashion Pipeline">
+    <meta property="og:description" content="Tổng quan Đầu tiên là tạo một môi trường ảo, coi như đây là môi trường ứng dụng của cửa hàng. EC2 Instance sẽ là máy chủ giả, nơi tạo ra dữ liệu cho lab. RDS Instance sẽ là cơ sở dữ liệu, dành cho các giao dịch… S3 Bucket sẽ là Data Lake, bao gồm các bucket sau: fashion-landing-zone: Nơi lưu trữ dữ liệu thô từ các nguồn khác nhau. fashion-clean-zone: Nơi lưu trữ dữ liệu đã được xử lý và chuẩn bị cho việc phân tích. fashion-logic-zone: Nơi lưu trữ các script Lambda và mã nguồn cho các quy trình ETL (Extract, Transform, Load). Các bước triển khai Đảm bảo để Region là Singapore (ap-southeast-1) trước khi thực hiện các bước sau:">
     <meta property="og:locale" content="vi">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="2. Các bước chuẩn bị :: AWS Fashion Pipeline">
+    <meta itemprop="description" content="Tổng quan Đầu tiên là tạo một môi trường ảo, coi như đây là môi trường ứng dụng của cửa hàng. EC2 Instance sẽ là máy chủ giả, nơi tạo ra dữ liệu cho lab. RDS Instance sẽ là cơ sở dữ liệu, dành cho các giao dịch… S3 Bucket sẽ là Data Lake, bao gồm các bucket sau: fashion-landing-zone: Nơi lưu trữ dữ liệu thô từ các nguồn khác nhau. fashion-clean-zone: Nơi lưu trữ dữ liệu đã được xử lý và chuẩn bị cho việc phân tích. fashion-logic-zone: Nơi lưu trữ các script Lambda và mã nguồn cho các quy trình ETL (Extract, Transform, Load). Các bước triển khai Đảm bảo để Region là Singapore (ap-southeast-1) trước khi thực hiện các bước sau:">
+    <meta itemprop="wordCount" content="147">
     <title>2. Các bước chuẩn bị :: AWS Fashion Pipeline</title>
     <link href="/vi/prepareation/index.xml" rel="alternate" type="application/rss+xml" title="2. Các bước chuẩn bị :: AWS Fashion Pipeline"><link rel="icon" href="https://static-00.iconduck.com/assets.00/aws-icon-512x512-4v2f55fn.png" type="image/png">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744814071" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744814071" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744814071" rel="stylesheet">
-    <link href="/css/theme.css?1744814071" rel="stylesheet">
-    <link href="/css/format-html.css?1744814071" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1744814071" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1744814071" defer></script>
-    <script src="/js/lunr/lunr.min.js?1744814071" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1744814071" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1744814071" defer></script>
-    <script src="/js/lunr/lunr.vi.min.js?1744814071" defer></script>
-    <script src="/js/search.js?1744814071" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744817361" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744817361" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744817361" rel="stylesheet">
+    <link href="/css/theme.css?1744817361" rel="stylesheet">
+    <link href="/css/format-html.css?1744817361" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1744817361" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1744817361" defer></script>
+    <script src="/js/lunr/lunr.min.js?1744817361" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1744817361" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1744817361" defer></script>
+    <script src="/js/lunr/lunr.vi.min.js?1744817361" defer></script>
+    <script src="/js/search.js?1744817361" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -37,7 +41,7 @@
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['vi'];
-      window.relearn.index_js_url="/searchindex.vi.js?1744814071";
+      window.relearn.index_js_url="/searchindex.vi.js?1744817361";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -83,7 +87,7 @@
       window.T_No_results_found = `Không tìm thấy kết quả nào cho "{0}"`;
       window.T_N_results_found = `{1} kết quả được tìm thấy cho "{0}"`;
     </script>
-    <link href="/css/custom.css?1744814071" rel="stylesheet">
+    <link href="/css/custom.css?1744817361" rel="stylesheet">
   </head>
   <body class="mobile-support html" data-url="/vi/prepareation/index.html">
     <div id="R-body" class="default-animation">
@@ -96,7 +100,13 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Mục lục (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#tổng-quan">Tổng quan</a></li>
+    <li><a href="#các-bước-triển-khai">Các bước triển khai</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -108,7 +118,7 @@
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vi/overview/index.html" title="1. Giới thiệu (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vi/prepareation/setup-role/index.html" title="2.1 Tạo các Role cần thiết (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Nội dung khác"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -130,6 +140,26 @@
 
 <h1 id="2-các-bước-chuẩn-bị">2. Các bước chuẩn bị</h1>
 
+<h2 id="tổng-quan">Tổng quan</h2>
+<ul>
+<li>Đầu tiên là tạo một môi trường ảo, coi như đây là môi trường ứng dụng của cửa hàng.</li>
+<li>EC2 Instance sẽ là máy chủ giả, nơi tạo ra dữ liệu cho lab.</li>
+<li>RDS Instance sẽ là cơ sở dữ liệu, dành cho các giao dịch&hellip;</li>
+<li>S3 Bucket sẽ là Data Lake, bao gồm các bucket sau:
+<ul>
+<li><strong>fashion-landing-zone</strong>: Nơi lưu trữ dữ liệu thô từ các nguồn khác nhau.</li>
+<li><strong>fashion-clean-zone</strong>: Nơi lưu trữ dữ liệu đã được xử lý và chuẩn bị cho việc phân tích.</li>
+<li><strong>fashion-logic-zone</strong>: Nơi lưu trữ các script Lambda và mã nguồn cho các quy trình ETL (Extract, Transform, Load).</li>
+</ul>
+</li>
+</ul>
+<h2 id="các-bước-triển-khai">Các bước triển khai</h2>
+<p>Đảm bảo để Region là Singapore (ap-southeast-1) trước khi thực hiện các bước sau:</p>
+<p><a href="/vi/prepareation/setup-role/index.html">2.1 Tạo các Role cần thiết</a></p>
+<p><a href="/vi/prepareation/setup-env/index.html">2.2 Tạo VPC, Subnet, &hellip;</a></p>
+<p><a href="/vi/prepareation/setup-ec2/index.html">2.3 Tạo EC2 Instance</a></p>
+<p><a href="/vi/prepareation/setup-rds/index.html">2.4 Tạo RDS Instance</a></p>
+<p><a href="/vi/prepareation/setup-s3/index.html">2.5 Tạo S3 Bucket</a></p>
 
   <footer class="footline">
   </footer>
@@ -177,7 +207,12 @@
         <div class="R-sidebarmenu R-shortcutmenu-main">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vi/overview/index.html"><a class="padding" href="/vi/overview/index.html">1. Giới thiệu<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/vi/prepareation/index.html"><a class="padding" href="/vi/prepareation/index.html">2. Các bước chuẩn bị<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active parent " data-nav-id="/vi/prepareation/index.html"><input type="checkbox" id="R-section-5925f5949b8bbff79c51a59e1e7daf5f" aria-controls="R-subsections-5925f5949b8bbff79c51a59e1e7daf5f" checked><label for="R-section-5925f5949b8bbff79c51a59e1e7daf5f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 2. Các bước chuẩn bị</span></label><a class="padding" href="/vi/prepareation/index.html">2. Các bước chuẩn bị<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-5925f5949b8bbff79c51a59e1e7daf5f" class="collapsible-menu">
+            <li class="" data-nav-id="/vi/prepareation/setup-role/index.html"><a class="padding" href="/vi/prepareation/setup-role/index.html">2.1 Tạo các Role cần thiết<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/prepareation/setup-env/index.html"><a class="padding" href="/vi/prepareation/setup-env/index.html">2.2 Tạo VPC, Subnet, ...<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/prepareation/setup-ec2/index.html"><a class="padding" href="/vi/prepareation/setup-ec2/index.html">2.3 Tạo EC2 Instance<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/prepareation/setup-rds/index.html"><a class="padding" href="/vi/prepareation/setup-rds/index.html">2.4 Tạo RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/prepareation/setup-s3/index.html"><a class="padding" href="/vi/prepareation/setup-s3/index.html">2.5 Tạo S3 Bucket<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -218,8 +253,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1744814071" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744814071" defer></script>
-    <script src="/js/theme.js?1744814071" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1744817361" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744817361" defer></script>
+    <script src="/js/theme.js?1744817361" defer></script>
   </body>
 </html>

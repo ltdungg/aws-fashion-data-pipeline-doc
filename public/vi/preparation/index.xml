@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2. Các bước chuẩn bị :: AWS Fashion Pipeline</title>
+    <link>http://localhost:1313/vi/preparation/index.html</link>
+    <description>Tổng quan Đầu tiên là tạo một môi trường ảo, coi như đây là môi trường ứng dụng của cửa hàng. EC2 Instance sẽ là máy chủ giả, nơi tạo ra dữ liệu cho lab. RDS Instance sẽ là cơ sở dữ liệu, dành cho các giao dịch… S3 Bucket sẽ là Data Lake, bao gồm các bucket sau: fashion-landing-zone: Nơi lưu trữ dữ liệu thô từ các nguồn khác nhau. fashion-clean-zone: Nơi lưu trữ dữ liệu đã được xử lý và chuẩn bị cho việc phân tích. fashion-logic-zone: Nơi lưu trữ các script Lambda và mã nguồn cho các quy trình ETL (Extract, Transform, Load). Các bước triển khai Đảm bảo để Region là Singapore (ap-southeast-1) trước khi thực hiện các bước sau:</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <atom:link href="http://localhost:1313/vi/preparation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2.1 Tạo các Role cần thiết</title>
+      <link>http://localhost:1313/vi/preparation/setup-role/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/preparation/setup-role/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>2.2 Tạo VPC, Subnet, ...</title>
+      <link>http://localhost:1313/vi/preparation/setup-env/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/preparation/setup-env/index.html</guid>
+      <description>Tạo VPC (Virtual Private Cloud) Truy cập Amazon Management Console Tìm kiếm dịch vụ VPC Chọn VPC từ kết quả tìm kiếm Trong phần giao diện VPC chọn Create VPC Trong giao diện Create VPC Chọn VPC and more name tag auto-generation ghi: fashion IPv4 CIDR block: 10.10.0.0/16</description>
+    </item>
+    <item>
+      <title>2.3 Tạo EC2 Instance</title>
+      <link>http://localhost:1313/vi/preparation/setup-ec2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/preparation/setup-ec2/index.html</guid>
+      <description>Tạo Elastic Compute Cloud (EC2) Instance Truy cập Amazon Management Console Tìm kiếm dịch vụ EC2 Chọn EC2 từ kết quả tìm kiếm Chọn Launch Instance Trong giao diện Launch Instance Name: fashion-webapp Amazon Machine Image (AMI): Amazon Linux 2023 AMI Instance Type: t2.micro</description>
+    </item>
+    <item>
+      <title>2.4 Tạo RDS</title>
+      <link>http://localhost:1313/vi/preparation/setup-rds/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/preparation/setup-rds/index.html</guid>
+      <description>Cài đặt Relational Database Service (RDS) Truy cập Amazon Management Console Tìm kiếm dịch vụ RDS Chọn Aurora and RDS từ kết quả tìm kiếm Chọn Create database</description>
+    </item>
+    <item>
+      <title>2.5 Tạo S3 Bucket</title>
+      <link>http://localhost:1313/vi/preparation/setup-s3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/preparation/setup-s3/index.html</guid>
+      <description>a</description>
+    </item>
+  </channel>
+</rss>

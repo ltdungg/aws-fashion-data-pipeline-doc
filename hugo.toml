@@ -34,3 +34,4 @@ defaultContentLanguage = 'vi'
   themeVariant = "my-branding"
   hideAuthorDate = true
   custom_css = ["css/custom.css"]
+  collapsibleMenu = true

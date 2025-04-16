@@ -37,4 +37,4 @@ Sau lúc bạn ghi ra những ý tưởng, đầu bạn nảy ra một hệ th�
 
 ### Kiến trúc hệ thống
 
-![alt](./images/architect.png)
+![alt](/images/overview/architect.png)

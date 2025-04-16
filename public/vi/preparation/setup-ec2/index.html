@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.143.1">
+    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="description" content="Tạo Elastic Compute Cloud (EC2) Instance Truy cập Amazon Management Console Tìm kiếm dịch vụ EC2 Chọn EC2 từ kết quả tìm kiếm Chọn Launch Instance Trong giao diện Launch Instance Name: fashion-webapp Amazon Machine Image (AMI): Amazon Linux 2023 AMI Instance Type: t2.micro">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="2.3 Tạo EC2 Instance :: AWS Fashion Pipeline">
+    <meta name="twitter:description" content="Tạo Elastic Compute Cloud (EC2) Instance Truy cập Amazon Management Console Tìm kiếm dịch vụ EC2 Chọn EC2 từ kết quả tìm kiếm Chọn Launch Instance Trong giao diện Launch Instance Name: fashion-webapp Amazon Machine Image (AMI): Amazon Linux 2023 AMI Instance Type: t2.micro">
+    <meta property="og:url" content="http://localhost:1313/vi/preparation/setup-ec2/index.html">
+    <meta property="og:site_name" content="AWS Fashion Pipeline">
+    <meta property="og:title" content="2.3 Tạo EC2 Instance :: AWS Fashion Pipeline">
+    <meta property="og:description" content="Tạo Elastic Compute Cloud (EC2) Instance Truy cập Amazon Management Console Tìm kiếm dịch vụ EC2 Chọn EC2 từ kết quả tìm kiếm Chọn Launch Instance Trong giao diện Launch Instance Name: fashion-webapp Amazon Machine Image (AMI): Amazon Linux 2023 AMI Instance Type: t2.micro">
+    <meta property="og:locale" content="vi">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="2. Các bước chuẩn bị">
+    <meta itemprop="name" content="2.3 Tạo EC2 Instance :: AWS Fashion Pipeline">
+    <meta itemprop="description" content="Tạo Elastic Compute Cloud (EC2) Instance Truy cập Amazon Management Console Tìm kiếm dịch vụ EC2 Chọn EC2 từ kết quả tìm kiếm Chọn Launch Instance Trong giao diện Launch Instance Name: fashion-webapp Amazon Machine Image (AMI): Amazon Linux 2023 AMI Instance Type: t2.micro">
+    <meta itemprop="wordCount" content="364">
+    <title>2.3 Tạo EC2 Instance :: AWS Fashion Pipeline</title><link rel="icon" href="https://static-00.iconduck.com/assets.00/aws-icon-512x512-4v2f55fn.png" type="image/png">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744822495" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744822495" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744822495" rel="stylesheet">
+    <link href="/css/theme.css?1744822495" rel="stylesheet">
+    <link href="/css/format-html.css?1744822495" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1744822495" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1744822495" defer></script>
+    <script src="/js/lunr/lunr.min.js?1744822495" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1744822495" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1744822495" defer></script>
+    <script src="/js/lunr/lunr.vi.min.js?1744822495" defer></script>
+    <script src="/js/search.js?1744822495" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vi\/preparation\/setup-ec2\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['vi'];
+      window.relearn.index_js_url="/searchindex.vi.js?1744822495";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'my-branding' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Sao chép vào bảng tạm`;
+      window.T_Copied_to_clipboard = `Sao chép vào bảng tạm!`;
+      window.T_Copy_link_to_clipboard = `Sao chép nối kết vào bảng tạm`;
+      window.T_Link_copied_to_clipboard = `Liên kết được sao chép vào bảng tạm!`;
+      window.T_Reset_view = `Đặt lại dạng xem`;
+      window.T_View_reset = `Xem đặt lại!`;
+      window.T_No_results_found = `Không tìm thấy kết quả nào cho "{0}"`;
+      window.T_N_results_found = `{1} kết quả được tìm thấy cho "{0}"`;
+    </script>
+    <link href="/css/custom.css?1744822495" rel="stylesheet">
+  </head>
+  <body class="mobile-support html" data-url="/vi/preparation/setup-ec2/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Mục lục (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#tạo-elastic-compute-cloud-ec2-instance">Tạo Elastic Compute Cloud (EC2) Instance</a></li>
+    <li><a href="#cài-đặt-môi-trường-bên-trong-ec2-instance">Cài đặt môi trường bên trong EC2 Instance</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vi/index.html"><span itemprop="name">AWS Fashion Pipeline</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vi/preparation/index.html"><span itemprop="name">2. Các bước chuẩn bị</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">2.3 Tạo EC2 Instance</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vi/preparation/setup-env/index.html" title="2.2 Tạo VPC, Subnet, ... (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vi/preparation/setup-rds/index.html" title="2.4 Tạo RDS (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Nội dung khác"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable preparation" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="23-tạo-ec2-instance">2.3 Tạo EC2 Instance</h1>
+
+<h2 id="tạo-elastic-compute-cloud-ec2-instance">Tạo Elastic Compute Cloud (EC2) Instance</h2>
+<ol>
+<li>Truy cập <strong>Amazon Management Console</strong>
+<ul>
+<li>Tìm kiếm dịch vụ EC2</li>
+<li>Chọn <strong>EC2</strong> từ kết quả tìm kiếm</li>
+</ul>
+</li>
+</ol>
+<p><a href="#R-image-7b29da65b869eb56b5c3785a0b6b91c9" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7b29da65b869eb56b5c3785a0b6b91c9"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-1.png"></a></p>
+<ol start="2">
+<li>Chọn <strong>Launch Instance</strong></li>
+</ol>
+<p><a href="#R-image-5c66f38304006b2c1a357a8d6822dc93" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5c66f38304006b2c1a357a8d6822dc93"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-2.png"></a></p>
+<ol start="3">
+<li>Trong giao diện Launch Instance
+<ul>
+<li>Name: <code>fashion-webapp</code></li>
+<li>Amazon Machine Image (AMI): <code>Amazon Linux 2023 AMI</code></li>
+<li>Instance Type: <code>t2.micro</code></li>
+</ul>
+</li>
+</ol>
+<p><a href="#R-image-4c60c3a90b2e802b726e31e1d6b004d3" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4c60c3a90b2e802b726e31e1d6b004d3"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-3.png"></a></p>
+<ol start="4">
+<li>
+<p>Tại phần Key pair, chọn <strong>Create new key pair</strong></p>
+<ul>
+<li>Key pair name: <code>fashion-keypair</code></li>
+<li>Key pair type: <code>RSA</code>, private key file format: <code>.pem</code></li>
+<li>Chọn Create key pair</li>
+</ul>
+</li>
+<li>
+<p>Tại phần Network Settings, chọn Edit:</p>
+<ul>
+<li>VPC: <code>fashion-vpc</code></li>
+<li>Subnet: <code>fashion-subnet-public1-ap-southeast-1a</code></li>
+<li>Auto-assign Public IP: <code>Enable</code></li>
+<li>Security Group chọn Create security group
+<ul>
+<li>security group name: <code>fashion-webapp-sg</code></li>
+<li>description: <code>Allow SSH from My IP, and HTTP, HTTPS from everywhere</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><a href="#R-image-d5b00a16d2414bc55b1d1c17f1ae8049" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-4.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d5b00a16d2414bc55b1d1c17f1ae8049"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-4.png"></a></p>
+<ol start="6">
+<li>Tại Inbound Security Group Rules, cài đặt như hình sau</li>
+</ol>
+<p><a href="#R-image-3a9ccfee9cb4e059e17094acc9b23adf" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-5.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3a9ccfee9cb4e059e17094acc9b23adf"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-5.png"></a></p>
+<ol start="7">
+<li>Còn lại để mặc định, nhấn <strong>Launch instance</strong> để hoàn tất việc tạo EC2 Instance</li>
+</ol>
+<h2 id="cài-đặt-môi-trường-bên-trong-ec2-instance">Cài đặt môi trường bên trong EC2 Instance</h2>
+<ol>
+<li>Kết nối SSH vào EC2 Instance
+<ul>
+<li>Di chuyển tới thư mục chứa file <code>fashion-keypair.pem</code></li>
+<li>Sử dụng terminal, gõ lệnh sau:
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -i fashion-keypair.pem ec2-user@&lt;Public IP | Public DNS&gt;</span></span></code></pre></div>
+</li>
+<li>Gõ &lsquo;yes&rsquo;</li>
+<li>Nếu không kết nối được, hãy kiểm tra lại Security Group đã cho phép SSH từ IP của bạn chưa nhé.</li>
+</ul>
+</li>
+</ol>
+<p><a href="#R-image-f2153d98795d1b8a813dd87f4c5af7a3" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-6.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f2153d98795d1b8a813dd87f4c5af7a3"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-6.png"></a></p>
+<ol start="2">
+<li>Cài đặt môi trường Python, Git, PostgreSQL cho EC2 Instance</li>
+</ol>
+<ul>
+<li>Đầu tiên, gõ <code>sudo su</code> để chuyển sang user root</li>
+<li>Cài đặt các gói cần thiết (quá trình mất khoảng 5-10 phút):</li>
+</ul>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dnf install -y git tar gcc <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                   zlib-devel bzip2-devel readline-devel <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                   sqlite sqlite-devel openssl-devel <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                   tk-devel libffi-devel xz-devel
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>curl https://pyenv.run | bash <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    echo <span style="color:#e6db74">&#39;export PYENV_ROOT=&#34;$HOME/.pyenv&#34;&#39;</span> &gt;&gt; ~/.bashrc <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    echo <span style="color:#e6db74">&#39;[[ -d $PYENV_ROOT/bin ]] &amp;&amp; export PATH=&#34;$PYENV_ROOT/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    echo <span style="color:#e6db74">&#39;eval &#34;$(pyenv init -)&#34;&#39;</span> &gt;&gt; ~/.bashrc <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    source ~/.bashrc <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    pyenv install 3.12.4 <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    pyenv global 3.12.4
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>sudo yum install postgresql17-server.x86_64 -y</span></span></code></pre></div>
+<ul>
+<li>Kiểm tra lại phiên bản Python đã cài đặt</li>
+</ul>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python --version</span></span></code></pre></div>
+<ul>
+<li>Kiểm tra lại phiên bản PostgreSQL đã cài đặt</li>
+</ul>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>psql --version</span></span></code></pre></div>
+<ol start="3">
+<li>Clone repository từ github về EC2 Instance</li>
+</ol>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --sparse --filter<span style="color:#f92672">=</span>blob:none https://github.com/ltdungg/aws-fashion-data-pipeline.git project
+</span></span><span style="display:flex;"><span>cd project
+</span></span><span style="display:flex;"><span>git sparse-checkout init
+</span></span><span style="display:flex;"><span>git sparse-checkout set ec2
+</span></span><span style="display:flex;"><span>cd ec2</span></span></code></pre></div>
+<ol start="4">
+<li>Cài đặt các thư viện cần thiết</li>
+</ol>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install -r requirements.txt</span></span></code></pre></div>
+<ol start="5">
+<li>Sau khi cài đặt xong, giữ nguyên terminal và chuyển tới phần tiếp theo cài đặt RDS.</li>
+</ol>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="R-logo" href="/vi/index.html">
+    <img src="https://freepnglogo.com/images/all_img/1726309795amazon-web-services-logo-png.png" alt="brand logo" width="100" height="50" class="logo" loading="lazy" style="width: 84px; height: 50px; margin: 0 auto; display: block; text-align: center;" />
+  </a>
+        </div>
+        <search><form action="/vi/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Tìm kiếm (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Tìm kiếm</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Tìm kiếm...">
+            <button class="search-clear" type="button" data-search-clear="" title="Xóa tìm kiếm"><i class="fas fa-times" title="Xóa tìm kiếm"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vi/overview/index.html"><a class="padding" href="/vi/overview/index.html">1. Giới thiệu<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="parent " data-nav-id="/vi/preparation/index.html"><input type="checkbox" id="R-section-5d3dc0156e97e93929ea76c794397c6c" aria-controls="R-subsections-5d3dc0156e97e93929ea76c794397c6c" checked><label for="R-section-5d3dc0156e97e93929ea76c794397c6c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 2. Các bước chuẩn bị</span></label><a class="padding" href="/vi/preparation/index.html">2. Các bước chuẩn bị<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-5d3dc0156e97e93929ea76c794397c6c" class="collapsible-menu">
+            <li class="" data-nav-id="/vi/preparation/setup-role/index.html"><a class="padding" href="/vi/preparation/setup-role/index.html">2.1 Tạo các Role cần thiết<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-env/index.html"><a class="padding" href="/vi/preparation/setup-env/index.html">2.2 Tạo VPC, Subnet, ...<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/vi/preparation/setup-ec2/index.html"><a class="padding" href="/vi/preparation/setup-ec2/index.html">2.3 Tạo EC2 Instance<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-rds/index.html"><a class="padding" href="/vi/preparation/setup-rds/index.html">2.4 Tạo RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-s3/index.html"><a class="padding" href="/vi/preparation/setup-s3/index.html">2.5 Tạo S3 Bucket<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+			<li class="R-languageswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-language"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-language">Ngôn ngữ</label>
+                  <select id="R-select-language">
+                    <option id="R-select-language-vi" value="vi" data-url="/vi/preparation/setup-ec2/index.html" lang="vi" selected data-selected>Vietnamese</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Xóa lịch sử..</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1744822495" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744822495" defer></script>
+    <script src="/js/theme.js?1744822495" defer></script>
+  </body>
+</html>

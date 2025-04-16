@@ -3,9 +3,44 @@
   <channel>
     <title>2. Các bước chuẩn bị :: AWS Fashion Pipeline</title>
     <link>http://localhost:1313/vi/prepareation/index.html</link>
-    <description></description>
+    <description>Tổng quan Đầu tiên là tạo một môi trường ảo, coi như đây là môi trường ứng dụng của cửa hàng. EC2 Instance sẽ là máy chủ giả, nơi tạo ra dữ liệu cho lab. RDS Instance sẽ là cơ sở dữ liệu, dành cho các giao dịch… S3 Bucket sẽ là Data Lake, bao gồm các bucket sau: fashion-landing-zone: Nơi lưu trữ dữ liệu thô từ các nguồn khác nhau. fashion-clean-zone: Nơi lưu trữ dữ liệu đã được xử lý và chuẩn bị cho việc phân tích. fashion-logic-zone: Nơi lưu trữ các script Lambda và mã nguồn cho các quy trình ETL (Extract, Transform, Load). Các bước triển khai Đảm bảo để Region là Singapore (ap-southeast-1) trước khi thực hiện các bước sau:</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <atom:link href="http://localhost:1313/vi/prepareation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2.1 Tạo các Role cần thiết</title>
+      <link>http://localhost:1313/vi/prepareation/setup-role/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/prepareation/setup-role/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>2.2 Tạo VPC, Subnet, ...</title>
+      <link>http://localhost:1313/vi/prepareation/setup-env/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/prepareation/setup-env/index.html</guid>
+      <description>Tạo VPC (Virtual Private Cloud) Truy cập Amazon Management Console Tìm kiếm dịch vụ VPC Chọn VPC từ kết quả tìm kiếm</description>
+    </item>
+    <item>
+      <title>2.3 Tạo EC2 Instance</title>
+      <link>http://localhost:1313/vi/prepareation/setup-ec2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/prepareation/setup-ec2/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>2.4 Tạo RDS</title>
+      <link>http://localhost:1313/vi/prepareation/setup-rds/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/prepareation/setup-rds/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>2.5 Tạo S3 Bucket</title>
+      <link>http://localhost:1313/vi/prepareation/setup-s3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/prepareation/setup-s3/index.html</guid>
+      <description>a</description>
+    </item>
   </channel>
 </rss>
