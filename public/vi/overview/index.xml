@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1. Giới thiệu :: AWS Fashion Pipeline</title>
+    <link>http://localhost:1313/vi/overview/index.html</link>
+    <description>A Data Pipeline for Fashion Store Dữ liệu Workshop này bao gồm những dữ liệu sau:&#xA;Các sản phẩm quần áo được lấy từ Kaggle Dữ liệu người dùng, mua hàng, clickstream tự tạo bằng Faker Python Bối cảnh Giả sử bạn là Data Engineer tại một cửa hàng bán quần áo online, sếp bạn muốn biết sự quan tâm của khách hàng vào những sản phẩm nào cũng như là phân tích xem xu hướng thời trang hiện tại như thế nào.</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <atom:link href="http://localhost:1313/vi/overview/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
