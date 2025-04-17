@@ -19,7 +19,7 @@
       <link>http://localhost:1313/vi/test-connection/test-kinesis/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vi/test-connection/test-kinesis/index.html</guid>
-      <description>Kiểm tra dữ liệu trong Kinesis Data Stream Quay trở lại terminal kết nối với EC2 Instance tại bước module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets. Chạy lệnh sau để mô tả luồng Kinesis Data Stream: aws kinesis describe-stream --stream-name fashion-ds Chạy lệnh sau để lấy iterator của shard trong luồng Kinesis Data Stream: aws kinesis get-shard-iterator --stream-name fashion-ds --shard-id shardId-000000000000 --shard-iterator-type TRIM_HORIZON</description>
+      <description>Kiểm tra dữ liệu trong Kinesis Data Stream Quay trở lại terminal kết nối với EC2 Instance tại bước 2.3 Tạo EC2 Instance. Chạy lệnh sau để mô tả luồng Kinesis Data Stream: aws kinesis describe-stream --stream-name fashion-ds Chạy lệnh sau để lấy iterator của shard trong luồng Kinesis Data Stream: aws kinesis get-shard-iterator --stream-name fashion-ds --shard-id shardId-000000000000 --shard-iterator-type TRIM_HORIZON Copy ShardIterator trong kết quả trả về của lệnh trên và chạy lệnh sau để lấy dữ liệu trong luồng Kinesis Data Stream: aws kinesis get-records --shard-iterator &lt;YOUR_SHARD_ITERATOR&gt;</description>
     </item>
     <item>
       <title>5.3 Test Lambda Function</title>
