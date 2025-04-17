@@ -5,33 +5,37 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.143.1">
     <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
-    <meta name="description" content="Tạo dữ liệu để test. Vào lại terminal kết nối với EC2 Instances. Chạy lệnh sau đi đến thư mục chứa file tạo dữ liệu: cd /home/ec2-user/project/ec2 Chạy lệnh sau để tạo dữ liệu: python data-generator.py Sau khi chạy một lúc, hãy bấm Ctrl &#43; C để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau.">
+    <meta name="description" content="Tạo dữ liệu để test. Vào lại terminal kết nối với EC2 Instances. Chạy lệnh sau đi đến thư mục chứa file tạo dữ liệu: cd /home/ec2-user/project/ec2 Chạy lệnh sau để tạo dữ liệu: python data-generator.py Sau khi chạy một lúc, hãy bấm Ctrl &#43; C để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau. Bạn có thể thấy như sau:
+Order data insert successfully là dữ liệu order được đẩy vào RDS. Còn lại là dữ liệu tương tác khách hàng được đẩy vào Kinesis stream, với những event như page_view, add_to_cart, product_view. Bạn có thể xem code tạo dữ liệu ở bên dưới (Tùy chọn)">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="5. Test dữ liệu :: AWS Fashion Pipeline">
-    <meta name="twitter:description" content="Tạo dữ liệu để test. Vào lại terminal kết nối với EC2 Instances. Chạy lệnh sau đi đến thư mục chứa file tạo dữ liệu: cd /home/ec2-user/project/ec2 Chạy lệnh sau để tạo dữ liệu: python data-generator.py Sau khi chạy một lúc, hãy bấm Ctrl &#43; C để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau.">
+    <meta name="twitter:description" content="Tạo dữ liệu để test. Vào lại terminal kết nối với EC2 Instances. Chạy lệnh sau đi đến thư mục chứa file tạo dữ liệu: cd /home/ec2-user/project/ec2 Chạy lệnh sau để tạo dữ liệu: python data-generator.py Sau khi chạy một lúc, hãy bấm Ctrl &#43; C để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau. Bạn có thể thấy như sau:
+Order data insert successfully là dữ liệu order được đẩy vào RDS. Còn lại là dữ liệu tương tác khách hàng được đẩy vào Kinesis stream, với những event như page_view, add_to_cart, product_view. Bạn có thể xem code tạo dữ liệu ở bên dưới (Tùy chọn)">
     <meta property="og:url" content="http://localhost:1313/vi/test-connection/index.html">
     <meta property="og:site_name" content="AWS Fashion Pipeline">
     <meta property="og:title" content="5. Test dữ liệu :: AWS Fashion Pipeline">
-    <meta property="og:description" content="Tạo dữ liệu để test. Vào lại terminal kết nối với EC2 Instances. Chạy lệnh sau đi đến thư mục chứa file tạo dữ liệu: cd /home/ec2-user/project/ec2 Chạy lệnh sau để tạo dữ liệu: python data-generator.py Sau khi chạy một lúc, hãy bấm Ctrl &#43; C để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau.">
+    <meta property="og:description" content="Tạo dữ liệu để test. Vào lại terminal kết nối với EC2 Instances. Chạy lệnh sau đi đến thư mục chứa file tạo dữ liệu: cd /home/ec2-user/project/ec2 Chạy lệnh sau để tạo dữ liệu: python data-generator.py Sau khi chạy một lúc, hãy bấm Ctrl &#43; C để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau. Bạn có thể thấy như sau:
+Order data insert successfully là dữ liệu order được đẩy vào RDS. Còn lại là dữ liệu tương tác khách hàng được đẩy vào Kinesis stream, với những event như page_view, add_to_cart, product_view. Bạn có thể xem code tạo dữ liệu ở bên dưới (Tùy chọn)">
     <meta property="og:locale" content="vi">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="5. Test dữ liệu :: AWS Fashion Pipeline">
-    <meta itemprop="description" content="Tạo dữ liệu để test. Vào lại terminal kết nối với EC2 Instances. Chạy lệnh sau đi đến thư mục chứa file tạo dữ liệu: cd /home/ec2-user/project/ec2 Chạy lệnh sau để tạo dữ liệu: python data-generator.py Sau khi chạy một lúc, hãy bấm Ctrl &#43; C để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau.">
+    <meta itemprop="description" content="Tạo dữ liệu để test. Vào lại terminal kết nối với EC2 Instances. Chạy lệnh sau đi đến thư mục chứa file tạo dữ liệu: cd /home/ec2-user/project/ec2 Chạy lệnh sau để tạo dữ liệu: python data-generator.py Sau khi chạy một lúc, hãy bấm Ctrl &#43; C để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau. Bạn có thể thấy như sau:
+Order data insert successfully là dữ liệu order được đẩy vào RDS. Còn lại là dữ liệu tương tác khách hàng được đẩy vào Kinesis stream, với những event như page_view, add_to_cart, product_view. Bạn có thể xem code tạo dữ liệu ở bên dưới (Tùy chọn)">
     <meta itemprop="wordCount" content="589">
     <title>5. Test dữ liệu :: AWS Fashion Pipeline</title>
     <link href="/vi/test-connection/index.xml" rel="alternate" type="application/rss+xml" title="5. Test dữ liệu :: AWS Fashion Pipeline"><link rel="icon" href="https://static-00.iconduck.com/assets.00/aws-icon-512x512-4v2f55fn.png" type="image/png">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744901602" rel="stylesheet">
-    <link href="/css/theme.css?1744901602" rel="stylesheet">
-    <link href="/css/format-html.css?1744901602" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1744901602" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.vi.min.js?1744901602" defer></script>
-    <script src="/js/search.js?1744901602" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744902644" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744902644" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744902644" rel="stylesheet">
+    <link href="/css/theme.css?1744902644" rel="stylesheet">
+    <link href="/css/format-html.css?1744902644" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1744902644" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.vi.min.js?1744902644" defer></script>
+    <script src="/js/search.js?1744902644" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -41,7 +45,7 @@
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['vi'];
-      window.relearn.index_js_url="/searchindex.vi.js?1744901602";
+      window.relearn.index_js_url="/searchindex.vi.js?1744902644";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -87,7 +91,7 @@
       window.T_No_results_found = `Không tìm thấy kết quả nào cho "{0}"`;
       window.T_N_results_found = `{1} kết quả được tìm thấy cho "{0}"`;
     </script>
-    <link href="/css/custom.css?1744901602" rel="stylesheet">
+    <link href="/css/custom.css?1744902644" rel="stylesheet">
   </head>
   <body class="mobile-support html" data-url="/vi/test-connection/index.html">
     <div id="R-body" class="default-animation">
@@ -153,8 +157,7 @@
 <ol start="4">
 <li>Sau khi chạy một lúc, hãy bấm <code>Ctrl + C</code> để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau.</li>
 </ol>
-<p><a href="#R-image-7b71f7eebd6845a3cf80fc75c93181dd" class="lightbox-link"><img alt="img.png" class="lazy lightbox figure-image" loading="lazy" src="/images/test-connection/img_2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7b71f7eebd6845a3cf80fc75c93181dd"><img alt="img.png" class="lazy lightbox lightbox-image" loading="lazy" src="/images/test-connection/img_2.png"></a></p>
+<p><img src="/images/test-connection/img_2.png" alt="img.png"></p>
 <ol start="5">
 <li>
 <p>Bạn có thể thấy như sau:</p>
@@ -442,8 +445,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1744901602" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744901602" defer></script>
-    <script src="/js/theme.js?1744901602" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1744902644" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744902644" defer></script>
+    <script src="/js/theme.js?1744902644" defer></script>
   </body>
 </html>

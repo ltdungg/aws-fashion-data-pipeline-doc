@@ -25,17 +25,17 @@ fashion-landing-zone: Đây là nơi lưu trữ dữ liệu thô chưa được 
 fashion-landing-zone: Đây là nơi lưu trữ dữ liệu thô chưa được xử lý. fashion-clean-zone: Đây là nơi lưu trữ dữ liệu đã được chuyển đổi và chuẩn bị sẵn sàng cho các công việc phân tích. fashion-logic-zone: Đây là nơi lưu trữ những Lambda Function và các dags chạy Airflow cho AWS MWAA. Cài đặt Truy cập Amazon Management Console Tìm kiếm dịch vụ S3 Chọn S3 từ kết quả tìm kiếm Sau đó bấm Create bucket">
     <meta itemprop="wordCount" content="143">
     <title>2.5 Tạo S3 Bucket :: AWS Fashion Pipeline</title><link rel="icon" href="https://static-00.iconduck.com/assets.00/aws-icon-512x512-4v2f55fn.png" type="image/png">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744901602" rel="stylesheet">
-    <link href="/css/theme.css?1744901602" rel="stylesheet">
-    <link href="/css/format-html.css?1744901602" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1744901602" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.vi.min.js?1744901602" defer></script>
-    <script src="/js/search.js?1744901602" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744902644" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744902644" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744902644" rel="stylesheet">
+    <link href="/css/theme.css?1744902644" rel="stylesheet">
+    <link href="/css/format-html.css?1744902644" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1744902644" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.vi.min.js?1744902644" defer></script>
+    <script src="/js/search.js?1744902644" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -45,7 +45,7 @@ fashion-landing-zone: Đây là nơi lưu trữ dữ liệu thô chưa được 
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['vi'];
-      window.relearn.index_js_url="/searchindex.vi.js?1744901602";
+      window.relearn.index_js_url="/searchindex.vi.js?1744902644";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -91,7 +91,7 @@ fashion-landing-zone: Đây là nơi lưu trữ dữ liệu thô chưa được 
       window.T_No_results_found = `Không tìm thấy kết quả nào cho "{0}"`;
       window.T_N_results_found = `{1} kết quả được tìm thấy cho "{0}"`;
     </script>
-    <link href="/css/custom.css?1744901602" rel="stylesheet">
+    <link href="/css/custom.css?1744902644" rel="stylesheet">
   </head>
   <body class="mobile-support html" data-url="/vi/preparation/setup-s3/index.html">
     <div id="R-body" class="default-animation">
@@ -163,10 +163,8 @@ Trong phần này ta sẽ tạo các bucket sau:</p>
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-5cf684ab1f12447c122469f67dbf992b" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/s3-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5cf684ab1f12447c122469f67dbf992b"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/s3-1.png"></a>
-<a href="#R-image-747488f590982a80ad4e132998026e06" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/s3-2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-747488f590982a80ad4e132998026e06"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/s3-2.png"></a></p>
+<p><img src="/images/preparation/s3-1.png" alt="alt">
+<img src="/images/preparation/s3-2.png" alt="alt"></p>
 <ol start="2">
 <li>Trong giao diện Create bucket
 <ul>
@@ -176,8 +174,7 @@ Trong phần này ta sẽ tạo các bucket sau:</p>
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-8417a2b6c03fd660aed08defe70bd596" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/s3-3.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8417a2b6c03fd660aed08defe70bd596"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/s3-3.png"></a></p>
+<p><img src="/images/preparation/s3-3.png" alt="alt"></p>
 <ol start="3">
 <li>Lặp lại bước 2 với các bucket sau:
 <ul>
@@ -186,8 +183,7 @@ Trong phần này ta sẽ tạo các bucket sau:</p>
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-dab96bb0a219261666be9cd273dac4a6" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/s3-4.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-dab96bb0a219261666be9cd273dac4a6"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/s3-4.png"></a></p>
+<p><img src="/images/preparation/s3-4.png" alt="alt"></p>
 <p>Bạn đang tạo thành công 3 bucket S3.</p>
 
   <footer class="footline">
@@ -289,8 +285,8 @@ Trong phần này ta sẽ tạo các bucket sau:</p>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1744901602" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744901602" defer></script>
-    <script src="/js/theme.js?1744901602" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1744902644" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744902644" defer></script>
+    <script src="/js/theme.js?1744902644" defer></script>
   </body>
 </html>

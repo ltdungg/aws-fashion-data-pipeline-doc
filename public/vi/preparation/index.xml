@@ -12,42 +12,42 @@
       <link>http://localhost:1313/vi/preparation/setup-role/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vi/preparation/setup-role/index.html</guid>
-      <description>Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. Chọn Roles từ menu bên trái, bấm vào Create role. Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next.</description>
+      <description>Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets&#xA;Chọn Roles từ menu bên trái, bấm vào Create role. module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets&#xA;Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next. module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets</description>
     </item>
     <item>
       <title>2.2 Tạo VPC, Subnet, ...</title>
       <link>http://localhost:1313/vi/preparation/setup-env/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vi/preparation/setup-env/index.html</guid>
-      <description>Tạo VPC (Virtual Private Cloud) Truy cập Amazon Management Console Tìm kiếm dịch vụ VPC Chọn VPC từ kết quả tìm kiếm Trong phần giao diện VPC chọn Create VPC Trong giao diện Create VPC Chọn VPC and more name tag auto-generation ghi: fashion IPv4 CIDR block: 10.10.0.0/16</description>
+      <description>Tạo VPC (Virtual Private Cloud) Truy cập Amazon Management Console Tìm kiếm dịch vụ VPC Chọn VPC từ kết quả tìm kiếm module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets&#xA;Trong phần giao diện VPC chọn Create VPC module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets&#xA;Trong giao diện Create VPC Chọn VPC and more name tag auto-generation ghi: fashion IPv4 CIDR block: 10.10.0.0/16 module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets</description>
     </item>
     <item>
       <title>2.3 Tạo EC2 Instance</title>
       <link>http://localhost:1313/vi/preparation/setup-ec2/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vi/preparation/setup-ec2/index.html</guid>
-      <description>Tạo Elastic Compute Cloud (EC2) Instance Truy cập Amazon Management Console Tìm kiếm dịch vụ EC2 Chọn EC2 từ kết quả tìm kiếm Chọn Launch Instance Trong giao diện Launch Instance Name: fashion-webapp Amazon Machine Image (AMI): Amazon Linux 2023 AMI Instance Type: t2.micro</description>
+      <description>Tạo Elastic Compute Cloud (EC2) Instance Truy cập Amazon Management Console Tìm kiếm dịch vụ EC2 Chọn EC2 từ kết quả tìm kiếm module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets&#xA;Chọn Launch Instance module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets&#xA;Trong giao diện Launch Instance Name: fashion-webapp Amazon Machine Image (AMI): Amazon Linux 2023 AMI Instance Type: t2.micro module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets</description>
     </item>
     <item>
       <title>2.4 Tạo RDS</title>
       <link>http://localhost:1313/vi/preparation/setup-rds/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vi/preparation/setup-rds/index.html</guid>
-      <description>Cài đặt Relational Database Service (RDS) Truy cập Amazon Management Console Tìm kiếm dịch vụ RDS Chọn Aurora and RDS từ kết quả tìm kiếm Chọn Create database Tại giao diện tạo RDS, chọn Standard Create Engine options: PostgreSQL Version: PostgreSQL 17.2-R2 Templates: Free Tier DB instance identifier: fashion-db Master password: Tự đặt password cho riêng mình DB instance class: db.t4g.micro</description>
+      <description>Cài đặt Relational Database Service (RDS) Truy cập Amazon Management Console Tìm kiếm dịch vụ RDS Chọn Aurora and RDS từ kết quả tìm kiếm Chọn Create database module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets&#xA;module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets&#xA;Tại giao diện tạo RDS, chọn Standard Create Engine options: PostgreSQL Version: PostgreSQL 17.2-R2 Templates: Free Tier DB instance identifier: fashion-db Master password: Tự đặt password cho riêng mình DB instance class: db.t4g.micro module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets</description>
     </item>
     <item>
       <title>2.5 Tạo S3 Bucket</title>
       <link>http://localhost:1313/vi/preparation/setup-s3/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vi/preparation/setup-s3/index.html</guid>
-      <description>Giới thiệu Trong phần này, ta sẽ tạo S3 Bucket để làm một Data Lake cho Data Pipeline. Trong phần này ta sẽ tạo các bucket sau:&#xA;fashion-landing-zone: Đây là nơi lưu trữ dữ liệu thô chưa được xử lý. fashion-clean-zone: Đây là nơi lưu trữ dữ liệu đã được chuyển đổi và chuẩn bị sẵn sàng cho các công việc phân tích. fashion-logic-zone: Đây là nơi lưu trữ những Lambda Function và các dags chạy Airflow cho AWS MWAA. Cài đặt Truy cập Amazon Management Console Tìm kiếm dịch vụ S3 Chọn S3 từ kết quả tìm kiếm Sau đó bấm Create bucket</description>
+      <description>Giới thiệu Trong phần này, ta sẽ tạo S3 Bucket để làm một Data Lake cho Data Pipeline. Trong phần này ta sẽ tạo các bucket sau:&#xA;fashion-landing-zone: Đây là nơi lưu trữ dữ liệu thô chưa được xử lý. fashion-clean-zone: Đây là nơi lưu trữ dữ liệu đã được chuyển đổi và chuẩn bị sẵn sàng cho các công việc phân tích. fashion-logic-zone: Đây là nơi lưu trữ những Lambda Function và các dags chạy Airflow cho AWS MWAA. Cài đặt Truy cập Amazon Management Console Tìm kiếm dịch vụ S3 Chọn S3 từ kết quả tìm kiếm Sau đó bấm Create bucket module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets</description>
     </item>
     <item>
       <title>2.6 Tạo Kinesis Data Stream</title>
       <link>http://localhost:1313/vi/preparation/setup-kinesis/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vi/preparation/setup-kinesis/index.html</guid>
-      <description>Tạo Kinesis Data Stream Truy cập Amazon Management Console Tìm kiếm dịch vụ Kinesis Chọn Kinesis từ kết quả tìm kiếm Trong phần giao diện Kinesis chọn Kinesis Data Streams rồi chọn Create data stream Trong giao diện Create data stream Chọn Name là fashion-ds Chọn Provisioned Phần Provisioned shards nhập 1 Chọn Create data stream</description>
+      <description>Tạo Kinesis Data Stream Truy cập Amazon Management Console Tìm kiếm dịch vụ Kinesis Chọn Kinesis từ kết quả tìm kiếm module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets&#xA;Trong phần giao diện Kinesis chọn Kinesis Data Streams rồi chọn Create data stream module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets&#xA;Trong giao diện Create data stream Chọn Name là fashion-ds Chọn Provisioned Phần Provisioned shards nhập 1 Chọn Create data stream module:&#xD;mounts:&#xD;- source: assets&#xD;target: assets&#xD;- source: static&#xD;target: assets</description>
     </item>
   </channel>
 </rss>

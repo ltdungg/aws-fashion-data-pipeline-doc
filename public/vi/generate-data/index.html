@@ -22,20 +22,20 @@ products, users, orders và order_details Các bước triển khai Quay lại g
     <meta itemprop="name" content="3. Tạo môi trường ứng dụng :: AWS Fashion Pipeline">
     <meta itemprop="description" content="Tổng quan Trong phần này, ta sẽ tạo môi trường ứng dụng cho Data Pipeline. Môi trường bao gồm: EC2 Instance: Nơi tạo ra dữ liệu giả và khởi tạo các table database. RDS: Database PostgreSQL để lưu trữ dữ liệu giả. Mô hình database bao gồm 4 bảng:
 products, users, orders và order_details Các bước triển khai Quay lại giao diện RDS Chọn Databases từ menu bên trái Bấm vào fashion-db">
-    <meta itemprop="wordCount" content="455">
+    <meta itemprop="wordCount" content="471">
     <title>3. Tạo môi trường ứng dụng :: AWS Fashion Pipeline</title>
     <link href="/vi/generate-data/index.xml" rel="alternate" type="application/rss+xml" title="3. Tạo môi trường ứng dụng :: AWS Fashion Pipeline"><link rel="icon" href="https://static-00.iconduck.com/assets.00/aws-icon-512x512-4v2f55fn.png" type="image/png">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744901602" rel="stylesheet">
-    <link href="/css/theme.css?1744901602" rel="stylesheet">
-    <link href="/css/format-html.css?1744901602" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1744901602" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.vi.min.js?1744901602" defer></script>
-    <script src="/js/search.js?1744901602" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744902644" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744902644" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744902644" rel="stylesheet">
+    <link href="/css/theme.css?1744902644" rel="stylesheet">
+    <link href="/css/format-html.css?1744902644" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1744902644" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.vi.min.js?1744902644" defer></script>
+    <script src="/js/search.js?1744902644" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -45,7 +45,7 @@ products, users, orders và order_details Các bước triển khai Quay lại g
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['vi'];
-      window.relearn.index_js_url="/searchindex.vi.js?1744901602";
+      window.relearn.index_js_url="/searchindex.vi.js?1744902644";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -91,7 +91,7 @@ products, users, orders và order_details Các bước triển khai Quay lại g
       window.T_No_results_found = `Không tìm thấy kết quả nào cho "{0}"`;
       window.T_N_results_found = `{1} kết quả được tìm thấy cho "{0}"`;
     </script>
-    <link href="/css/custom.css?1744901602" rel="stylesheet">
+    <link href="/css/custom.css?1744902644" rel="stylesheet">
   </head>
   <body class="mobile-support html" data-url="/vi/generate-data/index.html">
     <div id="R-body" class="default-animation">
@@ -158,8 +158,7 @@ products, users, orders và order_details Các bước triển khai Quay lại g
 <ul>
 <li>products, users, orders và order_details</li>
 </ul>
-<p><a href="#R-image-6728a77300f0415e73480b94724cba1a" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/generate-data/1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6728a77300f0415e73480b94724cba1a"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/generate-data/1.png"></a></p>
+<p><img src="/images/generate-data/1.png" alt="alt"></p>
 <h2 id="các-bước-triển-khai">Các bước triển khai</h2>
 <ol>
 <li>Quay lại giao diện RDS
@@ -169,13 +168,11 @@ products, users, orders và order_details Các bước triển khai Quay lại g
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-b10d3c7805012837782288295b916131" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/generate-data/img.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b10d3c7805012837782288295b916131"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/generate-data/img.png"></a></p>
+<p><img src="/images/generate-data/img.png" alt="alt"></p>
 <ol start="2">
 <li>Tại giao diện fashion-db, lưu lại <strong>Endpoint</strong> của database vào một nơi nào đó.</li>
 </ol>
-<p><a href="#R-image-665b3affba02681c3c6e8866b99686aa" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/generate-data/img_1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-665b3affba02681c3c6e8866b99686aa"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/generate-data/img_1.png"></a></p>
+<p><img src="/images/generate-data/img_1.png" alt="alt"></p>
 <ol start="3">
 <li>Kéo xuống phần Connected compute resources
 <ul>
@@ -184,8 +181,7 @@ products, users, orders và order_details Các bước triển khai Quay lại g
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-5adbfd1f98355ac694af79b41b376b5b" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/generate-data/img_2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5adbfd1f98355ac694af79b41b376b5b"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/generate-data/img_2.png"></a></p>
+<p><img src="/images/generate-data/img_2.png" alt="alt"></p>
 <ol start="4">
 <li>Tại giao diện Set up EC2 connection
 <ul>
@@ -195,16 +191,19 @@ products, users, orders và order_details Các bước triển khai Quay lại g
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-8d91511d141fb3a595f2d768f775462b" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/generate-data/img_3.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8d91511d141fb3a595f2d768f775462b"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/generate-data/img_3.png"></a></p>
+<p><img src="/images/generate-data/img_3.png" alt="alt"></p>
 <ol start="5">
 <li>Khi hoàn tất, bạn sẽ thấy một thông báo như sau:</li>
 </ol>
-<p><a href="#R-image-7fff20fb797eaf337c043f161d19d778" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/generate-data/img_4.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7fff20fb797eaf337c043f161d19d778"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/generate-data/img_4.png"></a></p>
+<p><img src="/images/generate-data/img_4.png" alt="alt"></p>
 <ol start="6">
 <li>
-<p>Quay trở lại terminal kết nối với EC2 Instance tại bước <a href="/vi/preparation/setup-ec2/index.html">2.3 Tạo EC2 Instance</a>.</p>
+<p>Quay trở lại terminal kết nối với EC2 Instance tại bước module:
+  mounts:
+  - source: assets
+    target: assets
+  - source: static
+    target: assets.</p>
 </li>
 <li>
 <p>Test kết nối tới database PostgreSQL với DNS Database bạn đã lưu lúc trước:</p>
@@ -219,8 +218,7 @@ products, users, orders và order_details Các bước triển khai Quay lại g
 <p>Nếu bạn thấy thông báo như sau thì bạn đã kết nối thành công tới database PostgreSQL.</p>
 <ul>
 <li>Còn nếu không hiện lên đúng hình ảnh phía dưới, xem lại các bước trên nhé.
-<a href="#R-image-db4f7988f21fa8b13dd8ae51530b7b0e" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/generate-data/img_5.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-db4f7988f21fa8b13dd8ae51530b7b0e"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/generate-data/img_5.png"></a></li>
+<img src="/images/generate-data/img_5.png" alt="alt"></li>
 </ul>
 </li>
 <li>
@@ -236,7 +234,12 @@ products, users, orders và order_details Các bước triển khai Quay lại g
 <li>RDS_HOST: là DNS của database PostgreSQL bạn đã lưu ở bước 2.</li>
 <li>RDS_PASSWORD: là password của database PostgreSQL bạn đã tạo ở bước 2.</li>
 <li>KINESIS_STREAM_NAME: <code>fashion-ds</code></li>
-<li>STREAM_ARN: Là ARN của Kinesis Stream bạn đã tạo ở bước <a href="/vi/preparation/setup-kinesis/index.html">2.6 Tạo Kinesis Stream</a>.</li>
+<li>STREAM_ARN: Là ARN của Kinesis Stream bạn đã tạo ở bước module:
+  mounts:
+  - source: assets
+    target: assets
+  - source: static
+    target: assets.</li>
 </ul>
 </li>
 <li>Bấm <strong>Esc</strong> để thoát khỏi chế độ nhập liệu.</li>
@@ -244,8 +247,7 @@ products, users, orders và order_details Các bước triển khai Quay lại g
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-584d71b3126c4b19200bfec2f42f04fe" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/generate-data/img_6.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-584d71b3126c4b19200bfec2f42f04fe"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/generate-data/img_6.png"></a></p>
+<p><img src="/images/generate-data/img_6.png" alt="alt"></p>
 <ol start="11">
 <li>Tạo table cho database :
 <ul>
@@ -258,8 +260,7 @@ products, users, orders và order_details Các bước triển khai Quay lại g
 <ol start="12">
 <li>
 <p>Nếu bạn thấy thông báo như sau thì bạn đã tạo thành công database và dữ liệu giả cho 1000 users và bảng products.
-<a href="#R-image-ae870791991d4fc56d73490c46d19346" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/generate-data/img_7.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ae870791991d4fc56d73490c46d19346"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/generate-data/img_7.png"></a></p>
+<img src="/images/generate-data/img_7.png" alt="alt"></p>
 </li>
 <li>
 <p>Xem các bảng đã tạo trong database PostgreSQL:</p>
@@ -270,8 +271,7 @@ products, users, orders và order_details Các bước triển khai Quay lại g
 </li>
 </ol>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> information_schema.tables <span style="color:#66d9ef">WHERE</span> table_schema <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;public&#39;</span>;</span></span></code></pre></div>
-<p><a href="#R-image-04d7a890c50c6b0fd8875b9c3c888f53" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/generate-data/img_8.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-04d7a890c50c6b0fd8875b9c3c888f53"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/generate-data/img_8.png"></a></p>
+<p><img src="/images/generate-data/img_8.png" alt="alt"></p>
 <ol start="14">
 <li>Xem tất cả dữ liệu trong bảng (Tùy chọn):</li>
 </ol>
@@ -381,8 +381,8 @@ products, users, orders và order_details Các bước triển khai Quay lại g
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1744901602" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744901602" defer></script>
-    <script src="/js/theme.js?1744901602" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1744902644" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744902644" defer></script>
+    <script src="/js/theme.js?1744902644" defer></script>
   </body>
 </html>

@@ -5,33 +5,41 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.143.1">
     <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
-    <meta name="description" content="Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. Chọn Roles từ menu bên trái, bấm vào Create role. Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next.">
+    <meta name="description" content="Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. module:mounts:- source: assetstarget: assets- source: statictarget: assets
+Chọn Roles từ menu bên trái, bấm vào Create role. module:mounts:- source: assetstarget: assets- source: statictarget: assets
+Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next. module:mounts:- source: assetstarget: assets- source: statictarget: assets">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="2.1 Tạo các Role cần thiết :: AWS Fashion Pipeline">
-    <meta name="twitter:description" content="Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. Chọn Roles từ menu bên trái, bấm vào Create role. Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next.">
+    <meta name="twitter:description" content="Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. module:mounts:- source: assetstarget: assets- source: statictarget: assets
+Chọn Roles từ menu bên trái, bấm vào Create role. module:mounts:- source: assetstarget: assets- source: statictarget: assets
+Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next. module:mounts:- source: assetstarget: assets- source: statictarget: assets">
     <meta property="og:url" content="http://localhost:1313/vi/preparation/setup-role/index.html">
     <meta property="og:site_name" content="AWS Fashion Pipeline">
     <meta property="og:title" content="2.1 Tạo các Role cần thiết :: AWS Fashion Pipeline">
-    <meta property="og:description" content="Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. Chọn Roles từ menu bên trái, bấm vào Create role. Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next.">
+    <meta property="og:description" content="Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. module:mounts:- source: assetstarget: assets- source: statictarget: assets
+Chọn Roles từ menu bên trái, bấm vào Create role. module:mounts:- source: assetstarget: assets- source: statictarget: assets
+Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next. module:mounts:- source: assetstarget: assets- source: statictarget: assets">
     <meta property="og:locale" content="vi">
     <meta property="og:type" content="article">
     <meta property="article:section" content="2. Các bước chuẩn bị">
     <meta itemprop="name" content="2.1 Tạo các Role cần thiết :: AWS Fashion Pipeline">
-    <meta itemprop="description" content="Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. Chọn Roles từ menu bên trái, bấm vào Create role. Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next.">
-    <meta itemprop="wordCount" content="190">
+    <meta itemprop="description" content="Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. module:mounts:- source: assetstarget: assets- source: statictarget: assets
+Chọn Roles từ menu bên trái, bấm vào Create role. module:mounts:- source: assetstarget: assets- source: statictarget: assets
+Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next. module:mounts:- source: assetstarget: assets- source: statictarget: assets">
+    <meta itemprop="wordCount" content="298">
     <title>2.1 Tạo các Role cần thiết :: AWS Fashion Pipeline</title><link rel="icon" href="https://static-00.iconduck.com/assets.00/aws-icon-512x512-4v2f55fn.png" type="image/png">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744901602" rel="stylesheet">
-    <link href="/css/theme.css?1744901602" rel="stylesheet">
-    <link href="/css/format-html.css?1744901602" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1744901602" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.vi.min.js?1744901602" defer></script>
-    <script src="/js/search.js?1744901602" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744903457" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744903457" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744903457" rel="stylesheet">
+    <link href="/css/theme.css?1744903457" rel="stylesheet">
+    <link href="/css/format-html.css?1744903457" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1744903457" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1744903457" defer></script>
+    <script src="/js/lunr/lunr.min.js?1744903457" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1744903457" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1744903457" defer></script>
+    <script src="/js/lunr/lunr.vi.min.js?1744903457" defer></script>
+    <script src="/js/search.js?1744903457" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -41,7 +49,7 @@
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['vi'];
-      window.relearn.index_js_url="/searchindex.vi.js?1744901602";
+      window.relearn.index_js_url="/searchindex.vi.js?1744903457";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -87,7 +95,7 @@
       window.T_No_results_found = `Không tìm thấy kết quả nào cho "{0}"`;
       window.T_N_results_found = `{1} kết quả được tìm thấy cho "{0}"`;
     </script>
-    <link href="/css/custom.css?1744901602" rel="stylesheet">
+    <link href="/css/custom.css?1744903457" rel="stylesheet">
   </head>
   <body class="mobile-support html" data-url="/vi/preparation/setup-role/index.html">
     <div id="R-body" class="default-animation">
@@ -145,18 +153,30 @@
 <ol>
 <li>Truy cập vào AWS Console, chọn <strong>IAM</strong> từ menu dịch vụ.</li>
 </ol>
-<p><a href="#R-image-b0f4639dbdf5afc47208716a9d085e3b" class="lightbox-link"><img alt="img.png" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/iam-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b0f4639dbdf5afc47208716a9d085e3b"><img alt="img.png" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/iam-1.png"></a></p>
+<p>module:
+  mounts:
+  - source: assets
+    target: assets
+  - source: static
+    target: assets</p>
 <ol start="2">
 <li>Chọn <strong>Roles</strong> từ menu bên trái, bấm vào <strong>Create role</strong>.</li>
 </ol>
-<p><a href="#R-image-0b4996414db79dde3f363d507bd7b04a" class="lightbox-link"><img alt="img.png" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/iam-2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0b4996414db79dde3f363d507bd7b04a"><img alt="img.png" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/iam-2.png"></a></p>
+<p>module:
+  mounts:
+  - source: assets
+    target: assets
+  - source: static
+    target: assets</p>
 <ol start="3">
 <li>Tại giao diện <strong>Select trusted entity</strong>, chọn <strong>AWS service</strong>, sau đó chọn <strong>Lambda</strong> từ danh sách dịch vụ. Bấm <strong>Next</strong>.</li>
 </ol>
-<p><a href="#R-image-9123d267621ac1a662b0a78bf3666cd0" class="lightbox-link"><img alt="img.png" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/iam-3.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9123d267621ac1a662b0a78bf3666cd0"><img alt="img.png" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/iam-3.png"></a></p>
+<p>module:
+  mounts:
+  - source: assets
+    target: assets
+  - source: static
+    target: assets</p>
 <ol start="4">
 <li>
 <p>Tại phần Add permissions</p>
@@ -175,24 +195,40 @@
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-670f93a87ef1f848325da1e77089e792" class="lightbox-link"><img alt="img.png" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/iam-5.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-670f93a87ef1f848325da1e77089e792"><img alt="img.png" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/iam-5.png"></a></p>
+<p>module:
+  mounts:
+  - source: assets
+    target: assets
+  - source: static
+    target: assets</p>
 <h2 id="tạo-role-cho-ec2-truy-cập-vào-kinesis">Tạo role cho EC2 truy cập vào Kinesis</h2>
 <ol>
 <li>Truy cập vào AWS Console, chọn <strong>IAM</strong> từ menu dịch vụ.</li>
 </ol>
-<p><a href="#R-image-748b202c3c33ad3e0ad238405301ef8d" class="lightbox-link"><img alt="img.png" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/iam-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-748b202c3c33ad3e0ad238405301ef8d"><img alt="img.png" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/iam-1.png"></a></p>
+<p>module:
+  mounts:
+  - source: assets
+    target: assets
+  - source: static
+    target: assets</p>
 <ol start="2">
 <li>Chọn <strong>Roles</strong> từ menu bên trái, bấm vào <strong>Create role</strong>.</li>
 </ol>
-<p><a href="#R-image-9251350fbb756da1fb09391fdfbfc665" class="lightbox-link"><img alt="img.png" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/iam-2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9251350fbb756da1fb09391fdfbfc665"><img alt="img.png" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/iam-2.png"></a></p>
+<p>module:
+  mounts:
+  - source: assets
+    target: assets
+  - source: static
+    target: assets</p>
 <ol start="3">
 <li>Tại giao diện <strong>Select trusted entity</strong>, chọn <strong>AWS service</strong>, sau đó chọn <strong>EC2</strong> từ danh sách dịch vụ. Bấm <strong>Next</strong>.</li>
 </ol>
-<p><a href="#R-image-0fc2e2430040006fe5e84d8efa741e3d" class="lightbox-link"><img alt="img.png" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/iam-6.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0fc2e2430040006fe5e84d8efa741e3d"><img alt="img.png" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/iam-6.png"></a></p>
+<p>module:
+  mounts:
+  - source: assets
+    target: assets
+  - source: static
+    target: assets</p>
 <ol start="4">
 <li>Tại phần Add permissions
 <ul>
@@ -201,8 +237,12 @@
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-a17256af3be604b6dd833054a88449a5" class="lightbox-link"><img alt="img.png" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/iam-7.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a17256af3be604b6dd833054a88449a5"><img alt="img.png" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/iam-7.png"></a></p>
+<p>module:
+  mounts:
+  - source: assets
+    target: assets
+  - source: static
+    target: assets</p>
 <ol start="5">
 <li>Tại phần Name, review, and create
 <ul>
@@ -212,8 +252,12 @@
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-070bcb79e0ea1c3cb2f956fc1feeaf97" class="lightbox-link"><img alt="img.png" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/iam-8.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-070bcb79e0ea1c3cb2f956fc1feeaf97"><img alt="img.png" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/iam-8.png"></a></p>
+<p>module:
+  mounts:
+  - source: assets
+    target: assets
+  - source: static
+    target: assets</p>
 
   <footer class="footline">
   </footer>
@@ -314,8 +358,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1744901602" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744901602" defer></script>
-    <script src="/js/theme.js?1744901602" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1744903457" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744903457" defer></script>
+    <script src="/js/theme.js?1744903457" defer></script>
   </body>
 </html>

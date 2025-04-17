@@ -25,6 +25,9 @@
     <loc>http://localhost:1313/vi/generate-data/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vi/test-connection/test-lambda/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/vi/preparation/setup-rds/index.html</loc>
   </url>
   <url>

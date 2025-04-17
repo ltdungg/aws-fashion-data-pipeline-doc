@@ -5,33 +5,33 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.143.1">
     <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
-    <meta name="description" content="Tạo Kinesis Data Stream Truy cập Amazon Management Console Tìm kiếm dịch vụ Kinesis Chọn Kinesis từ kết quả tìm kiếm Trong phần giao diện Kinesis chọn Kinesis Data Streams rồi chọn Create data stream Trong giao diện Create data stream Chọn Name là fashion-ds Chọn Provisioned Phần Provisioned shards nhập 1 Chọn Create data stream">
+    <meta name="description" content="Tạo Kinesis Data Stream Truy cập Amazon Management Console Tìm kiếm dịch vụ Kinesis Chọn Kinesis từ kết quả tìm kiếm Trong phần giao diện Kinesis chọn Kinesis Data Streams rồi chọn Create data stream Trong giao diện Create data stream Chọn Name là fashion-ds Chọn Provisioned Phần Provisioned shards nhập 1 Chọn Create data stream Sau khi tạo xong bạn sẽ thấy giao diện như sau, lưu lại ARN của Kinesis Data Stream này để sử dụng trong các bước sau.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="2.6 Tạo Kinesis Data Stream :: AWS Fashion Pipeline">
-    <meta name="twitter:description" content="Tạo Kinesis Data Stream Truy cập Amazon Management Console Tìm kiếm dịch vụ Kinesis Chọn Kinesis từ kết quả tìm kiếm Trong phần giao diện Kinesis chọn Kinesis Data Streams rồi chọn Create data stream Trong giao diện Create data stream Chọn Name là fashion-ds Chọn Provisioned Phần Provisioned shards nhập 1 Chọn Create data stream">
+    <meta name="twitter:description" content="Tạo Kinesis Data Stream Truy cập Amazon Management Console Tìm kiếm dịch vụ Kinesis Chọn Kinesis từ kết quả tìm kiếm Trong phần giao diện Kinesis chọn Kinesis Data Streams rồi chọn Create data stream Trong giao diện Create data stream Chọn Name là fashion-ds Chọn Provisioned Phần Provisioned shards nhập 1 Chọn Create data stream Sau khi tạo xong bạn sẽ thấy giao diện như sau, lưu lại ARN của Kinesis Data Stream này để sử dụng trong các bước sau.">
     <meta property="og:url" content="http://localhost:1313/vi/preparation/setup-kinesis/index.html">
     <meta property="og:site_name" content="AWS Fashion Pipeline">
     <meta property="og:title" content="2.6 Tạo Kinesis Data Stream :: AWS Fashion Pipeline">
-    <meta property="og:description" content="Tạo Kinesis Data Stream Truy cập Amazon Management Console Tìm kiếm dịch vụ Kinesis Chọn Kinesis từ kết quả tìm kiếm Trong phần giao diện Kinesis chọn Kinesis Data Streams rồi chọn Create data stream Trong giao diện Create data stream Chọn Name là fashion-ds Chọn Provisioned Phần Provisioned shards nhập 1 Chọn Create data stream">
+    <meta property="og:description" content="Tạo Kinesis Data Stream Truy cập Amazon Management Console Tìm kiếm dịch vụ Kinesis Chọn Kinesis từ kết quả tìm kiếm Trong phần giao diện Kinesis chọn Kinesis Data Streams rồi chọn Create data stream Trong giao diện Create data stream Chọn Name là fashion-ds Chọn Provisioned Phần Provisioned shards nhập 1 Chọn Create data stream Sau khi tạo xong bạn sẽ thấy giao diện như sau, lưu lại ARN của Kinesis Data Stream này để sử dụng trong các bước sau.">
     <meta property="og:locale" content="vi">
     <meta property="og:type" content="article">
     <meta property="article:section" content="2. Các bước chuẩn bị">
     <meta itemprop="name" content="2.6 Tạo Kinesis Data Stream :: AWS Fashion Pipeline">
-    <meta itemprop="description" content="Tạo Kinesis Data Stream Truy cập Amazon Management Console Tìm kiếm dịch vụ Kinesis Chọn Kinesis từ kết quả tìm kiếm Trong phần giao diện Kinesis chọn Kinesis Data Streams rồi chọn Create data stream Trong giao diện Create data stream Chọn Name là fashion-ds Chọn Provisioned Phần Provisioned shards nhập 1 Chọn Create data stream">
+    <meta itemprop="description" content="Tạo Kinesis Data Stream Truy cập Amazon Management Console Tìm kiếm dịch vụ Kinesis Chọn Kinesis từ kết quả tìm kiếm Trong phần giao diện Kinesis chọn Kinesis Data Streams rồi chọn Create data stream Trong giao diện Create data stream Chọn Name là fashion-ds Chọn Provisioned Phần Provisioned shards nhập 1 Chọn Create data stream Sau khi tạo xong bạn sẽ thấy giao diện như sau, lưu lại ARN của Kinesis Data Stream này để sử dụng trong các bước sau.">
     <meta itemprop="wordCount" content="82">
     <title>2.6 Tạo Kinesis Data Stream :: AWS Fashion Pipeline</title><link rel="icon" href="https://static-00.iconduck.com/assets.00/aws-icon-512x512-4v2f55fn.png" type="image/png">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744901602" rel="stylesheet">
-    <link href="/css/theme.css?1744901602" rel="stylesheet">
-    <link href="/css/format-html.css?1744901602" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1744901602" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1744901602" defer></script>
-    <script src="/js/lunr/lunr.vi.min.js?1744901602" defer></script>
-    <script src="/js/search.js?1744901602" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744902644" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744902644" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744902644" rel="stylesheet">
+    <link href="/css/theme.css?1744902644" rel="stylesheet">
+    <link href="/css/format-html.css?1744902644" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1744902644" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1744902644" defer></script>
+    <script src="/js/lunr/lunr.vi.min.js?1744902644" defer></script>
+    <script src="/js/search.js?1744902644" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -41,7 +41,7 @@
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['vi'];
-      window.relearn.index_js_url="/searchindex.vi.js?1744901602";
+      window.relearn.index_js_url="/searchindex.vi.js?1744902644";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -87,7 +87,7 @@
       window.T_No_results_found = `Không tìm thấy kết quả nào cho "{0}"`;
       window.T_N_results_found = `{1} kết quả được tìm thấy cho "{0}"`;
     </script>
-    <link href="/css/custom.css?1744901602" rel="stylesheet">
+    <link href="/css/custom.css?1744902644" rel="stylesheet">
   </head>
   <body class="mobile-support html" data-url="/vi/preparation/setup-kinesis/index.html">
     <div id="R-body" class="default-animation">
@@ -149,13 +149,11 @@
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-a632c3a18c60411a7fb56a45ca40c2fb" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/kinesis-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a632c3a18c60411a7fb56a45ca40c2fb"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/kinesis-1.png"></a></p>
+<p><img src="/images/preparation/kinesis-1.png" alt="alt"></p>
 <ol start="2">
 <li>Trong phần giao diện Kinesis chọn <strong>Kinesis Data Streams</strong> rồi chọn <strong>Create data stream</strong></li>
 </ol>
-<p><a href="#R-image-ae3c4272b519c918238fc70ba22bfc76" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/kinesis-2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ae3c4272b519c918238fc70ba22bfc76"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/kinesis-2.png"></a></p>
+<p><img src="/images/preparation/kinesis-2.png" alt="alt"></p>
 <ol start="3">
 <li>Trong giao diện Create data stream
 <ul>
@@ -166,13 +164,11 @@
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-2397e3f7d09403f43aa113b000e532d2" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/kinesis-3.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2397e3f7d09403f43aa113b000e532d2"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/kinesis-3.png"></a></p>
+<p><img src="/images/preparation/kinesis-3.png" alt="alt"></p>
 <ol start="4">
 <li>Sau khi tạo xong bạn sẽ thấy giao diện như sau, lưu lại ARN của Kinesis Data Stream này để sử dụng trong các bước sau.</li>
 </ol>
-<p><a href="#R-image-c7d2e437b079b54f2f383a7fb958da49" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/kinesis-4.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c7d2e437b079b54f2f383a7fb958da49"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/kinesis-4.png"></a></p>
+<p><img src="/images/preparation/kinesis-4.png" alt="alt"></p>
 
   <footer class="footline">
   </footer>
@@ -273,8 +269,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1744901602" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744901602" defer></script>
-    <script src="/js/theme.js?1744901602" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1744902644" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744902644" defer></script>
+    <script src="/js/theme.js?1744902644" defer></script>
   </body>
 </html>

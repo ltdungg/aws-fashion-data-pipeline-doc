@@ -1,4 +1,4 @@
-baseURL = 'https://ltdungg.github.io/aws-fashion-data-pipeline-doc/'
+baseURL = 'https://example.com/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'hugo-theme-relearn'
