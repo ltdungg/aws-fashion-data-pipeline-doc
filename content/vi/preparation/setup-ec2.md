@@ -98,4 +98,13 @@ cd ec2
 pip install -r requirements.txt
 ```
 
-5. Sau khi cài đặt xong, giữ nguyên terminal và chuyển tới phần tiếp theo cài đặt RDS.
+## Gắn role cho EC2 để ghi vào Kinesis Data Stream
+1. Về giao diện EC2 Instances bấm vào `fashion-webapp`, chọn Actions, Security, Modify IAM role.
+
+![img.png](/images/test-connection/img.png)
+
+2. Chọn `ec2-kinesis-role` mà chúng ta đã tạo ở phần trước.
+
+![img.png](/images/test-connection/img_1.png)
+
+3. Bấm **Update IAM role**.

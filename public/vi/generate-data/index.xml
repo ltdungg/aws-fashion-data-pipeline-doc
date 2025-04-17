@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3. Tạo môi trường ứng dụng :: AWS Fashion Pipeline</title>
+    <link>http://localhost:1313/vi/generate-data/index.html</link>
+    <description>Tổng quan Trong phần này, ta sẽ tạo môi trường ứng dụng cho Data Pipeline. Môi trường bao gồm: EC2 Instance: Nơi tạo ra dữ liệu giả và khởi tạo các table database. RDS: Database PostgreSQL để lưu trữ dữ liệu giả. Mô hình database bao gồm 4 bảng:&#xA;products, users, orders và order_details Các bước triển khai Quay lại giao diện RDS Chọn Databases từ menu bên trái Bấm vào fashion-db</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <atom:link href="http://localhost:1313/vi/generate-data/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

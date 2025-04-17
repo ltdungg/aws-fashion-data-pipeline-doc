@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://ltdungg.github.io/aws-fashion-data-pipeline-doc/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'hugo-theme-relearn'
@@ -11,6 +11,10 @@ defaultContentLanguage = 'vi'
 [author]
   email = 'luongtiendung.work@gmail.com'
   name = 'Dzung Luong'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
 
 [languages]
   [languages.en]

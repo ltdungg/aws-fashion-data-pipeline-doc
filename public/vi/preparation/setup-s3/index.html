@@ -5,33 +5,37 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.143.1">
     <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
-    <meta name="description" content="a">
+    <meta name="description" content="Giới thiệu Trong phần này, ta sẽ tạo S3 Bucket để làm một Data Lake cho Data Pipeline. Trong phần này ta sẽ tạo các bucket sau:
+fashion-landing-zone: Đây là nơi lưu trữ dữ liệu thô chưa được xử lý. fashion-clean-zone: Đây là nơi lưu trữ dữ liệu đã được chuyển đổi và chuẩn bị sẵn sàng cho các công việc phân tích. fashion-logic-zone: Đây là nơi lưu trữ những Lambda Function và các dags chạy Airflow cho AWS MWAA. Cài đặt Truy cập Amazon Management Console Tìm kiếm dịch vụ S3 Chọn S3 từ kết quả tìm kiếm Sau đó bấm Create bucket">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="2.5 Tạo S3 Bucket :: AWS Fashion Pipeline">
-    <meta name="twitter:description" content="a">
+    <meta name="twitter:description" content="Giới thiệu Trong phần này, ta sẽ tạo S3 Bucket để làm một Data Lake cho Data Pipeline. Trong phần này ta sẽ tạo các bucket sau:
+fashion-landing-zone: Đây là nơi lưu trữ dữ liệu thô chưa được xử lý. fashion-clean-zone: Đây là nơi lưu trữ dữ liệu đã được chuyển đổi và chuẩn bị sẵn sàng cho các công việc phân tích. fashion-logic-zone: Đây là nơi lưu trữ những Lambda Function và các dags chạy Airflow cho AWS MWAA. Cài đặt Truy cập Amazon Management Console Tìm kiếm dịch vụ S3 Chọn S3 từ kết quả tìm kiếm Sau đó bấm Create bucket">
     <meta property="og:url" content="http://localhost:1313/vi/preparation/setup-s3/index.html">
     <meta property="og:site_name" content="AWS Fashion Pipeline">
     <meta property="og:title" content="2.5 Tạo S3 Bucket :: AWS Fashion Pipeline">
-    <meta property="og:description" content="a">
+    <meta property="og:description" content="Giới thiệu Trong phần này, ta sẽ tạo S3 Bucket để làm một Data Lake cho Data Pipeline. Trong phần này ta sẽ tạo các bucket sau:
+fashion-landing-zone: Đây là nơi lưu trữ dữ liệu thô chưa được xử lý. fashion-clean-zone: Đây là nơi lưu trữ dữ liệu đã được chuyển đổi và chuẩn bị sẵn sàng cho các công việc phân tích. fashion-logic-zone: Đây là nơi lưu trữ những Lambda Function và các dags chạy Airflow cho AWS MWAA. Cài đặt Truy cập Amazon Management Console Tìm kiếm dịch vụ S3 Chọn S3 từ kết quả tìm kiếm Sau đó bấm Create bucket">
     <meta property="og:locale" content="vi">
     <meta property="og:type" content="article">
     <meta property="article:section" content="2. Các bước chuẩn bị">
     <meta itemprop="name" content="2.5 Tạo S3 Bucket :: AWS Fashion Pipeline">
-    <meta itemprop="description" content="a">
-    <meta itemprop="wordCount" content="1">
+    <meta itemprop="description" content="Giới thiệu Trong phần này, ta sẽ tạo S3 Bucket để làm một Data Lake cho Data Pipeline. Trong phần này ta sẽ tạo các bucket sau:
+fashion-landing-zone: Đây là nơi lưu trữ dữ liệu thô chưa được xử lý. fashion-clean-zone: Đây là nơi lưu trữ dữ liệu đã được chuyển đổi và chuẩn bị sẵn sàng cho các công việc phân tích. fashion-logic-zone: Đây là nơi lưu trữ những Lambda Function và các dags chạy Airflow cho AWS MWAA. Cài đặt Truy cập Amazon Management Console Tìm kiếm dịch vụ S3 Chọn S3 từ kết quả tìm kiếm Sau đó bấm Create bucket">
+    <meta itemprop="wordCount" content="143">
     <title>2.5 Tạo S3 Bucket :: AWS Fashion Pipeline</title><link rel="icon" href="https://static-00.iconduck.com/assets.00/aws-icon-512x512-4v2f55fn.png" type="image/png">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744822495" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744822495" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744822495" rel="stylesheet">
-    <link href="/css/theme.css?1744822495" rel="stylesheet">
-    <link href="/css/format-html.css?1744822495" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1744822495" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1744822495" defer></script>
-    <script src="/js/lunr/lunr.min.js?1744822495" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1744822495" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1744822495" defer></script>
-    <script src="/js/lunr/lunr.vi.min.js?1744822495" defer></script>
-    <script src="/js/search.js?1744822495" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744901602" rel="stylesheet">
+    <link href="/css/theme.css?1744901602" rel="stylesheet">
+    <link href="/css/format-html.css?1744901602" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1744901602" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.vi.min.js?1744901602" defer></script>
+    <script src="/js/search.js?1744901602" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -41,7 +45,7 @@
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['vi'];
-      window.relearn.index_js_url="/searchindex.vi.js?1744822495";
+      window.relearn.index_js_url="/searchindex.vi.js?1744901602";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -87,7 +91,7 @@
       window.T_No_results_found = `Không tìm thấy kết quả nào cho "{0}"`;
       window.T_N_results_found = `{1} kết quả được tìm thấy cho "{0}"`;
     </script>
-    <link href="/css/custom.css?1744822495" rel="stylesheet">
+    <link href="/css/custom.css?1744901602" rel="stylesheet">
   </head>
   <body class="mobile-support html" data-url="/vi/preparation/setup-s3/index.html">
     <div id="R-body" class="default-animation">
@@ -100,7 +104,13 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Mục lục (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#giới-thiệu">Giới thiệu</a></li>
+    <li><a href="#cài-đặt">Cài đặt</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -113,7 +123,7 @@
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vi/preparation/setup-rds/index.html" title="2.4 Tạo RDS (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vi/preparation/setup-kinesis/index.html" title="2.6 Tạo Kinesis Data Stream (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Nội dung khác"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -135,7 +145,50 @@
 
 <h1 id="25-tạo-s3-bucket">2.5 Tạo S3 Bucket</h1>
 
-<p>a</p>
+<h2 id="giới-thiệu">Giới thiệu</h2>
+<p>Trong phần này, ta sẽ tạo S3 Bucket để làm một Data Lake cho Data Pipeline.
+Trong phần này ta sẽ tạo các bucket sau:</p>
+<ul>
+<li>fashion-landing-zone: Đây là nơi lưu trữ dữ liệu thô chưa được xử lý.</li>
+<li>fashion-clean-zone: Đây là nơi lưu trữ dữ liệu đã được chuyển đổi và chuẩn bị sẵn sàng cho các công việc phân tích.</li>
+<li>fashion-logic-zone: Đây là nơi lưu trữ những Lambda Function và các dags chạy Airflow cho AWS MWAA.</li>
+</ul>
+<h2 id="cài-đặt">Cài đặt</h2>
+<ol>
+<li>Truy cập <strong>Amazon Management Console</strong>
+<ul>
+<li>Tìm kiếm dịch vụ S3</li>
+<li>Chọn <strong>S3</strong> từ kết quả tìm kiếm</li>
+<li>Sau đó bấm <strong>Create bucket</strong></li>
+</ul>
+</li>
+</ol>
+<p><a href="#R-image-5cf684ab1f12447c122469f67dbf992b" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/s3-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5cf684ab1f12447c122469f67dbf992b"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/s3-1.png"></a>
+<a href="#R-image-747488f590982a80ad4e132998026e06" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/s3-2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-747488f590982a80ad4e132998026e06"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/s3-2.png"></a></p>
+<ol start="2">
+<li>Trong giao diện Create bucket
+<ul>
+<li>Chọn <strong>Bucket name</strong> là <code>fashion-landing-zone</code></li>
+<li>Để mặc định các thông số còn lại</li>
+<li>Bấm <strong>Create bucket</strong></li>
+</ul>
+</li>
+</ol>
+<p><a href="#R-image-8417a2b6c03fd660aed08defe70bd596" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/s3-3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8417a2b6c03fd660aed08defe70bd596"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/s3-3.png"></a></p>
+<ol start="3">
+<li>Lặp lại bước 2 với các bucket sau:
+<ul>
+<li><code>fashion-clean-zone</code></li>
+<li><code>fashion-logic-zone</code></li>
+</ul>
+</li>
+</ol>
+<p><a href="#R-image-dab96bb0a219261666be9cd273dac4a6" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/s3-4.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-dab96bb0a219261666be9cd273dac4a6"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/s3-4.png"></a></p>
+<p>Bạn đang tạo thành công 3 bucket S3.</p>
 
   <footer class="footline">
   </footer>
@@ -188,7 +241,14 @@
             <li class="" data-nav-id="/vi/preparation/setup-env/index.html"><a class="padding" href="/vi/preparation/setup-env/index.html">2.2 Tạo VPC, Subnet, ...<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/vi/preparation/setup-ec2/index.html"><a class="padding" href="/vi/preparation/setup-ec2/index.html">2.3 Tạo EC2 Instance<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/vi/preparation/setup-rds/index.html"><a class="padding" href="/vi/preparation/setup-rds/index.html">2.4 Tạo RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/vi/preparation/setup-s3/index.html"><a class="padding" href="/vi/preparation/setup-s3/index.html">2.5 Tạo S3 Bucket<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="active " data-nav-id="/vi/preparation/setup-s3/index.html"><a class="padding" href="/vi/preparation/setup-s3/index.html">2.5 Tạo S3 Bucket<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-kinesis/index.html"><a class="padding" href="/vi/preparation/setup-kinesis/index.html">2.6 Tạo Kinesis Data Stream<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/vi/generate-data/index.html"><a class="padding" href="/vi/generate-data/index.html">3. Tạo môi trường ứng dụng<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/rds-to-s3/index.html"><a class="padding" href="/vi/rds-to-s3/index.html">4. Trích xuất dữ liệu từ RDS vào S3<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/test-connection/index.html"><input type="checkbox" id="R-section-1a0528a68276c9c3c0d85cb2378ffaf7" aria-controls="R-subsections-1a0528a68276c9c3c0d85cb2378ffaf7"><label for="R-section-1a0528a68276c9c3c0d85cb2378ffaf7"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 5. Test dữ liệu</span></label><a class="padding" href="/vi/test-connection/index.html">5. Test dữ liệu<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-1a0528a68276c9c3c0d85cb2378ffaf7" class="collapsible-menu">
+            <li class="" data-nav-id="/vi/test-connection/test-rds/index.html"><a class="padding" href="/vi/test-connection/test-rds/index.html">5.1 Kiểm tra dữ liệu trong RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/test-connection/test-kinesis/index.html"><a class="padding" href="/vi/test-connection/test-kinesis/index.html">5.2 Kiểm tra dữ liệu trong Kinesis Data Stream<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/test-connection/test-lambda/index.html"><a class="padding" href="/vi/test-connection/test-lambda/index.html">5.3 Test Lambda Function<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -229,8 +289,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1744822495" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744822495" defer></script>
-    <script src="/js/theme.js?1744822495" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1744901602" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744901602" defer></script>
+    <script src="/js/theme.js?1744901602" defer></script>
   </body>
 </html>

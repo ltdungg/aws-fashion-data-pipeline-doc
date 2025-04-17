@@ -19,19 +19,19 @@
     <meta property="article:section" content="2. Các bước chuẩn bị">
     <meta itemprop="name" content="2.3 Tạo EC2 Instance :: AWS Fashion Pipeline">
     <meta itemprop="description" content="Tạo Elastic Compute Cloud (EC2) Instance Truy cập Amazon Management Console Tìm kiếm dịch vụ EC2 Chọn EC2 từ kết quả tìm kiếm Chọn Launch Instance Trong giao diện Launch Instance Name: fashion-webapp Amazon Machine Image (AMI): Amazon Linux 2023 AMI Instance Type: t2.micro">
-    <meta itemprop="wordCount" content="364">
+    <meta itemprop="wordCount" content="385">
     <title>2.3 Tạo EC2 Instance :: AWS Fashion Pipeline</title><link rel="icon" href="https://static-00.iconduck.com/assets.00/aws-icon-512x512-4v2f55fn.png" type="image/png">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744822495" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744822495" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744822495" rel="stylesheet">
-    <link href="/css/theme.css?1744822495" rel="stylesheet">
-    <link href="/css/format-html.css?1744822495" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1744822495" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1744822495" defer></script>
-    <script src="/js/lunr/lunr.min.js?1744822495" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1744822495" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1744822495" defer></script>
-    <script src="/js/lunr/lunr.vi.min.js?1744822495" defer></script>
-    <script src="/js/search.js?1744822495" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744901602" rel="stylesheet">
+    <link href="/css/theme.css?1744901602" rel="stylesheet">
+    <link href="/css/format-html.css?1744901602" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1744901602" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.vi.min.js?1744901602" defer></script>
+    <script src="/js/search.js?1744901602" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -41,7 +41,7 @@
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['vi'];
-      window.relearn.index_js_url="/searchindex.vi.js?1744822495";
+      window.relearn.index_js_url="/searchindex.vi.js?1744901602";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -87,7 +87,7 @@
       window.T_No_results_found = `Không tìm thấy kết quả nào cho "{0}"`;
       window.T_N_results_found = `{1} kết quả được tìm thấy cho "{0}"`;
     </script>
-    <link href="/css/custom.css?1744822495" rel="stylesheet">
+    <link href="/css/custom.css?1744901602" rel="stylesheet">
   </head>
   <body class="mobile-support html" data-url="/vi/preparation/setup-ec2/index.html">
     <div id="R-body" class="default-animation">
@@ -105,6 +105,7 @@
   <ul>
     <li><a href="#tạo-elastic-compute-cloud-ec2-instance">Tạo Elastic Compute Cloud (EC2) Instance</a></li>
     <li><a href="#cài-đặt-môi-trường-bên-trong-ec2-instance">Cài đặt môi trường bên trong EC2 Instance</a></li>
+    <li><a href="#gắn-role-cho-ec2-để-ghi-vào-kinesis-data-stream">Gắn role cho EC2 để ghi vào Kinesis Data Stream</a></li>
   </ul>
 </nav>
                 </div>
@@ -150,13 +151,13 @@
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-7b29da65b869eb56b5c3785a0b6b91c9" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7b29da65b869eb56b5c3785a0b6b91c9"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-1.png"></a></p>
+<p><a href="#R-image-a29b8250c238966713971e95b93330cf" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a29b8250c238966713971e95b93330cf"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-1.png"></a></p>
 <ol start="2">
 <li>Chọn <strong>Launch Instance</strong></li>
 </ol>
-<p><a href="#R-image-5c66f38304006b2c1a357a8d6822dc93" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5c66f38304006b2c1a357a8d6822dc93"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-2.png"></a></p>
+<p><a href="#R-image-1890ce7cfa6043d1810262330abd25c1" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1890ce7cfa6043d1810262330abd25c1"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-2.png"></a></p>
 <ol start="3">
 <li>Trong giao diện Launch Instance
 <ul>
@@ -166,8 +167,8 @@
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-4c60c3a90b2e802b726e31e1d6b004d3" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-3.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4c60c3a90b2e802b726e31e1d6b004d3"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-3.png"></a></p>
+<p><a href="#R-image-1081e8598cb8136809ae6a179b4eaee2" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1081e8598cb8136809ae6a179b4eaee2"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-3.png"></a></p>
 <ol start="4">
 <li>
 <p>Tại phần Key pair, chọn <strong>Create new key pair</strong></p>
@@ -192,13 +193,13 @@
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-d5b00a16d2414bc55b1d1c17f1ae8049" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-4.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d5b00a16d2414bc55b1d1c17f1ae8049"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-4.png"></a></p>
+<p><a href="#R-image-aa8078874073013a09a432de5a6bdd4b" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-4.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-aa8078874073013a09a432de5a6bdd4b"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-4.png"></a></p>
 <ol start="6">
 <li>Tại Inbound Security Group Rules, cài đặt như hình sau</li>
 </ol>
-<p><a href="#R-image-3a9ccfee9cb4e059e17094acc9b23adf" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-5.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3a9ccfee9cb4e059e17094acc9b23adf"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-5.png"></a></p>
+<p><a href="#R-image-005d131bd0cad3cd375eaf1fc794c4e8" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-5.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-005d131bd0cad3cd375eaf1fc794c4e8"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-5.png"></a></p>
 <ol start="7">
 <li>Còn lại để mặc định, nhấn <strong>Launch instance</strong> để hoàn tất việc tạo EC2 Instance</li>
 </ol>
@@ -215,8 +216,8 @@
 </ul>
 </li>
 </ol>
-<p><a href="#R-image-f2153d98795d1b8a813dd87f4c5af7a3" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-6.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f2153d98795d1b8a813dd87f4c5af7a3"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-6.png"></a></p>
+<p><a href="#R-image-8abb2cbf3841c3c8bbdf21e2b44c1665" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/preparation/ec2-6.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8abb2cbf3841c3c8bbdf21e2b44c1665"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/preparation/ec2-6.png"></a></p>
 <ol start="2">
 <li>Cài đặt môi trường Python, Git, PostgreSQL cho EC2 Instance</li>
 </ol>
@@ -258,8 +259,19 @@
 <li>Cài đặt các thư viện cần thiết</li>
 </ol>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install -r requirements.txt</span></span></code></pre></div>
-<ol start="5">
-<li>Sau khi cài đặt xong, giữ nguyên terminal và chuyển tới phần tiếp theo cài đặt RDS.</li>
+<h2 id="gắn-role-cho-ec2-để-ghi-vào-kinesis-data-stream">Gắn role cho EC2 để ghi vào Kinesis Data Stream</h2>
+<ol>
+<li>Về giao diện EC2 Instances bấm vào <code>fashion-webapp</code>, chọn Actions, Security, Modify IAM role.</li>
+</ol>
+<p><a href="#R-image-d2e5f3b4ec130dd1f42bedb486be8251" class="lightbox-link"><img alt="img.png" class="lazy lightbox figure-image" loading="lazy" src="/images/test-connection/img.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d2e5f3b4ec130dd1f42bedb486be8251"><img alt="img.png" class="lazy lightbox lightbox-image" loading="lazy" src="/images/test-connection/img.png"></a></p>
+<ol start="2">
+<li>Chọn <code>ec2-kinesis-role</code> mà chúng ta đã tạo ở phần trước.</li>
+</ol>
+<p><a href="#R-image-a9d2ae635a231993f66f99f0da26d36d" class="lightbox-link"><img alt="img.png" class="lazy lightbox figure-image" loading="lazy" src="/images/test-connection/img_1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a9d2ae635a231993f66f99f0da26d36d"><img alt="img.png" class="lazy lightbox lightbox-image" loading="lazy" src="/images/test-connection/img_1.png"></a></p>
+<ol start="3">
+<li>Bấm <strong>Update IAM role</strong>.</li>
 </ol>
 
   <footer class="footline">
@@ -313,7 +325,14 @@
             <li class="" data-nav-id="/vi/preparation/setup-env/index.html"><a class="padding" href="/vi/preparation/setup-env/index.html">2.2 Tạo VPC, Subnet, ...<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="active " data-nav-id="/vi/preparation/setup-ec2/index.html"><a class="padding" href="/vi/preparation/setup-ec2/index.html">2.3 Tạo EC2 Instance<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/vi/preparation/setup-rds/index.html"><a class="padding" href="/vi/preparation/setup-rds/index.html">2.4 Tạo RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/vi/preparation/setup-s3/index.html"><a class="padding" href="/vi/preparation/setup-s3/index.html">2.5 Tạo S3 Bucket<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/vi/preparation/setup-s3/index.html"><a class="padding" href="/vi/preparation/setup-s3/index.html">2.5 Tạo S3 Bucket<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-kinesis/index.html"><a class="padding" href="/vi/preparation/setup-kinesis/index.html">2.6 Tạo Kinesis Data Stream<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/vi/generate-data/index.html"><a class="padding" href="/vi/generate-data/index.html">3. Tạo môi trường ứng dụng<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/rds-to-s3/index.html"><a class="padding" href="/vi/rds-to-s3/index.html">4. Trích xuất dữ liệu từ RDS vào S3<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/test-connection/index.html"><input type="checkbox" id="R-section-1a0528a68276c9c3c0d85cb2378ffaf7" aria-controls="R-subsections-1a0528a68276c9c3c0d85cb2378ffaf7"><label for="R-section-1a0528a68276c9c3c0d85cb2378ffaf7"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 5. Test dữ liệu</span></label><a class="padding" href="/vi/test-connection/index.html">5. Test dữ liệu<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-1a0528a68276c9c3c0d85cb2378ffaf7" class="collapsible-menu">
+            <li class="" data-nav-id="/vi/test-connection/test-rds/index.html"><a class="padding" href="/vi/test-connection/test-rds/index.html">5.1 Kiểm tra dữ liệu trong RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/test-connection/test-kinesis/index.html"><a class="padding" href="/vi/test-connection/test-kinesis/index.html">5.2 Kiểm tra dữ liệu trong Kinesis Data Stream<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/test-connection/test-lambda/index.html"><a class="padding" href="/vi/test-connection/test-lambda/index.html">5.3 Test Lambda Function<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -354,8 +373,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1744822495" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744822495" defer></script>
-    <script src="/js/theme.js?1744822495" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1744901602" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744901602" defer></script>
+    <script src="/js/theme.js?1744901602" defer></script>
   </body>
 </html>

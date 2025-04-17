@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.143.1">
+    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="description" content="Kiểm tra dữ liệu trong Kinesis Data Stream Quay trở lại terminal kết nối với EC2 Instance tại bước 2.3 Tạo EC2 Instance. Chạy lệnh sau để mô tả luồng Kinesis Data Stream: aws kinesis describe-stream --stream-name fashion-ds Chạy lệnh sau để lấy iterator của shard trong luồng Kinesis Data Stream: aws kinesis get-shard-iterator --stream-name fashion-ds --shard-id shardId-000000000000 --shard-iterator-type TRIM_HORIZON">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="5.2 Kiểm tra dữ liệu trong Kinesis Data Stream :: AWS Fashion Pipeline">
+    <meta name="twitter:description" content="Kiểm tra dữ liệu trong Kinesis Data Stream Quay trở lại terminal kết nối với EC2 Instance tại bước 2.3 Tạo EC2 Instance. Chạy lệnh sau để mô tả luồng Kinesis Data Stream: aws kinesis describe-stream --stream-name fashion-ds Chạy lệnh sau để lấy iterator của shard trong luồng Kinesis Data Stream: aws kinesis get-shard-iterator --stream-name fashion-ds --shard-id shardId-000000000000 --shard-iterator-type TRIM_HORIZON">
+    <meta property="og:url" content="http://localhost:1313/vi/test-connection/test-kinesis/index.html">
+    <meta property="og:site_name" content="AWS Fashion Pipeline">
+    <meta property="og:title" content="5.2 Kiểm tra dữ liệu trong Kinesis Data Stream :: AWS Fashion Pipeline">
+    <meta property="og:description" content="Kiểm tra dữ liệu trong Kinesis Data Stream Quay trở lại terminal kết nối với EC2 Instance tại bước 2.3 Tạo EC2 Instance. Chạy lệnh sau để mô tả luồng Kinesis Data Stream: aws kinesis describe-stream --stream-name fashion-ds Chạy lệnh sau để lấy iterator của shard trong luồng Kinesis Data Stream: aws kinesis get-shard-iterator --stream-name fashion-ds --shard-id shardId-000000000000 --shard-iterator-type TRIM_HORIZON">
+    <meta property="og:locale" content="vi">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="5. Test dữ liệu">
+    <meta itemprop="name" content="5.2 Kiểm tra dữ liệu trong Kinesis Data Stream :: AWS Fashion Pipeline">
+    <meta itemprop="description" content="Kiểm tra dữ liệu trong Kinesis Data Stream Quay trở lại terminal kết nối với EC2 Instance tại bước 2.3 Tạo EC2 Instance. Chạy lệnh sau để mô tả luồng Kinesis Data Stream: aws kinesis describe-stream --stream-name fashion-ds Chạy lệnh sau để lấy iterator của shard trong luồng Kinesis Data Stream: aws kinesis get-shard-iterator --stream-name fashion-ds --shard-id shardId-000000000000 --shard-iterator-type TRIM_HORIZON">
+    <meta itemprop="wordCount" content="165">
+    <title>5.2 Kiểm tra dữ liệu trong Kinesis Data Stream :: AWS Fashion Pipeline</title><link rel="icon" href="https://static-00.iconduck.com/assets.00/aws-icon-512x512-4v2f55fn.png" type="image/png">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744901602" rel="stylesheet">
+    <link href="/css/theme.css?1744901602" rel="stylesheet">
+    <link href="/css/format-html.css?1744901602" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1744901602" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.vi.min.js?1744901602" defer></script>
+    <script src="/js/search.js?1744901602" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vi\/test-connection\/test-kinesis\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['vi'];
+      window.relearn.index_js_url="/searchindex.vi.js?1744901602";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'my-branding' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Sao chép vào bảng tạm`;
+      window.T_Copied_to_clipboard = `Sao chép vào bảng tạm!`;
+      window.T_Copy_link_to_clipboard = `Sao chép nối kết vào bảng tạm`;
+      window.T_Link_copied_to_clipboard = `Liên kết được sao chép vào bảng tạm!`;
+      window.T_Reset_view = `Đặt lại dạng xem`;
+      window.T_View_reset = `Xem đặt lại!`;
+      window.T_No_results_found = `Không tìm thấy kết quả nào cho "{0}"`;
+      window.T_N_results_found = `{1} kết quả được tìm thấy cho "{0}"`;
+    </script>
+    <link href="/css/custom.css?1744901602" rel="stylesheet">
+  </head>
+  <body class="mobile-support html" data-url="/vi/test-connection/test-kinesis/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Mục lục (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#kiểm-tra-dữ-liệu-trong-kinesis-data-stream">Kiểm tra dữ liệu trong Kinesis Data Stream</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vi/index.html"><span itemprop="name">AWS Fashion Pipeline</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vi/test-connection/index.html"><span itemprop="name">5. Test dữ liệu</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">5.2 Kiểm tra dữ liệu trong Kinesis Data Stream</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vi/test-connection/test-rds/index.html" title="5.1 Kiểm tra dữ liệu trong RDS (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vi/test-connection/test-lambda/index.html" title="5.3 Test Lambda Function (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Nội dung khác"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable test-connection" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="52-kiểm-tra-dữ-liệu-trong-kinesis-data-stream">5.2 Kiểm tra dữ liệu trong Kinesis Data Stream</h1>
+
+<h2 id="kiểm-tra-dữ-liệu-trong-kinesis-data-stream">Kiểm tra dữ liệu trong Kinesis Data Stream</h2>
+<ol>
+<li>Quay trở lại terminal kết nối với EC2 Instance tại bước <a href="/vi/preparation/setup-ec2/index.html">2.3 Tạo EC2 Instance</a>.</li>
+<li>Chạy lệnh sau để mô tả luồng Kinesis Data Stream:</li>
+</ol>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws kinesis describe-stream --stream-name fashion-ds</span></span></code></pre></div>
+<p><a href="#R-image-30845c9a2c741fe8641e4d32d4e6cbad" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/test-connection/img_5.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-30845c9a2c741fe8641e4d32d4e6cbad"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/test-connection/img_5.png"></a></p>
+<ol start="3">
+<li>Chạy lệnh sau để lấy iterator của shard trong luồng Kinesis Data Stream:</li>
+</ol>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws kinesis get-shard-iterator --stream-name fashion-ds --shard-id shardId-000000000000 --shard-iterator-type TRIM_HORIZON</span></span></code></pre></div>
+<p><a href="#R-image-c1ad723907f0ed95a6b02f82f529dff6" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/test-connection/img_6.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c1ad723907f0ed95a6b02f82f529dff6"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/test-connection/img_6.png"></a></p>
+<ol start="4">
+<li>Copy <code>ShardIterator</code> trong kết quả trả về của lệnh trên và chạy lệnh sau để lấy dữ liệu trong luồng Kinesis Data Stream:</li>
+</ol>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws kinesis get-records --shard-iterator &lt;YOUR_SHARD_ITERATOR&gt;</span></span></code></pre></div>
+<p><a href="#R-image-63b7b86d6f8a440cc7e351b5a4ae4c05" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/test-connection/img_7.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-63b7b86d6f8a440cc7e351b5a4ae4c05"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/test-connection/img_7.png"></a></p>
+<ol start="5">
+<li>
+<p>Trong phần Records:</p>
+<ul>
+<li>PartitionKey là user ID</li>
+<li>Data là những dữ liệu JSON được encode trong luồng</li>
+</ul>
+</li>
+<li>
+<p>Kiểm tra dữ liệu, copy một Data bên trong Records. Vào trang <a href="https://www.base64decode.org/" rel="external" target="_blank">Base64 Decode</a> để decode dữ liệu vừa copy.</p>
+<ul>
+<li>Decode UTF-8</li>
+<li>Bạn phải decode dữ liệu 2 lần mới ra được dữ liệu JSON. Tại vì mình viết code encode 2 lần :))</li>
+<li>Tức là copy kết quả decode đầu tiên và paste vào lại để decode lần 2.</li>
+</ul>
+</li>
+</ol>
+<p><a href="#R-image-46974da882c1fb38c5014f72655586bc" class="lightbox-link"><img alt="alt" class="lazy lightbox figure-image" loading="lazy" src="/images/test-connection/img_8.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-46974da882c1fb38c5014f72655586bc"><img alt="alt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/test-connection/img_8.png"></a></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="R-logo" href="/vi/index.html">
+    <img src="https://freepnglogo.com/images/all_img/1726309795amazon-web-services-logo-png.png" alt="brand logo" width="100" height="50" class="logo" loading="lazy" style="width: 84px; height: 50px; margin: 0 auto; display: block; text-align: center;" />
+  </a>
+        </div>
+        <search><form action="/vi/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Tìm kiếm (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Tìm kiếm</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Tìm kiếm...">
+            <button class="search-clear" type="button" data-search-clear="" title="Xóa tìm kiếm"><i class="fas fa-times" title="Xóa tìm kiếm"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vi/overview/index.html"><a class="padding" href="/vi/overview/index.html">1. Giới thiệu<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/index.html"><input type="checkbox" id="R-section-5d3dc0156e97e93929ea76c794397c6c" aria-controls="R-subsections-5d3dc0156e97e93929ea76c794397c6c"><label for="R-section-5d3dc0156e97e93929ea76c794397c6c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 2. Các bước chuẩn bị</span></label><a class="padding" href="/vi/preparation/index.html">2. Các bước chuẩn bị<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-5d3dc0156e97e93929ea76c794397c6c" class="collapsible-menu">
+            <li class="" data-nav-id="/vi/preparation/setup-role/index.html"><a class="padding" href="/vi/preparation/setup-role/index.html">2.1 Tạo các Role cần thiết<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-env/index.html"><a class="padding" href="/vi/preparation/setup-env/index.html">2.2 Tạo VPC, Subnet, ...<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-ec2/index.html"><a class="padding" href="/vi/preparation/setup-ec2/index.html">2.3 Tạo EC2 Instance<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-rds/index.html"><a class="padding" href="/vi/preparation/setup-rds/index.html">2.4 Tạo RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-s3/index.html"><a class="padding" href="/vi/preparation/setup-s3/index.html">2.5 Tạo S3 Bucket<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-kinesis/index.html"><a class="padding" href="/vi/preparation/setup-kinesis/index.html">2.6 Tạo Kinesis Data Stream<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/vi/generate-data/index.html"><a class="padding" href="/vi/generate-data/index.html">3. Tạo môi trường ứng dụng<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/rds-to-s3/index.html"><a class="padding" href="/vi/rds-to-s3/index.html">4. Trích xuất dữ liệu từ RDS vào S3<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="parent " data-nav-id="/vi/test-connection/index.html"><input type="checkbox" id="R-section-1a0528a68276c9c3c0d85cb2378ffaf7" aria-controls="R-subsections-1a0528a68276c9c3c0d85cb2378ffaf7" checked><label for="R-section-1a0528a68276c9c3c0d85cb2378ffaf7"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 5. Test dữ liệu</span></label><a class="padding" href="/vi/test-connection/index.html">5. Test dữ liệu<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-1a0528a68276c9c3c0d85cb2378ffaf7" class="collapsible-menu">
+            <li class="" data-nav-id="/vi/test-connection/test-rds/index.html"><a class="padding" href="/vi/test-connection/test-rds/index.html">5.1 Kiểm tra dữ liệu trong RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/vi/test-connection/test-kinesis/index.html"><a class="padding" href="/vi/test-connection/test-kinesis/index.html">5.2 Kiểm tra dữ liệu trong Kinesis Data Stream<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/test-connection/test-lambda/index.html"><a class="padding" href="/vi/test-connection/test-lambda/index.html">5.3 Test Lambda Function<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+			<li class="R-languageswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-language"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-language">Ngôn ngữ</label>
+                  <select id="R-select-language">
+                    <option id="R-select-language-vi" value="vi" data-url="/vi/test-connection/test-kinesis/index.html" lang="vi" selected data-selected>Vietnamese</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Xóa lịch sử..</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1744901602" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744901602" defer></script>
+    <script src="/js/theme.js?1744901602" defer></script>
+  </body>
+</html>

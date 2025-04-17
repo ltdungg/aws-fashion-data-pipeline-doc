@@ -7,19 +7,37 @@
     <loc>http://localhost:1313/vi/preparation/setup-role/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vi/test-connection/test-rds/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/vi/preparation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vi/preparation/setup-env/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vi/test-connection/test-kinesis/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/vi/preparation/setup-ec2/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/generate-data/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vi/preparation/setup-rds/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vi/rds-to-s3/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/vi/preparation/setup-s3/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/test-connection/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/preparation/setup-kinesis/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vi/categories/index.html</loc>

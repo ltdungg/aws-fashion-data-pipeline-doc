@@ -3,7 +3,7 @@
   <channel>
     <title>2. Các bước chuẩn bị :: AWS Fashion Pipeline</title>
     <link>http://localhost:1313/vi/preparation/index.html</link>
-    <description>Tổng quan Đầu tiên là tạo một môi trường ảo, coi như đây là môi trường ứng dụng của cửa hàng. EC2 Instance sẽ là máy chủ giả, nơi tạo ra dữ liệu cho lab. RDS Instance sẽ là cơ sở dữ liệu, dành cho các giao dịch… S3 Bucket sẽ là Data Lake, bao gồm các bucket sau: fashion-landing-zone: Nơi lưu trữ dữ liệu thô từ các nguồn khác nhau. fashion-clean-zone: Nơi lưu trữ dữ liệu đã được xử lý và chuẩn bị cho việc phân tích. fashion-logic-zone: Nơi lưu trữ các script Lambda và mã nguồn cho các quy trình ETL (Extract, Transform, Load). Các bước triển khai Đảm bảo để Region là Singapore (ap-southeast-1) trước khi thực hiện các bước sau:</description>
+    <description>Tổng quan Đầu tiên là tạo một môi trường ảo, coi như đây là môi trường ứng dụng của cửa hàng. EC2 Instance sẽ là máy chủ giả, nơi tạo ra dữ liệu cho lab. RDS Instance sẽ là cơ sở dữ liệu, dành cho các giao dịch… S3 Bucket sẽ là Data Lake, bao gồm các bucket sau: fashion-landing-zone: Nơi lưu trữ dữ liệu thô từ các nguồn khác nhau. fashion-clean-zone: Nơi lưu trữ dữ liệu đã được xử lý và chuẩn bị cho việc phân tích. fashion-logic-zone: Nơi lưu trữ các script Lambda và mã nguồn cho các quy trình ETL (Extract, Transform, Load). Kinesis Stream sẽ là luồng lưu trữ các sự kiện tương tác của khách hàng Các bước triển khai Đảm bảo để Region là Singapore (ap-southeast-1) trước khi thực hiện các bước sau:</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <atom:link href="http://localhost:1313/vi/preparation/index.xml" rel="self" type="application/rss+xml" />
@@ -12,7 +12,7 @@
       <link>http://localhost:1313/vi/preparation/setup-role/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vi/preparation/setup-role/index.html</guid>
-      <description></description>
+      <description>Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. Chọn Roles từ menu bên trái, bấm vào Create role. Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next.</description>
     </item>
     <item>
       <title>2.2 Tạo VPC, Subnet, ...</title>
@@ -33,14 +33,21 @@
       <link>http://localhost:1313/vi/preparation/setup-rds/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vi/preparation/setup-rds/index.html</guid>
-      <description>Cài đặt Relational Database Service (RDS) Truy cập Amazon Management Console Tìm kiếm dịch vụ RDS Chọn Aurora and RDS từ kết quả tìm kiếm Chọn Create database</description>
+      <description>Cài đặt Relational Database Service (RDS) Truy cập Amazon Management Console Tìm kiếm dịch vụ RDS Chọn Aurora and RDS từ kết quả tìm kiếm Chọn Create database Tại giao diện tạo RDS, chọn Standard Create Engine options: PostgreSQL Version: PostgreSQL 17.2-R2 Templates: Free Tier DB instance identifier: fashion-db Master password: Tự đặt password cho riêng mình DB instance class: db.t4g.micro</description>
     </item>
     <item>
       <title>2.5 Tạo S3 Bucket</title>
       <link>http://localhost:1313/vi/preparation/setup-s3/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vi/preparation/setup-s3/index.html</guid>
-      <description>a</description>
+      <description>Giới thiệu Trong phần này, ta sẽ tạo S3 Bucket để làm một Data Lake cho Data Pipeline. Trong phần này ta sẽ tạo các bucket sau:&#xA;fashion-landing-zone: Đây là nơi lưu trữ dữ liệu thô chưa được xử lý. fashion-clean-zone: Đây là nơi lưu trữ dữ liệu đã được chuyển đổi và chuẩn bị sẵn sàng cho các công việc phân tích. fashion-logic-zone: Đây là nơi lưu trữ những Lambda Function và các dags chạy Airflow cho AWS MWAA. Cài đặt Truy cập Amazon Management Console Tìm kiếm dịch vụ S3 Chọn S3 từ kết quả tìm kiếm Sau đó bấm Create bucket</description>
+    </item>
+    <item>
+      <title>2.6 Tạo Kinesis Data Stream</title>
+      <link>http://localhost:1313/vi/preparation/setup-kinesis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/preparation/setup-kinesis/index.html</guid>
+      <description>Tạo Kinesis Data Stream Truy cập Amazon Management Console Tìm kiếm dịch vụ Kinesis Chọn Kinesis từ kết quả tìm kiếm Trong phần giao diện Kinesis chọn Kinesis Data Streams rồi chọn Create data stream Trong giao diện Create data stream Chọn Name là fashion-ds Chọn Provisioned Phần Provisioned shards nhập 1 Chọn Create data stream</description>
     </item>
   </channel>
 </rss>

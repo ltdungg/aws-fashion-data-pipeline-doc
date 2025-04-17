@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.143.1">
+    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="description" content="Tạo dữ liệu để test. Vào lại terminal kết nối với EC2 Instances. Chạy lệnh sau đi đến thư mục chứa file tạo dữ liệu: cd /home/ec2-user/project/ec2 Chạy lệnh sau để tạo dữ liệu: python data-generator.py Sau khi chạy một lúc, hãy bấm Ctrl &#43; C để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="5. Test dữ liệu :: AWS Fashion Pipeline">
+    <meta name="twitter:description" content="Tạo dữ liệu để test. Vào lại terminal kết nối với EC2 Instances. Chạy lệnh sau đi đến thư mục chứa file tạo dữ liệu: cd /home/ec2-user/project/ec2 Chạy lệnh sau để tạo dữ liệu: python data-generator.py Sau khi chạy một lúc, hãy bấm Ctrl &#43; C để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau.">
+    <meta property="og:url" content="http://localhost:1313/vi/test-connection/index.html">
+    <meta property="og:site_name" content="AWS Fashion Pipeline">
+    <meta property="og:title" content="5. Test dữ liệu :: AWS Fashion Pipeline">
+    <meta property="og:description" content="Tạo dữ liệu để test. Vào lại terminal kết nối với EC2 Instances. Chạy lệnh sau đi đến thư mục chứa file tạo dữ liệu: cd /home/ec2-user/project/ec2 Chạy lệnh sau để tạo dữ liệu: python data-generator.py Sau khi chạy một lúc, hãy bấm Ctrl &#43; C để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau.">
+    <meta property="og:locale" content="vi">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="5. Test dữ liệu :: AWS Fashion Pipeline">
+    <meta itemprop="description" content="Tạo dữ liệu để test. Vào lại terminal kết nối với EC2 Instances. Chạy lệnh sau đi đến thư mục chứa file tạo dữ liệu: cd /home/ec2-user/project/ec2 Chạy lệnh sau để tạo dữ liệu: python data-generator.py Sau khi chạy một lúc, hãy bấm Ctrl &#43; C để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau.">
+    <meta itemprop="wordCount" content="589">
+    <title>5. Test dữ liệu :: AWS Fashion Pipeline</title>
+    <link href="/vi/test-connection/index.xml" rel="alternate" type="application/rss+xml" title="5. Test dữ liệu :: AWS Fashion Pipeline"><link rel="icon" href="https://static-00.iconduck.com/assets.00/aws-icon-512x512-4v2f55fn.png" type="image/png">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744901602" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744901602" rel="stylesheet">
+    <link href="/css/theme.css?1744901602" rel="stylesheet">
+    <link href="/css/format-html.css?1744901602" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1744901602" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1744901602" defer></script>
+    <script src="/js/lunr/lunr.vi.min.js?1744901602" defer></script>
+    <script src="/js/search.js?1744901602" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vi\/test-connection\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['vi'];
+      window.relearn.index_js_url="/searchindex.vi.js?1744901602";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'my-branding' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Sao chép vào bảng tạm`;
+      window.T_Copied_to_clipboard = `Sao chép vào bảng tạm!`;
+      window.T_Copy_link_to_clipboard = `Sao chép nối kết vào bảng tạm`;
+      window.T_Link_copied_to_clipboard = `Liên kết được sao chép vào bảng tạm!`;
+      window.T_Reset_view = `Đặt lại dạng xem`;
+      window.T_View_reset = `Xem đặt lại!`;
+      window.T_No_results_found = `Không tìm thấy kết quả nào cho "{0}"`;
+      window.T_N_results_found = `{1} kết quả được tìm thấy cho "{0}"`;
+    </script>
+    <link href="/css/custom.css?1744901602" rel="stylesheet">
+  </head>
+  <body class="mobile-support html" data-url="/vi/test-connection/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Mục lục (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#tạo-dữ-liệu-để-test">Tạo dữ liệu để test.</a></li>
+    <li><a href="#code-tạo-dữ-liệu">Code tạo dữ liệu</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vi/index.html"><span itemprop="name">AWS Fashion Pipeline</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">5. Test dữ liệu</span><meta itemprop="position" content="2"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vi/rds-to-s3/index.html" title="4. Trích xuất dữ liệu từ RDS vào S3 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vi/test-connection/test-rds/index.html" title="5.1 Kiểm tra dữ liệu trong RDS (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Nội dung khác"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable test-connection" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="5-test-dữ-liệu">5. Test dữ liệu</h1>
+
+<h2 id="tạo-dữ-liệu-để-test">Tạo dữ liệu để test.</h2>
+<ol>
+<li>Vào lại terminal kết nối với EC2 Instances.</li>
+<li>Chạy lệnh sau đi đến thư mục chứa file tạo dữ liệu:</li>
+</ol>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /home/ec2-user/project/ec2</span></span></code></pre></div>
+<ol start="3">
+<li>Chạy lệnh sau để tạo dữ liệu:</li>
+</ol>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python data-generator.py</span></span></code></pre></div>
+<ol start="4">
+<li>Sau khi chạy một lúc, hãy bấm <code>Ctrl + C</code> để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau.</li>
+</ol>
+<p><a href="#R-image-7b71f7eebd6845a3cf80fc75c93181dd" class="lightbox-link"><img alt="img.png" class="lazy lightbox figure-image" loading="lazy" src="/images/test-connection/img_2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7b71f7eebd6845a3cf80fc75c93181dd"><img alt="img.png" class="lazy lightbox lightbox-image" loading="lazy" src="/images/test-connection/img_2.png"></a></p>
+<ol start="5">
+<li>
+<p>Bạn có thể thấy như sau:</p>
+<ul>
+<li>Order data insert successfully là dữ liệu order được đẩy vào RDS.</li>
+<li>Còn lại là dữ liệu tương tác khách hàng được đẩy vào Kinesis stream, với những event như page_view, add_to_cart, product_view.</li>
+</ul>
+</li>
+<li>
+<p>Bạn có thể xem code tạo dữ liệu ở bên dưới (Tùy chọn)</p>
+</li>
+</ol>
+<h2 id="code-tạo-dữ-liệu">Code tạo dữ liệu</h2>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> faker
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> psycopg2
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> dotenv <span style="color:#f92672">import</span> load_dotenv
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> threading
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> base64
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> boto3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># RDS Parameters</span>
+</span></span><span style="display:flex;"><span>load_dotenv(<span style="color:#e6db74">&#34;.env&#34;</span>)
+</span></span><span style="display:flex;"><span>RDS_HOST <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#34;RDS_HOST&#34;</span>)
+</span></span><span style="display:flex;"><span>RDS_PASSWORD <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#34;RDS_PASSWORD&#34;</span>)
+</span></span><span style="display:flex;"><span>LAST_ORDER_ID <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>db_params <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;dbname&#39;</span>: <span style="color:#e6db74">&#39;postgres&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;user&#39;</span>: <span style="color:#e6db74">&#39;postgres&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;password&#39;</span>: RDS_PASSWORD,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;host&#39;</span>: RDS_HOST,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;port&#39;</span>: <span style="color:#ae81ff">5432</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Kinesis Parameters</span>
+</span></span><span style="display:flex;"><span>STREAM_NAME <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#34;KINESIS_STREAM_NAME&#34;</span>)
+</span></span><span style="display:flex;"><span>STREAM_ARN <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#34;STREAM_ARN&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_conn_and_cursor</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        conn <span style="color:#f92672">=</span> psycopg2<span style="color:#f92672">.</span>connect(<span style="color:#f92672">**</span>db_params)
+</span></span><span style="display:flex;"><span>        cursor <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>cursor()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> conn, cursor
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> (<span style="color:#a6e22e">Exception</span>) <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_last_order_id</span>(conn, cursor):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> LAST_ORDER_ID
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        cursor<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#39;SELECT MAX(id) FROM orders&#39;</span>)
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> cursor<span style="color:#f92672">.</span>fetchone()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> result[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            LAST_ORDER_ID <span style="color:#f92672">=</span> result[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            LAST_ORDER_ID <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> (<span style="color:#a6e22e">Exception</span>) <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_rds_user_id</span>(conn, cursor):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        cursor<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#39;SELECT id FROM users&#39;</span>)
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> cursor<span style="color:#f92672">.</span>fetchall()
+</span></span><span style="display:flex;"><span>        user_id <span style="color:#f92672">=</span> [row[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> result]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> user_id
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> (<span style="color:#a6e22e">Exception</span>) <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_rds_product</span>(conn, cursor):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        cursor<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#39;SELECT id, price FROM products&#39;</span>)
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> cursor<span style="color:#f92672">.</span>fetchall()
+</span></span><span style="display:flex;"><span>        product_id <span style="color:#f92672">=</span> [(row[<span style="color:#ae81ff">0</span>], row[<span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> result]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> product_id
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> (<span style="color:#a6e22e">Exception</span>) <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_clickstream_data</span>(user_id, product_id):
+</span></span><span style="display:flex;"><span>    event_type_enum <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;page_view&#39;</span>, <span style="color:#e6db74">&#39;add_to_cart&#39;</span>, <span style="color:#e6db74">&#39;product_view&#39;</span>]
+</span></span><span style="display:flex;"><span>    event_type <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>choice(event_type_enum)
+</span></span><span style="display:flex;"><span>    clickstream_data <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;user_id&#39;</span>: random<span style="color:#f92672">.</span>choice(user_id),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;timestamp&#39;</span>: datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#34;</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;event_type&#39;</span>: event_type,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;product_id&#39;</span>: random<span style="color:#f92672">.</span>choice(product_id) <span style="color:#66d9ef">if</span> event_type <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#39;add_to_cart&#39;</span>, <span style="color:#e6db74">&#39;product_view&#39;</span>] <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> clickstream_data
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_order_data</span>(user_id, products):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> LAST_ORDER_ID
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> LAST_ORDER_ID <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        LAST_ORDER_ID <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        LAST_ORDER_ID <span style="color:#f92672">=</span> LAST_ORDER_ID <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    user_id <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>choice(user_id)
+</span></span><span style="display:flex;"><span>    order_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>now()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    numbers_of_product <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>    order_details <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    random_products <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>sample(products, numbers_of_product)
+</span></span><span style="display:flex;"><span>    total_price <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(numbers_of_product):
+</span></span><span style="display:flex;"><span>        purchase_product <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>           <span style="color:#e6db74">&#39;order_id&#39;</span>: int(LAST_ORDER_ID),
+</span></span><span style="display:flex;"><span>           <span style="color:#e6db74">&#39;product_id&#39;</span>: int(random_products[i][<span style="color:#ae81ff">0</span>]),
+</span></span><span style="display:flex;"><span>           <span style="color:#e6db74">&#39;quantity&#39;</span>: int(random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>)),
+</span></span><span style="display:flex;"><span>           <span style="color:#e6db74">&#39;unit_price&#39;</span>: float(random_products[i][<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        total_price <span style="color:#f92672">+=</span> random_products[i][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> purchase_product[<span style="color:#e6db74">&#39;quantity&#39;</span>]
+</span></span><span style="display:flex;"><span>        order_details<span style="color:#f92672">.</span>append(purchase_product)
+</span></span><span style="display:flex;"><span>    order_data <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;id&#39;</span>: LAST_ORDER_ID,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;user_id&#39;</span>: user_id,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;order_date&#39;</span>: order_date,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;total_price&#39;</span>: total_price
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    order_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(order_data, index<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>    order_details_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(order_details)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> [order_df, order_details_df]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">clickstream_task</span>(user_id, product_id):
+</span></span><span style="display:flex;"><span>    kinesis_client <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>client(<span style="color:#e6db74">&#39;kinesis&#39;</span>, region_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ap-southeast-1&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>        clickstream_data <span style="color:#f92672">=</span> generate_clickstream_data(user_id, product_id)
+</span></span><span style="display:flex;"><span>        print(clickstream_data)
+</span></span><span style="display:flex;"><span>        clickstream_json <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>dumps(clickstream_data)
+</span></span><span style="display:flex;"><span>        kinesis_client<span style="color:#f92672">.</span>put_record(
+</span></span><span style="display:flex;"><span>            StreamName<span style="color:#f92672">=</span>STREAM_NAME,
+</span></span><span style="display:flex;"><span>            Data<span style="color:#f92672">=</span>base64<span style="color:#f92672">.</span>b64encode(clickstream_json<span style="color:#f92672">.</span>encode()),
+</span></span><span style="display:flex;"><span>            PartitionKey<span style="color:#f92672">=</span>str(clickstream_data[<span style="color:#e6db74">&#39;user_id&#39;</span>]),
+</span></span><span style="display:flex;"><span>            StreamARN<span style="color:#f92672">=</span>STREAM_ARN
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        time<span style="color:#f92672">.</span>sleep(random<span style="color:#f92672">.</span>uniform(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">order_task</span>(conn, cursor, user_id, products):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>        order_data <span style="color:#f92672">=</span> generate_order_data(user_id, products)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Insert order data into the database</span>
+</span></span><span style="display:flex;"><span>        orders_tuple <span style="color:#f92672">=</span> [tuple(row) <span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> order_data[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>values]
+</span></span><span style="display:flex;"><span>        order_insert_query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            INSERT INTO orders (id, user_id, order_date, total_price) VALUES (</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        cursor<span style="color:#f92672">.</span>executemany(order_insert_query, orders_tuple)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Insert order details data into the database</span>
+</span></span><span style="display:flex;"><span>        order_details_tuple <span style="color:#f92672">=</span> [tuple(row) <span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> order_data[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>values]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(order_details_tuple)):
+</span></span><span style="display:flex;"><span>            order_details_tuple[i] <span style="color:#f92672">=</span> (int(order_details_tuple[i][<span style="color:#ae81ff">0</span>]), int(order_details_tuple[i][<span style="color:#ae81ff">1</span>]), int(order_details_tuple[i][<span style="color:#ae81ff">2</span>]), float(order_details_tuple[i][<span style="color:#ae81ff">3</span>]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        order_details_insert_query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            INSERT INTO order_details (order_id, product_id, quantity, unit_price) VALUES (</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        cursor<span style="color:#f92672">.</span>executemany(order_details_insert_query, order_details_tuple)
+</span></span><span style="display:flex;"><span>        conn<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Order data inserted successfully. Order ID: &#34;</span>, order_data[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;id&#39;</span>]<span style="color:#f92672">.</span>values[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>        time<span style="color:#f92672">.</span>sleep(random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Create database connection</span>
+</span></span><span style="display:flex;"><span>    conn, cursor <span style="color:#f92672">=</span> get_conn_and_cursor()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Get last order ID</span>
+</span></span><span style="display:flex;"><span>    get_last_order_id(conn, cursor)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Get user and product data</span>
+</span></span><span style="display:flex;"><span>    products <span style="color:#f92672">=</span> get_rds_product(conn, cursor)
+</span></span><span style="display:flex;"><span>    user_id <span style="color:#f92672">=</span> get_rds_user_id(conn, cursor)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    product_id <span style="color:#f92672">=</span> [product[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">for</span> product <span style="color:#f92672">in</span> products]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Start clickstream task</span>
+</span></span><span style="display:flex;"><span>    clickstream_thread <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>clickstream_task, args<span style="color:#f92672">=</span>(user_id, product_id))
+</span></span><span style="display:flex;"><span>    clickstream_thread<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Start order task</span>
+</span></span><span style="display:flex;"><span>    order_thread <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>order_task, args<span style="color:#f92672">=</span>(conn, cursor, user_id, products))
+</span></span><span style="display:flex;"><span>    order_thread<span style="color:#f92672">.</span>start()</span></span></code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="R-logo" href="/vi/index.html">
+    <img src="https://freepnglogo.com/images/all_img/1726309795amazon-web-services-logo-png.png" alt="brand logo" width="100" height="50" class="logo" loading="lazy" style="width: 84px; height: 50px; margin: 0 auto; display: block; text-align: center;" />
+  </a>
+        </div>
+        <search><form action="/vi/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Tìm kiếm (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Tìm kiếm</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Tìm kiếm...">
+            <button class="search-clear" type="button" data-search-clear="" title="Xóa tìm kiếm"><i class="fas fa-times" title="Xóa tìm kiếm"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vi/overview/index.html"><a class="padding" href="/vi/overview/index.html">1. Giới thiệu<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/index.html"><input type="checkbox" id="R-section-5d3dc0156e97e93929ea76c794397c6c" aria-controls="R-subsections-5d3dc0156e97e93929ea76c794397c6c"><label for="R-section-5d3dc0156e97e93929ea76c794397c6c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 2. Các bước chuẩn bị</span></label><a class="padding" href="/vi/preparation/index.html">2. Các bước chuẩn bị<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-5d3dc0156e97e93929ea76c794397c6c" class="collapsible-menu">
+            <li class="" data-nav-id="/vi/preparation/setup-role/index.html"><a class="padding" href="/vi/preparation/setup-role/index.html">2.1 Tạo các Role cần thiết<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-env/index.html"><a class="padding" href="/vi/preparation/setup-env/index.html">2.2 Tạo VPC, Subnet, ...<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-ec2/index.html"><a class="padding" href="/vi/preparation/setup-ec2/index.html">2.3 Tạo EC2 Instance<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-rds/index.html"><a class="padding" href="/vi/preparation/setup-rds/index.html">2.4 Tạo RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-s3/index.html"><a class="padding" href="/vi/preparation/setup-s3/index.html">2.5 Tạo S3 Bucket<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-kinesis/index.html"><a class="padding" href="/vi/preparation/setup-kinesis/index.html">2.6 Tạo Kinesis Data Stream<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/vi/generate-data/index.html"><a class="padding" href="/vi/generate-data/index.html">3. Tạo môi trường ứng dụng<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/rds-to-s3/index.html"><a class="padding" href="/vi/rds-to-s3/index.html">4. Trích xuất dữ liệu từ RDS vào S3<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active parent " data-nav-id="/vi/test-connection/index.html"><input type="checkbox" id="R-section-1a0528a68276c9c3c0d85cb2378ffaf7" aria-controls="R-subsections-1a0528a68276c9c3c0d85cb2378ffaf7" checked><label for="R-section-1a0528a68276c9c3c0d85cb2378ffaf7"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 5. Test dữ liệu</span></label><a class="padding" href="/vi/test-connection/index.html">5. Test dữ liệu<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-1a0528a68276c9c3c0d85cb2378ffaf7" class="collapsible-menu">
+            <li class="" data-nav-id="/vi/test-connection/test-rds/index.html"><a class="padding" href="/vi/test-connection/test-rds/index.html">5.1 Kiểm tra dữ liệu trong RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/test-connection/test-kinesis/index.html"><a class="padding" href="/vi/test-connection/test-kinesis/index.html">5.2 Kiểm tra dữ liệu trong Kinesis Data Stream<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/test-connection/test-lambda/index.html"><a class="padding" href="/vi/test-connection/test-lambda/index.html">5.3 Test Lambda Function<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+			<li class="R-languageswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-language"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-language">Ngôn ngữ</label>
+                  <select id="R-select-language">
+                    <option id="R-select-language-vi" value="vi" data-url="/vi/test-connection/index.html" lang="vi" selected data-selected>Vietnamese</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Xóa lịch sử..</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1744901602" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744901602" defer></script>
+    <script src="/js/theme.js?1744901602" defer></script>
+  </body>
+</html>

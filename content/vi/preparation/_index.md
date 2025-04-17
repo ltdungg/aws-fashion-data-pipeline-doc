@@ -11,6 +11,7 @@ weight = 2
   - **fashion-landing-zone**: Nơi lưu trữ dữ liệu thô từ các nguồn khác nhau.
   - **fashion-clean-zone**: Nơi lưu trữ dữ liệu đã được xử lý và chuẩn bị cho việc phân tích.
   - **fashion-logic-zone**: Nơi lưu trữ các script Lambda và mã nguồn cho các quy trình ETL (Extract, Transform, Load).
+- Kinesis Stream sẽ là luồng lưu trữ các sự kiện tương tác của khách hàng
 
 ## Các bước triển khai
 Đảm bảo để Region là Singapore (ap-southeast-1) trước khi thực hiện các bước sau:
@@ -24,3 +25,5 @@ weight = 2
 [2.4 Tạo RDS Instance](setup-rds.md)
 
 [2.5 Tạo S3 Bucket](setup-s3.md)
+
+[2.6 Tạo Kinesis Stream](setup-kinesis.md)
