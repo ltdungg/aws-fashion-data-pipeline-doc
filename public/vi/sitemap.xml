@@ -10,6 +10,9 @@
     <loc>http://localhost:1313/vi/test-connection/test-rds/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vi/transform/transform/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/vi/preparation/index.html</loc>
   </url>
   <url>
@@ -17,6 +20,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/test-connection/test-kinesis/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/transform/glue-catalog/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vi/preparation/setup-ec2/index.html</loc>
@@ -41,6 +47,15 @@
   </url>
   <url>
     <loc>http://localhost:1313/vi/preparation/setup-kinesis/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/transform/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/preparation/setup-firehose/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/recommended/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vi/categories/index.html</loc>

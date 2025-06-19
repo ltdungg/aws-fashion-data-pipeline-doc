@@ -5,37 +5,41 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.143.1">
     <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
-    <meta name="description" content="Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. Chọn Roles từ menu bên trái, bấm vào Create role. Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next. Tại phần Add permissions
-Tìm kiếm và chọn AmazonS3FullAccess từ danh sách chính sách. Tìm kiếm và chọn AWSLambdaENIManagementAccess từ danh sách chính sách. Bấm Next. Tại phần Name, review, and create">
+    <meta name="description" content="Tổng quan Trong phần này chúng ta sẽ tạo các IAM Role cần thiết cho các dịch vụ AWS mà chúng ta sẽ sử dụng trong dự án này. Các role này sẽ cho phép các dịch vụ AWS truy cập vào các tài nguyên khác nhau trong tài khoản AWS.
+Các role này sẽ bao gồm:
+Role cho Lambda truy cập vào S3 Role cho EC2 truy cập vào Kinesis Role cho Lambda truy cập vào Kinesis và DynamoDB Role cho Glue truy cập vào S3 Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="2.1 Tạo các Role cần thiết :: AWS Fashion Pipeline">
-    <meta name="twitter:description" content="Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. Chọn Roles từ menu bên trái, bấm vào Create role. Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next. Tại phần Add permissions
-Tìm kiếm và chọn AmazonS3FullAccess từ danh sách chính sách. Tìm kiếm và chọn AWSLambdaENIManagementAccess từ danh sách chính sách. Bấm Next. Tại phần Name, review, and create">
+    <meta name="twitter:description" content="Tổng quan Trong phần này chúng ta sẽ tạo các IAM Role cần thiết cho các dịch vụ AWS mà chúng ta sẽ sử dụng trong dự án này. Các role này sẽ cho phép các dịch vụ AWS truy cập vào các tài nguyên khác nhau trong tài khoản AWS.
+Các role này sẽ bao gồm:
+Role cho Lambda truy cập vào S3 Role cho EC2 truy cập vào Kinesis Role cho Lambda truy cập vào Kinesis và DynamoDB Role cho Glue truy cập vào S3 Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ.">
     <meta property="og:url" content="http://localhost:1313/vi/preparation/setup-role/index.html">
     <meta property="og:site_name" content="AWS Fashion Pipeline">
     <meta property="og:title" content="2.1 Tạo các Role cần thiết :: AWS Fashion Pipeline">
-    <meta property="og:description" content="Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. Chọn Roles từ menu bên trái, bấm vào Create role. Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next. Tại phần Add permissions
-Tìm kiếm và chọn AmazonS3FullAccess từ danh sách chính sách. Tìm kiếm và chọn AWSLambdaENIManagementAccess từ danh sách chính sách. Bấm Next. Tại phần Name, review, and create">
+    <meta property="og:description" content="Tổng quan Trong phần này chúng ta sẽ tạo các IAM Role cần thiết cho các dịch vụ AWS mà chúng ta sẽ sử dụng trong dự án này. Các role này sẽ cho phép các dịch vụ AWS truy cập vào các tài nguyên khác nhau trong tài khoản AWS.
+Các role này sẽ bao gồm:
+Role cho Lambda truy cập vào S3 Role cho EC2 truy cập vào Kinesis Role cho Lambda truy cập vào Kinesis và DynamoDB Role cho Glue truy cập vào S3 Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ.">
     <meta property="og:locale" content="vi">
     <meta property="og:type" content="article">
     <meta property="article:section" content="2. Các bước chuẩn bị">
     <meta itemprop="name" content="2.1 Tạo các Role cần thiết :: AWS Fashion Pipeline">
-    <meta itemprop="description" content="Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. Chọn Roles từ menu bên trái, bấm vào Create role. Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next. Tại phần Add permissions
-Tìm kiếm và chọn AmazonS3FullAccess từ danh sách chính sách. Tìm kiếm và chọn AWSLambdaENIManagementAccess từ danh sách chính sách. Bấm Next. Tại phần Name, review, and create">
-    <meta itemprop="wordCount" content="190">
+    <meta itemprop="description" content="Tổng quan Trong phần này chúng ta sẽ tạo các IAM Role cần thiết cho các dịch vụ AWS mà chúng ta sẽ sử dụng trong dự án này. Các role này sẽ cho phép các dịch vụ AWS truy cập vào các tài nguyên khác nhau trong tài khoản AWS.
+Các role này sẽ bao gồm:
+Role cho Lambda truy cập vào S3 Role cho EC2 truy cập vào Kinesis Role cho Lambda truy cập vào Kinesis và DynamoDB Role cho Glue truy cập vào S3 Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ.">
+    <meta itemprop="wordCount" content="295">
     <title>2.1 Tạo các Role cần thiết :: AWS Fashion Pipeline</title><link rel="icon" href="https://static-00.iconduck.com/assets.00/aws-icon-512x512-4v2f55fn.png" type="image/png">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744904959" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744904959" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744904959" rel="stylesheet">
-    <link href="/css/theme.css?1744904959" rel="stylesheet">
-    <link href="/css/format-html.css?1744904959" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1744904959" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1744904959" defer></script>
-    <script src="/js/lunr/lunr.min.js?1744904959" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1744904959" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1744904959" defer></script>
-    <script src="/js/lunr/lunr.vi.min.js?1744904959" defer></script>
-    <script src="/js/search.js?1744904959" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750324671" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750324671" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750324671" rel="stylesheet">
+    <link href="/css/theme.css?1750324671" rel="stylesheet">
+    <link href="/css/format-html.css?1750324671" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1750324671" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1750324671" defer></script>
+    <script src="/js/lunr/lunr.min.js?1750324671" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1750324671" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1750324671" defer></script>
+    <script src="/js/lunr/lunr.vi.min.js?1750324671" defer></script>
+    <script src="/js/search.js?1750324671" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -45,7 +49,7 @@ Tìm kiếm và chọn AmazonS3FullAccess từ danh sách chính sách. Tìm ki�
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['vi'];
-      window.relearn.index_js_url="/searchindex.vi.js?1744904959";
+      window.relearn.index_js_url="/searchindex.vi.js?1750324671";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -110,8 +114,11 @@ Tìm kiếm và chọn AmazonS3FullAccess từ danh sách chính sách. Tìm ki�
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
+    <li><a href="#tổng-quan">Tổng quan</a></li>
     <li><a href="#tạo-role-cho-lambda-truy-cập-vào-s3">Tạo role cho Lambda truy cập vào S3</a></li>
     <li><a href="#tạo-role-cho-ec2-truy-cập-vào-kinesis">Tạo role cho EC2 truy cập vào Kinesis</a></li>
+    <li><a href="#tạo-role-cho-lambda-truy-cập-vào-kinesis-và-dynamodb">Tạo role cho Lambda truy cập vào Kinesis và DynamoDB</a></li>
+    <li><a href="#tạo-role-cho-glue-truy-cập-vào-s3">Tạo role cho Glue truy cập vào S3</a></li>
   </ul>
 </nav>
                 </div>
@@ -148,6 +155,15 @@ Tìm kiếm và chọn AmazonS3FullAccess từ danh sách chính sách. Tìm ki�
 
 <h1 id="21-tạo-các-role-cần-thiết">2.1 Tạo các Role cần thiết</h1>
 
+<h2 id="tổng-quan">Tổng quan</h2>
+<p>Trong phần này chúng ta sẽ tạo các IAM Role cần thiết cho các dịch vụ AWS mà chúng ta sẽ sử dụng trong dự án này. Các role này sẽ cho phép các dịch vụ AWS truy cập vào các tài nguyên khác nhau trong tài khoản AWS.</p>
+<p>Các role này sẽ bao gồm:</p>
+<ul>
+<li>Role cho Lambda truy cập vào S3</li>
+<li>Role cho EC2 truy cập vào Kinesis</li>
+<li>Role cho Lambda truy cập vào Kinesis và DynamoDB</li>
+<li>Role cho Glue truy cập vào S3</li>
+</ul>
 <h2 id="tạo-role-cho-lambda-truy-cập-vào-s3">Tạo role cho Lambda truy cập vào S3</h2>
 <ol>
 <li>Truy cập vào AWS Console, chọn <strong>IAM</strong> từ menu dịch vụ.</li>
@@ -212,6 +228,8 @@ Tìm kiếm và chọn AmazonS3FullAccess từ danh sách chính sách. Tìm ki�
 </li>
 </ol>
 <p><img src="/images/preparation/iam-8.png" alt="img.png"></p>
+<h2 id="tạo-role-cho-lambda-truy-cập-vào-kinesis-và-dynamodb">Tạo role cho Lambda truy cập vào Kinesis và DynamoDB</h2>
+<h2 id="tạo-role-cho-glue-truy-cập-vào-s3">Tạo role cho Glue truy cập vào S3</h2>
 
   <footer class="footline">
   </footer>
@@ -265,13 +283,18 @@ Tìm kiếm và chọn AmazonS3FullAccess từ danh sách chính sách. Tìm ki�
             <li class="" data-nav-id="/vi/preparation/setup-ec2/index.html"><a class="padding" href="/vi/preparation/setup-ec2/index.html">2.3 Tạo EC2 Instance<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/vi/preparation/setup-rds/index.html"><a class="padding" href="/vi/preparation/setup-rds/index.html">2.4 Tạo RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/vi/preparation/setup-s3/index.html"><a class="padding" href="/vi/preparation/setup-s3/index.html">2.5 Tạo S3 Bucket<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/vi/preparation/setup-kinesis/index.html"><a class="padding" href="/vi/preparation/setup-kinesis/index.html">2.6 Tạo Kinesis Data Stream<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/vi/preparation/setup-kinesis/index.html"><a class="padding" href="/vi/preparation/setup-kinesis/index.html">2.6 Tạo Kinesis Data Stream<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-firehose/index.html"><a class="padding" href="/vi/preparation/setup-firehose/index.html">2.7 Tạo Kinesis Firehose<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/vi/generate-data/index.html"><a class="padding" href="/vi/generate-data/index.html">3. Tạo môi trường ứng dụng<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/vi/rds-to-s3/index.html"><a class="padding" href="/vi/rds-to-s3/index.html">4. Trích xuất dữ liệu từ RDS vào S3<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/vi/test-connection/index.html"><input type="checkbox" id="R-section-1a0528a68276c9c3c0d85cb2378ffaf7" aria-controls="R-subsections-1a0528a68276c9c3c0d85cb2378ffaf7"><label for="R-section-1a0528a68276c9c3c0d85cb2378ffaf7"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 5. Test dữ liệu</span></label><a class="padding" href="/vi/test-connection/index.html">5. Test dữ liệu<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-1a0528a68276c9c3c0d85cb2378ffaf7" class="collapsible-menu">
             <li class="" data-nav-id="/vi/test-connection/test-rds/index.html"><a class="padding" href="/vi/test-connection/test-rds/index.html">5.1 Kiểm tra dữ liệu trong RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/vi/test-connection/test-kinesis/index.html"><a class="padding" href="/vi/test-connection/test-kinesis/index.html">5.2 Kiểm tra dữ liệu trong Kinesis Data Stream<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/vi/test-connection/test-lambda/index.html"><a class="padding" href="/vi/test-connection/test-lambda/index.html">5.3 Test Lambda Function<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/vi/transform/index.html"><input type="checkbox" id="R-section-ad48a38de39639a847a07445355daa50" aria-controls="R-subsections-ad48a38de39639a847a07445355daa50"><label for="R-section-ad48a38de39639a847a07445355daa50"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 6. Chuyển đổi dữ liệu</span></label><a class="padding" href="/vi/transform/index.html">6. Chuyển đổi dữ liệu<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ad48a38de39639a847a07445355daa50" class="collapsible-menu">
+            <li class="" data-nav-id="/vi/transform/transform/index.html"><a class="padding" href="/vi/transform/transform/index.html">6.1 Tạo Glue Job<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/transform/glue-catalog/index.html"><a class="padding" href="/vi/transform/glue-catalog/index.html">6.2 Tạo Catalog cho Clean Zone<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/vi/recommended/index.html"><a class="padding" href="/vi/recommended/index.html">7. Tạo hệ thống gợi ý sản phẩm<i class="fa-fw fas fa-check read-icon"></i></a></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -309,11 +332,12 @@ Tìm kiếm và chọn AmazonS3FullAccess từ danh sách chính sách. Tìm ki�
             </li>
           </ul>
         </div>
-<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+<div id="R-footer"><p>Built by Dzung Luong</a></p>
+</div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1744904959" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744904959" defer></script>
-    <script src="/js/theme.js?1744904959" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1750324671" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750324671" defer></script>
+    <script src="/js/theme.js?1750324671" defer></script>
   </body>
 </html>

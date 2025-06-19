@@ -3,6 +3,14 @@ title = "2.3 Tạo EC2 Instance"
 weight = 3
 +++
 
+## Tổng quan
+Ở bước này, chúng ta sẽ tạo một EC2 Instance để chạy giả lập một ứng dụng Website bán hàng.
+Và trong phần này sẽ tạo EC2 Instance và cài đặt môi trường cho ứng dụng bao gồm:
+- Môi trường Python
+- Môi trường PostgreSQL
+- Môi trường Git
+- Và cài đặt các thư viện cần thiết cho ứng dụng
+
 ## Tạo Elastic Compute Cloud (EC2) Instance
 1. Truy cập **Amazon Management Console**
     - Tìm kiếm dịch vụ EC2

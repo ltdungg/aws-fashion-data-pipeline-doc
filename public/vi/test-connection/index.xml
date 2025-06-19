@@ -3,7 +3,7 @@
   <channel>
     <title>5. Test dữ liệu :: AWS Fashion Pipeline</title>
     <link>http://localhost:1313/vi/test-connection/index.html</link>
-    <description>Tạo dữ liệu để test. Vào lại terminal kết nối với EC2 Instances. Chạy lệnh sau đi đến thư mục chứa file tạo dữ liệu: cd /home/ec2-user/project/ec2 Chạy lệnh sau để tạo dữ liệu: python data-generator.py Sau khi chạy một lúc, hãy bấm Ctrl + C để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau. Bạn có thể thấy như sau:&#xA;Order data insert successfully là dữ liệu order được đẩy vào RDS. Còn lại là dữ liệu tương tác khách hàng được đẩy vào Kinesis stream, với những event như page_view, add_to_cart, product_view. Bạn có thể xem code tạo dữ liệu ở bên dưới (Tùy chọn)</description>
+    <description>Tạo dữ liệu để test. Vào lại terminal kết nối với EC2 Instances. Chạy lệnh sau đi đến thư mục chứa file tạo dữ liệu: cd /home/ec2-user/project/ec2 Chạy lệnh sau để tạo dữ liệu: python data-generator.py Sau khi chạy một lúc (để khoảng 5 phút), hãy bấm Ctrl + C để dừng lại. Ta có thể thấy dữ liệu output trên terminal như sau. Bạn có thể thấy như sau: Order data insert successfully là dữ liệu order được đẩy vào RDS. Còn lại là dữ liệu tương tác khách hàng được đẩy vào Kinesis stream, với những event như page_view, add_to_cart, product_view.</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <atom:link href="http://localhost:1313/vi/test-connection/index.xml" rel="self" type="application/rss+xml" />

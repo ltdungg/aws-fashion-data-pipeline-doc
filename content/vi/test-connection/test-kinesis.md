@@ -31,7 +31,5 @@ aws kinesis get-records --shard-iterator <YOUR_SHARD_ITERATOR>
 
 6. Kiểm tra dữ liệu, copy một Data bên trong Records. Vào trang [Base64 Decode](https://www.base64decode.org/) để decode dữ liệu vừa copy.
     - Decode UTF-8
-    - Bạn phải decode dữ liệu 2 lần mới ra được dữ liệu JSON. Tại vì mình viết code encode 2 lần :))
-    - Tức là copy kết quả decode đầu tiên và paste vào lại để decode lần 2.
 
 ![alt](/images/test-connection/img_8.png)

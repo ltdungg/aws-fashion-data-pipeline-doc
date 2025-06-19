@@ -12,7 +12,7 @@
       <link>http://localhost:1313/vi/preparation/setup-role/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vi/preparation/setup-role/index.html</guid>
-      <description>Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ. Chọn Roles từ menu bên trái, bấm vào Create role. Tại giao diện Select trusted entity, chọn AWS service, sau đó chọn Lambda từ danh sách dịch vụ. Bấm Next. Tại phần Add permissions&#xA;Tìm kiếm và chọn AmazonS3FullAccess từ danh sách chính sách. Tìm kiếm và chọn AWSLambdaENIManagementAccess từ danh sách chính sách. Bấm Next. Tại phần Name, review, and create</description>
+      <description>Tổng quan Trong phần này chúng ta sẽ tạo các IAM Role cần thiết cho các dịch vụ AWS mà chúng ta sẽ sử dụng trong dự án này. Các role này sẽ cho phép các dịch vụ AWS truy cập vào các tài nguyên khác nhau trong tài khoản AWS.&#xA;Các role này sẽ bao gồm:&#xA;Role cho Lambda truy cập vào S3 Role cho EC2 truy cập vào Kinesis Role cho Lambda truy cập vào Kinesis và DynamoDB Role cho Glue truy cập vào S3 Tạo role cho Lambda truy cập vào S3 Truy cập vào AWS Console, chọn IAM từ menu dịch vụ.</description>
     </item>
     <item>
       <title>2.2 Tạo VPC, Subnet, ...</title>
@@ -26,7 +26,7 @@
       <link>http://localhost:1313/vi/preparation/setup-ec2/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vi/preparation/setup-ec2/index.html</guid>
-      <description>Tạo Elastic Compute Cloud (EC2) Instance Truy cập Amazon Management Console Tìm kiếm dịch vụ EC2 Chọn EC2 từ kết quả tìm kiếm Chọn Launch Instance Trong giao diện Launch Instance Name: fashion-webapp Amazon Machine Image (AMI): Amazon Linux 2023 AMI Instance Type: t2.micro Tại phần Key pair, chọn Create new key pair&#xA;Key pair name: fashion-keypair Key pair type: RSA, private key file format: .pem Chọn Create key pair Tại phần Network Settings, chọn Edit:</description>
+      <description>Tổng quan Ở bước này, chúng ta sẽ tạo một EC2 Instance để chạy giả lập một ứng dụng Website bán hàng. Và trong phần này sẽ tạo EC2 Instance và cài đặt môi trường cho ứng dụng bao gồm:&#xA;Môi trường Python Môi trường PostgreSQL Môi trường Git Và cài đặt các thư viện cần thiết cho ứng dụng Tạo Elastic Compute Cloud (EC2) Instance Truy cập Amazon Management Console Tìm kiếm dịch vụ EC2 Chọn EC2 từ kết quả tìm kiếm</description>
     </item>
     <item>
       <title>2.4 Tạo RDS</title>
@@ -48,6 +48,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vi/preparation/setup-kinesis/index.html</guid>
       <description>Tạo Kinesis Data Stream Truy cập Amazon Management Console Tìm kiếm dịch vụ Kinesis Chọn Kinesis từ kết quả tìm kiếm Trong phần giao diện Kinesis chọn Kinesis Data Streams rồi chọn Create data stream Trong giao diện Create data stream Chọn Name là fashion-ds Chọn Provisioned Phần Provisioned shards nhập 1 Chọn Create data stream Sau khi tạo xong bạn sẽ thấy giao diện như sau, lưu lại ARN của Kinesis Data Stream này để sử dụng trong các bước sau.</description>
+    </item>
+    <item>
+      <title>2.7 Tạo Kinesis Firehose</title>
+      <link>http://localhost:1313/vi/preparation/setup-firehose/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/preparation/setup-firehose/index.html</guid>
+      <description>Tạo Kinesis Firehose Truy cập Amazon Management Console Tìm kiếm dịch vụ Firehose Chọn Amazon Data Firehose từ kết quả tìm kiếm Trong phần giao diện Kinesis Firehose chọn Create Firehose stream Trong giao diện Create Firehose stream Chọn Source là Amazon Kinesis Data Stream Chọn Destination là Amazon S3 Chọn Name là fashion-ds-firehose Trong source settings chọn browse và chọn Kinesis Data Stream đã tạo ở bước trước. Trong phần Destination setting chọn Browse và chọn bucket fashion-landing-zone. Phần New line delimiter: Chọn Enabled Tại S3 bucket prefix nhập clickstreams/ Dưới buffer hints, compression, file extension and encryption: Để mặc định bufer size là 5MB Để mặc định bufer interval là 300s Chọn Create Firehose stream</description>
     </item>
   </channel>
 </rss>

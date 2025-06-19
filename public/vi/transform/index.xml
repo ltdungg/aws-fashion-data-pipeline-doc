@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>6. Chuyển đổi dữ liệu :: AWS Fashion Pipeline</title>
+    <link>http://localhost:1313/vi/transform/index.html</link>
+    <description>Các bước thực hiện Trong phần này chúng ta sẽ sử dụng Glue ETL để thực hiện chuyển đổi dữ liệu từ S3 bucket fashion-landing-zone sang S3 bucket fashion-clean-zone. Với mục đích sẵn sàng cho việc phân tích dữ liệu cũng như lưu trữ dữ liệu.&#xA;Phần này sẽ bao gồm các bước sau:&#xA;Tạo Glue Job để chuyển đổi dữ liệu từ S3 bucket fashion-landing-zone sang S3 bucket fashion-clean-zone Tạo Glue Trigger để tự động chạy Glue Job Kiểm tra dữ liệu trong S3 bucket fashion-clean-zone Tạo Glue Crawler để tự động tạo Glue Data Catalog cho dữ liệu trong S3 bucket fashion-clean-zone</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <atom:link href="http://localhost:1313/vi/transform/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>6.1 Tạo Glue Job</title>
+      <link>http://localhost:1313/vi/transform/transform/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/transform/transform/index.html</guid>
+      <description>Tổng quan Trong phần này chúng ta sẽ tạo Glue Job để chuyển đổi dữ liệu từ S3 bucket fashion-landing-zone sang S3 bucket fashion-clean-zone.&#xA;Tạo Glue Job Đăng nhập vào AWS Management Console và tìm kiếm dịch vụ AWS Glue. Tại giao diện AWS Glue, chọn “Go to ETL jobs” từ menu bên trái Tại giao diện ETL jobs, chọn Create job from a blank graph hoặc Visual ETL để tạo Glue Job mới</description>
+    </item>
+    <item>
+      <title>6.2 Tạo Catalog cho Clean Zone</title>
+      <link>http://localhost:1313/vi/transform/glue-catalog/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/transform/glue-catalog/index.html</guid>
+      <description>Tạo Glue Data Catalog cho Landing Zone Truy cập Amazon Management Console Tìm kiếm dịch vụ Glue Chọn Glue từ kết quả tìm kiếm Tạo Database cho Glue Data Catalog Trong phần Glue Data Catalog chọn Databases rồi chọn Add database Nhập tên database là fashion-clean-zone Chọn Create Tạo table cho Glue Data Catalog Bấm vào database fashion-clean-zone vừa tạo Chọn Add table rồi chọn Add tables using a crawler</description>
+    </item>
+  </channel>
+</rss>

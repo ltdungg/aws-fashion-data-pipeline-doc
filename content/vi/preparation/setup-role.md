@@ -2,6 +2,14 @@
 title = "2.1 Tạo các Role cần thiết"
 weight = 1
 +++
+## Tổng quan
+Trong phần này chúng ta sẽ tạo các IAM Role cần thiết cho các dịch vụ AWS mà chúng ta sẽ sử dụng trong dự án này. Các role này sẽ cho phép các dịch vụ AWS truy cập vào các tài nguyên khác nhau trong tài khoản AWS.
+
+Các role này sẽ bao gồm:
+- Role cho Lambda truy cập vào S3
+- Role cho EC2 truy cập vào Kinesis
+- Role cho Lambda truy cập vào Kinesis và DynamoDB
+- Role cho Glue truy cập vào S3
 
 ## Tạo role cho Lambda truy cập vào S3
 1. Truy cập vào AWS Console, chọn **IAM** từ menu dịch vụ.
@@ -54,3 +62,7 @@ weight = 1
    - Bấm **Create role**.
 
 ![img.png](/images/preparation/iam-8.png)
+
+## Tạo role cho Lambda truy cập vào Kinesis và DynamoDB
+
+## Tạo role cho Glue truy cập vào S3

@@ -3,6 +3,7 @@ title = "2.4 Tạo RDS"
 weight = 4
 +++
 
+
 ## Cài đặt Relational Database Service (RDS) 
 1. Truy cập **Amazon Management Console**
     - Tìm kiếm dịch vụ RDS
