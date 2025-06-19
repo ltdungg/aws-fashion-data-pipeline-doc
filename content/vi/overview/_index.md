@@ -28,8 +28,7 @@ Bạn nghĩ ra một hệ thống kết hợp giữa Batch Processing và Real-T
 4. Đối với luồng dữ liệu tương tác khách hàng (Clickstream), ta sẽ tạo một **Kinesis Data Stream** sau đó có 2 Consumer:
    - Dữ liệu trực tuyến đi qua Lambda, và mỗi khi **người dùng tương tác** sẽ kích hoạt Lambda Function gợi ý sản phẩm đẩy vào **DynamoDB**.
    - Consumer còn lại đi vào **Kinesis Firehose** mỗi 5 phút, để đẩy vào Data Lake, nơi **Data Analysis** phân tích dữ liệu và đưa ra xu hướng thời trang, cũng như là doanh số,...
-5. Lên lịch cho những công việc với Amazon MWAA
-   - Dữ liệu clickstream đi vào Lambda mỗi **5 phút**.
+5. Lên lịch cho những công việc với Amazon EventBridge lên lịch để tự động hóa quá trình cập nhật dữ liệu
    - Sau một ngày dữ liệu từ RDS đi vào S3 vào 00:01 ngày hôm sau.
    
    

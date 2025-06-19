@@ -28,8 +28,7 @@ You devise a system that combines Batch Processing and Real-Time Processing as f
 4. For the customer interaction (Clickstream) data flow, we will create a **Kinesis Data Stream** with two Consumers:
    - The online data passes through Lambda, and each time a **user interacts**, a Lambda Function is triggered to push product recommendations into **DynamoDB**.
    - The other Consumer feeds into **Kinesis Firehose** every 5 minutes, pushing data into the Data Lake, where **Data Analysis** processes the data to identify fashion trends, sales, etc.
-5. Schedule jobs using Amazon MWAA:
-   - Clickstream data goes into Lambda every **5 minutes**.
+5. Schedule jobs using Amazon EventBridge to automate the data update process:
    - At the end of the day, data from RDS is moved to S3 at 00:01 the next day.
 
 After writing down these ideas, you envision a system on AWS with the following architecture.
