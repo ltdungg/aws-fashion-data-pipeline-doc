@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>5. Test Data :: AWS Fashion Pipeline</title>
+    <link>http://localhost:1313/test-connection/index.html</link>
+    <description>Generate Data for Testing Return to the terminal connected to your EC2 Instance. Run the following command to navigate to the directory containing the data generation script: cd /home/ec2-user/project/ec2 Run the following command to generate data: python data-generator.py After running for a while (about 5 minutes), press Ctrl + C to stop. You should see output data in the terminal as shown below. You may observe the following: “Order data insert successfully” indicates that order data has been pushed to RDS. The remaining output shows customer interaction data being pushed to the Kinesis stream, with events such as page_view, add_to_cart, and product_view.</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/test-connection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5.1 Check Data in RDS</title>
+      <link>http://localhost:1313/test-connection/test-rds/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/test-connection/test-rds/index.html</guid>
+      <description>Check Data in RDS Use the command to access PostgreSQL from the previous step. psql -U postgres -h &lt;YOUR_POSTGRESQL_DNS&gt; -p 5432 -d postgres If you see a message like the one below, you have successfully connected to the PostgreSQL database. Run the following command to check data in the orders table:&#xA;SELECT * FROM orders; Run the following command to check data in the order_details table: SELECT * FROM order_details; Below is an example image of the orders table; your data may differ due to randomness.</description>
+    </item>
+    <item>
+      <title>5.2 Check Data in Kinesis Data Stream</title>
+      <link>http://localhost:1313/test-connection/test-kinesis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/test-connection/test-kinesis/index.html</guid>
+      <description>Check Data in Kinesis Data Stream Return to the terminal connected to your EC2 Instance from step 2.3 Create EC2 Instance. Run the following command to describe the Kinesis Data Stream: aws kinesis describe-stream --stream-name fashion-ds Run the following command to get the shard iterator for the shard in the Kinesis Data Stream: aws kinesis get-shard-iterator --stream-name fashion-ds --shard-id shardId-000000000000 --shard-iterator-type TRIM_HORIZON Copy the ShardIterator from the result of the previous command and run the following command to retrieve data from the Kinesis Data Stream: aws kinesis get-records --shard-iterator &lt;YOUR_SHARD_ITERATOR&gt;</description>
+    </item>
+    <item>
+      <title>5.3 Test Lambda Function</title>
+      <link>http://localhost:1313/test-connection/test-lambda/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/test-connection/test-lambda/index.html</guid>
+      <description>Run the Lambda Function Test Go to the Lambda Function page for lambda-rds-to-s3 in your AWS Console. Click on Test. Because the Lambda function is designed to run once per day at the start of the next day (i.e., at 00:01 the following day), you need to add an Event JSON with DATE_EXECUTION set to the date you are running the lab, in the format YYYY-MM-DD. For example: “2025-04-17”. In the Test section: Select Create new event Enter a name for the event, e.g., test Use the following Event JSON: { &#34;DATE_EXECUTION&#34;: &#34;&lt;Date of workshop execution&gt;&#34; }</description>
+    </item>
+  </channel>
+</rss>

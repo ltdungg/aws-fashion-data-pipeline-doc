@@ -27,7 +27,7 @@ defaultContentLanguage = 'vi'
     contentDir = 'content/en'
     languageCode = 'en'
     languageName = 'English'
-    title = 'My Website'
+    title = 'AWS Fashion Pipeline'
     weight = 1
 
   [languages.vi]

@@ -14,6 +14,14 @@ weight = 2
 - Kinesis Stream sẽ là luồng lưu trữ các sự kiện tương tác của khách hàng
 
 ## Các bước triển khai
+
+Trước khi bắt đầu, bạn cần chuẩn bị các phần code cho các bước triển khai. Link github của dự án là: [aws-fashion-data-pipeline](https://github.com/ltdungg/aws-fashion-data-pipeline)
+- Clone repository về máy tính của bạn:
+```bash
+git clone https://github.com/ltdungg/aws-fashion-data-pipeline
+cd aws-fashion-data-pipeline
+```
+
 Đảm bảo để Region là Singapore (ap-southeast-1) trước khi thực hiện các bước sau:
 
 [2.1 Tạo các Role cần thiết](setup-role.md)

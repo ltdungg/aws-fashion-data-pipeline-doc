@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1. Introduction :: AWS Fashion Pipeline</title>
+    <link>http://localhost:1313/overview/index.html</link>
+    <description>A Data Pipeline for Fashion Store Data This workshop includes the following data:&#xA;Clothing product data sourced from Kaggle User, purchase, and clickstream data generated using Python’s Faker Context Suppose you are a Data Engineer at an online clothing store. Your manager wants to know which products customers are interested in, as well as analyze current fashion trends.&#xA;Your manager has the following requirements:&#xA;When a user clicks on or adds a product to the cart, the event must be sent directly to storage, then transformed and enriched so that ML can predict current fashion trends and provide real-time product recommendations to users. These recommendations for each user are then stored in a place where they can be directly suggested to users on the website. The second requirement is that after a user makes a purchase, at the end of the day, the data needs to be aggregated, cleaned, and stored, ready for analysis to determine the direction for the next marketing strategy. Right after, you come up with an idea to implement this on Amazon Web Services as follows.</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/overview/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

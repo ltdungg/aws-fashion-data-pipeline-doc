@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3. Create Application Environment :: AWS Fashion Pipeline</title>
+    <link>http://localhost:1313/generate-data/index.html</link>
+    <description>Overview In this section, we will create the application environment for the Data Pipeline. The environment includes: EC2 Instance: Where mock data is generated and database tables are initialized. RDS: PostgreSQL database for storing mock data. The database model consists of 4 tables:&#xA;products, users, orders, and order_details Deployment Steps Return to the RDS interface Select Databases from the left menu Click on fashion-db In the fashion-db interface, save the Endpoint of the database somewhere safe.</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/generate-data/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

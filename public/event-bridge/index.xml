@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>8. Schedule Recurring Tasks :: AWS Fashion Pipeline</title>
+    <link>http://localhost:1313/event-bridge/index.html</link>
+    <description>Introduction In this section, we will set up recurring tasks to automate the process of updating data and generating product recommendations in the system. We will use Amazon EventBridge to schedule these tasks.&#xA;Steps to Implement In the AWS Management Console, search for and select the EventBridge service. Select EventBridge Schedule and then choose Create rules from the left sidebar. In the Create rule interface, fill in the following information: Name: fashion-rds-to-s3-scheduler Description: Rule to trigger Lambda function for ETL process Under Schedule Pattern, select Recurring schedule Timezone: (UTC +07:00) Asia/Saigon Cron expression: cron(0 0 * * ? *) (this means the task will run every day at 00:00 Vietnam time) Flexible time window: Leave as 5 minutes Click Next</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/event-bridge/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

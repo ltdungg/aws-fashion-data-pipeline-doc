@@ -5,33 +5,40 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.143.1">
     <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
-    <meta name="description" content="Các bước thực hiện Tạo DynamoDB Table để hiện gợi ý sản phẩm cho người dùng">
+    <meta name="description" content="Giới thiệu Trong phần này, chúng ta sẽ xây dựng một hệ thống gợi ý sản phẩm dựa trên dữ liệu đã được chuyển đổi và lưu trữ trong S3 bucket fashion-clean-zone. Hệ thống này sẽ sử dụng Amazon DynamoDB để lưu trữ các gợi ý sản phẩm cho người dùng.
+Hệ thống này hoạt động dựa trên phân tích dữ liệu người dùng theo gần thời gian thực, bằng cách mỗi khi nguười dùng thao tác với sản phẩm như xem, thêm vaào giỏ hàng thì hệ thống sẽ ghi nhận và đưa ra những gợi ý cho các sản phẩm liên quan">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="7. Tạo hệ thống gợi ý sản phẩm :: AWS Fashion Pipeline">
-    <meta name="twitter:description" content="Các bước thực hiện Tạo DynamoDB Table để hiện gợi ý sản phẩm cho người dùng">
+    <meta name="twitter:description" content="Giới thiệu Trong phần này, chúng ta sẽ xây dựng một hệ thống gợi ý sản phẩm dựa trên dữ liệu đã được chuyển đổi và lưu trữ trong S3 bucket fashion-clean-zone. Hệ thống này sẽ sử dụng Amazon DynamoDB để lưu trữ các gợi ý sản phẩm cho người dùng.
+Hệ thống này hoạt động dựa trên phân tích dữ liệu người dùng theo gần thời gian thực, bằng cách mỗi khi nguười dùng thao tác với sản phẩm như xem, thêm vaào giỏ hàng thì hệ thống sẽ ghi nhận và đưa ra những gợi ý cho các sản phẩm liên quan">
     <meta property="og:url" content="http://localhost:1313/vi/recommended/index.html">
     <meta property="og:site_name" content="AWS Fashion Pipeline">
     <meta property="og:title" content="7. Tạo hệ thống gợi ý sản phẩm :: AWS Fashion Pipeline">
-    <meta property="og:description" content="Các bước thực hiện Tạo DynamoDB Table để hiện gợi ý sản phẩm cho người dùng">
+    <meta property="og:description" content="Giới thiệu Trong phần này, chúng ta sẽ xây dựng một hệ thống gợi ý sản phẩm dựa trên dữ liệu đã được chuyển đổi và lưu trữ trong S3 bucket fashion-clean-zone. Hệ thống này sẽ sử dụng Amazon DynamoDB để lưu trữ các gợi ý sản phẩm cho người dùng.
+Hệ thống này hoạt động dựa trên phân tích dữ liệu người dùng theo gần thời gian thực, bằng cách mỗi khi nguười dùng thao tác với sản phẩm như xem, thêm vaào giỏ hàng thì hệ thống sẽ ghi nhận và đưa ra những gợi ý cho các sản phẩm liên quan">
     <meta property="og:locale" content="vi">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="7. Tạo hệ thống gợi ý sản phẩm :: AWS Fashion Pipeline">
-    <meta itemprop="description" content="Các bước thực hiện Tạo DynamoDB Table để hiện gợi ý sản phẩm cho người dùng">
-    <meta itemprop="wordCount" content="16">
+    <meta itemprop="description" content="Giới thiệu Trong phần này, chúng ta sẽ xây dựng một hệ thống gợi ý sản phẩm dựa trên dữ liệu đã được chuyển đổi và lưu trữ trong S3 bucket fashion-clean-zone. Hệ thống này sẽ sử dụng Amazon DynamoDB để lưu trữ các gợi ý sản phẩm cho người dùng.
+Hệ thống này hoạt động dựa trên phân tích dữ liệu người dùng theo gần thời gian thực, bằng cách mỗi khi nguười dùng thao tác với sản phẩm như xem, thêm vaào giỏ hàng thì hệ thống sẽ ghi nhận và đưa ra những gợi ý cho các sản phẩm liên quan">
+    <meta itemprop="wordCount" content="163">
     <title>7. Tạo hệ thống gợi ý sản phẩm :: AWS Fashion Pipeline</title>
+    <link href="http://localhost:1313/recommended/index.html" rel="alternate" hreflang="x-default">
+    <link href="http://localhost:1313/recommended/index.html" rel="alternate" hreflang="en">
+    <link href="http://localhost:1313/vi/recommended/index.html" rel="alternate" hreflang="vi">
     <link href="/vi/recommended/index.xml" rel="alternate" type="application/rss+xml" title="7. Tạo hệ thống gợi ý sản phẩm :: AWS Fashion Pipeline"><link rel="icon" href="https://static-00.iconduck.com/assets.00/aws-icon-512x512-4v2f55fn.png" type="image/png">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750324671" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750324671" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750324671" rel="stylesheet">
-    <link href="/css/theme.css?1750324671" rel="stylesheet">
-    <link href="/css/format-html.css?1750324671" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1750324671" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1750324671" defer></script>
-    <script src="/js/lunr/lunr.min.js?1750324671" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1750324671" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1750324671" defer></script>
-    <script src="/js/lunr/lunr.vi.min.js?1750324671" defer></script>
-    <script src="/js/search.js?1750324671" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750351655" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750351655" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750351655" rel="stylesheet">
+    <link href="/css/theme.css?1750351655" rel="stylesheet">
+    <link href="/css/format-html.css?1750351655" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1750351655" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1750351655" defer></script>
+    <script src="/js/lunr/lunr.min.js?1750351655" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1750351655" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1750351655" defer></script>
+    <script src="/js/lunr/lunr.vi.min.js?1750351655" defer></script>
+    <script src="/js/search.js?1750351655" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -41,7 +48,7 @@
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['vi'];
-      window.relearn.index_js_url="/searchindex.vi.js?1750324671";
+      window.relearn.index_js_url="/searchindex.vi.js?1750351655";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -106,6 +113,7 @@
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
+    <li><a href="#giới-thiệu">Giới thiệu</a></li>
     <li><a href="#các-bước-thực-hiện">Các bước thực hiện</a></li>
   </ul>
 </nav>
@@ -120,7 +128,7 @@
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vi/transform/glue-catalog/index.html" title="6.2 Tạo Catalog cho Clean Zone (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vi/recommended/1-create-dynamodb-table/index.html" title="7.1 Tạo DynamoDB Table (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Nội dung khác"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -142,10 +150,15 @@
 
 <h1 id="7-tạo-hệ-thống-gợi-ý-sản-phẩm">7. Tạo hệ thống gợi ý sản phẩm</h1>
 
+<h2 id="giới-thiệu">Giới thiệu</h2>
+<p>Trong phần này, chúng ta sẽ xây dựng một hệ thống gợi ý sản phẩm dựa trên dữ liệu đã được chuyển đổi và lưu trữ trong S3 bucket <code>fashion-clean-zone</code>. Hệ thống này sẽ sử dụng Amazon DynamoDB để lưu trữ các gợi ý sản phẩm cho người dùng.</p>
+<p>Hệ thống này hoạt động dựa trên phân tích dữ liệu người dùng theo gần thời gian thực, bằng cách mỗi khi nguười dùng thao tác với sản phẩm như xem, thêm vaào giỏ hàng thì hệ thống sẽ ghi nhận và đưa ra những gợi ý cho các sản phẩm liên quan</p>
 <h2 id="các-bước-thực-hiện">Các bước thực hiện</h2>
 <ol>
 <li>Tạo DynamoDB Table để hiện gợi ý sản phẩm cho người dùng</li>
-<li></li>
+<li>Tạo Amazon ECR để lưu trữ Docker Image cho Lambda Function</li>
+<li>Tạo Lambda Function để xử lý các sự kiện từ S3 bucket <code>fashion-clean-zone</code> và cập nhật gợi ý sản phẩm vào DynamoDB</li>
+<li>Kiểm tra hệ thống gợi ý sản phẩm hoạt động</li>
 </ol>
 
   <footer class="footline">
@@ -211,7 +224,13 @@
             <li class="" data-nav-id="/vi/transform/index.html"><input type="checkbox" id="R-section-ad48a38de39639a847a07445355daa50" aria-controls="R-subsections-ad48a38de39639a847a07445355daa50"><label for="R-section-ad48a38de39639a847a07445355daa50"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 6. Chuyển đổi dữ liệu</span></label><a class="padding" href="/vi/transform/index.html">6. Chuyển đổi dữ liệu<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ad48a38de39639a847a07445355daa50" class="collapsible-menu">
             <li class="" data-nav-id="/vi/transform/transform/index.html"><a class="padding" href="/vi/transform/transform/index.html">6.1 Tạo Glue Job<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/vi/transform/glue-catalog/index.html"><a class="padding" href="/vi/transform/glue-catalog/index.html">6.2 Tạo Catalog cho Clean Zone<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
-            <li class="active " data-nav-id="/vi/recommended/index.html"><a class="padding" href="/vi/recommended/index.html">7. Tạo hệ thống gợi ý sản phẩm<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active parent " data-nav-id="/vi/recommended/index.html"><input type="checkbox" id="R-section-e646fd60eba26f99a0ef2b5b51f059e0" aria-controls="R-subsections-e646fd60eba26f99a0ef2b5b51f059e0" checked><label for="R-section-e646fd60eba26f99a0ef2b5b51f059e0"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 7. Tạo hệ thống gợi ý sản phẩm</span></label><a class="padding" href="/vi/recommended/index.html">7. Tạo hệ thống gợi ý sản phẩm<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e646fd60eba26f99a0ef2b5b51f059e0" class="collapsible-menu">
+            <li class="" data-nav-id="/vi/recommended/1-create-dynamodb-table/index.html"><a class="padding" href="/vi/recommended/1-create-dynamodb-table/index.html">7.1 Tạo DynamoDB Table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/recommended/2-create-ecr-image/index.html"><a class="padding" href="/vi/recommended/2-create-ecr-image/index.html">7.2 Tạo ECR Image cho Lambda Function<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/recommended/3-create-lambda-func/index.html"><a class="padding" href="/vi/recommended/3-create-lambda-func/index.html">7.3 Tạo Lambda Function<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/recommended/4-test/index.html"><a class="padding" href="/vi/recommended/4-test/index.html">7.4 Kiểm tra hệ thống gợi ý sản phẩm<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/vi/event-bridge/index.html"><a class="padding" href="/vi/event-bridge/index.html">8. Lên lịch cho các nhiệm vụ định kỳ<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/clean/index.html"><a class="padding" href="/vi/clean/index.html">9. Dọn dẹp các tài nguyên<i class="fa-fw fas fa-check read-icon"></i></a></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -231,6 +250,7 @@
                 <div class="control-style">
                   <label class="a11y-only" for="R-select-language">Ngôn ngữ</label>
                   <select id="R-select-language">
+                    <option id="R-select-language-en" value="en" data-url="/recommended/index.html" lang="en">English</option>
                     <option id="R-select-language-vi" value="vi" data-url="/vi/recommended/index.html" lang="vi" selected data-selected>Vietnamese</option>
                   </select>
                 </div>
@@ -253,8 +273,8 @@
 </div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1750324671" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750324671" defer></script>
-    <script src="/js/theme.js?1750324671" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1750351655" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750351655" defer></script>
+    <script src="/js/theme.js?1750351655" defer></script>
   </body>
 </html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>4. Extract Data from RDS to S3 :: AWS Fashion Pipeline</title>
+    <link>http://localhost:1313/rds-to-s3/index.html</link>
+    <description>Overview In this section, we will use AWS Lambda to extract data from Amazon RDS and save it to Amazon S3. We will use a simple Lambda function to accomplish this. The Lambda function will be triggered to connect to Amazon RDS, execute an SQL query to retrieve data, and then save the data to Amazon S3 as a CSV file. First, download the Lambda function zip file here. Click the download raw file button at the top right of the screen to download. Access S3 Go to the AWS Console, search for and select S3 from the services menu. Click on the fashion-logic-zone bucket that we created earlier. In the bucket interface, click Upload. 4. In the Upload interface:</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/rds-to-s3/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

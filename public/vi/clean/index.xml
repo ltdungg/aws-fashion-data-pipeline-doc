@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>9. Dọn dẹp các tài nguyên :: AWS Fashion Pipeline</title>
+    <link>http://localhost:1313/vi/clean/index.html</link>
+    <description>S3 Vào dịch vụ S3, chọn các bucket đã tạo trong quá trình thực hiện dự án. Chọn Empty để xóa tất cả các đối tượng trong bucket. Sau khi xóa, chọn Delete để xóa bucket. DynamoDB Vào dịch vụ DynamoDB, chọn Tables từ menu bên trái. Chọn bảng fashion-rcm-table đã tạo trong quá trình thực hiện dự án. Chọn Delete để xóa bảng. Xác nhận việc xóa bảng bằng cách nhập confirm và bấm Delete. Glue Vào dịch vụ Glue, chọn ETL jobs từ menu bên trái.</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <atom:link href="http://localhost:1313/vi/clean/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

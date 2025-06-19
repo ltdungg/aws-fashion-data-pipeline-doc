@@ -36,5 +36,5 @@ Bạn nghĩ ra một hệ thống kết hợp giữa Batch Processing và Real-T
 Sau lúc bạn ghi ra những ý tưởng, đầu bạn nảy ra một hệ thống trên AWS có kiến trúc như sau
 
 ### Kiến trúc hệ thống
-
+- Lưu ý: Trong phần này, chúng ta sẽ không triển khai dịch vụ QuickSight và Redshift Spectrum, mà chỉ tập trung vào các dịch vụ chính để xây dựng hệ thống gợi ý sản phẩm.
 ![alt](/images/overview/architect.png)

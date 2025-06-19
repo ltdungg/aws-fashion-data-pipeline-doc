@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.143.1">
+    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="description" content="S3 Vào dịch vụ S3, chọn các bucket đã tạo trong quá trình thực hiện dự án. Chọn Empty để xóa tất cả các đối tượng trong bucket. Sau khi xóa, chọn Delete để xóa bucket. DynamoDB Vào dịch vụ DynamoDB, chọn Tables từ menu bên trái. Chọn bảng fashion-rcm-table đã tạo trong quá trình thực hiện dự án. Chọn Delete để xóa bảng. Xác nhận việc xóa bảng bằng cách nhập confirm và bấm Delete. Glue Vào dịch vụ Glue, chọn ETL jobs từ menu bên trái.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="9. Dọn dẹp các tài nguyên :: AWS Fashion Pipeline">
+    <meta name="twitter:description" content="S3 Vào dịch vụ S3, chọn các bucket đã tạo trong quá trình thực hiện dự án. Chọn Empty để xóa tất cả các đối tượng trong bucket. Sau khi xóa, chọn Delete để xóa bucket. DynamoDB Vào dịch vụ DynamoDB, chọn Tables từ menu bên trái. Chọn bảng fashion-rcm-table đã tạo trong quá trình thực hiện dự án. Chọn Delete để xóa bảng. Xác nhận việc xóa bảng bằng cách nhập confirm và bấm Delete. Glue Vào dịch vụ Glue, chọn ETL jobs từ menu bên trái.">
+    <meta property="og:url" content="http://localhost:1313/vi/clean/index.html">
+    <meta property="og:site_name" content="AWS Fashion Pipeline">
+    <meta property="og:title" content="9. Dọn dẹp các tài nguyên :: AWS Fashion Pipeline">
+    <meta property="og:description" content="S3 Vào dịch vụ S3, chọn các bucket đã tạo trong quá trình thực hiện dự án. Chọn Empty để xóa tất cả các đối tượng trong bucket. Sau khi xóa, chọn Delete để xóa bucket. DynamoDB Vào dịch vụ DynamoDB, chọn Tables từ menu bên trái. Chọn bảng fashion-rcm-table đã tạo trong quá trình thực hiện dự án. Chọn Delete để xóa bảng. Xác nhận việc xóa bảng bằng cách nhập confirm và bấm Delete. Glue Vào dịch vụ Glue, chọn ETL jobs từ menu bên trái.">
+    <meta property="og:locale" content="vi">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="9. Dọn dẹp các tài nguyên :: AWS Fashion Pipeline">
+    <meta itemprop="description" content="S3 Vào dịch vụ S3, chọn các bucket đã tạo trong quá trình thực hiện dự án. Chọn Empty để xóa tất cả các đối tượng trong bucket. Sau khi xóa, chọn Delete để xóa bucket. DynamoDB Vào dịch vụ DynamoDB, chọn Tables từ menu bên trái. Chọn bảng fashion-rcm-table đã tạo trong quá trình thực hiện dự án. Chọn Delete để xóa bảng. Xác nhận việc xóa bảng bằng cách nhập confirm và bấm Delete. Glue Vào dịch vụ Glue, chọn ETL jobs từ menu bên trái.">
+    <meta itemprop="wordCount" content="431">
+    <title>9. Dọn dẹp các tài nguyên :: AWS Fashion Pipeline</title>
+    <link href="http://localhost:1313/clean/index.html" rel="alternate" hreflang="x-default">
+    <link href="http://localhost:1313/clean/index.html" rel="alternate" hreflang="en">
+    <link href="http://localhost:1313/vi/clean/index.html" rel="alternate" hreflang="vi">
+    <link href="/vi/clean/index.xml" rel="alternate" type="application/rss+xml" title="9. Dọn dẹp các tài nguyên :: AWS Fashion Pipeline"><link rel="icon" href="https://static-00.iconduck.com/assets.00/aws-icon-512x512-4v2f55fn.png" type="image/png">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750352180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750352180" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750352180" rel="stylesheet">
+    <link href="/css/theme.css?1750352180" rel="stylesheet">
+    <link href="/css/format-html.css?1750352180" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1750352180" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1750352180" defer></script>
+    <script src="/js/lunr/lunr.min.js?1750352180" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1750352180" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1750352180" defer></script>
+    <script src="/js/lunr/lunr.vi.min.js?1750352180" defer></script>
+    <script src="/js/search.js?1750352180" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vi\/clean\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['vi'];
+      window.relearn.index_js_url="/searchindex.vi.js?1750352180";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'my-branding' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Sao chép vào bảng tạm`;
+      window.T_Copied_to_clipboard = `Sao chép vào bảng tạm!`;
+      window.T_Copy_link_to_clipboard = `Sao chép nối kết vào bảng tạm`;
+      window.T_Link_copied_to_clipboard = `Liên kết được sao chép vào bảng tạm!`;
+      window.T_Reset_view = `Đặt lại dạng xem`;
+      window.T_View_reset = `Xem đặt lại!`;
+      window.T_No_results_found = `Không tìm thấy kết quả nào cho "{0}"`;
+      window.T_N_results_found = `{1} kết quả được tìm thấy cho "{0}"`;
+    </script><style>
+:root {
+    --MAIN-WIDTH-MAX: 1000rem;
+}
+</style>
+  </head>
+  <body class="mobile-support html" data-url="/vi/clean/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Mục lục (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#s3">S3</a></li>
+    <li><a href="#dynamodb">DynamoDB</a></li>
+    <li><a href="#glue">Glue</a></li>
+    <li><a href="#rds">RDS</a></li>
+    <li><a href="#lambda">Lambda</a></li>
+    <li><a href="#eventbridge">EventBridge</a></li>
+    <li><a href="#ec2">EC2</a></li>
+    <li><a href="#ecr">ECR</a></li>
+    <li><a href="#iam">IAM</a></li>
+    <li><a href="#network-interfaces">Network Interfaces</a></li>
+    <li><a href="#vpc">VPC</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vi/index.html"><span itemprop="name">AWS Fashion Pipeline</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">9. Dọn dẹp các tài nguyên</span><meta itemprop="position" content="2"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vi/event-bridge/index.html" title="8. Lên lịch cho các nhiệm vụ định kỳ (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Nội dung khác"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable clean" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="9-dọn-dẹp-các-tài-nguyên">9. Dọn dẹp các tài nguyên</h1>
+
+<h2 id="s3">S3</h2>
+<ol>
+<li>Vào dịch vụ S3, chọn các bucket đã tạo trong quá trình thực hiện dự án.</li>
+<li>Chọn <strong>Empty</strong> để xóa tất cả các đối tượng trong bucket.</li>
+<li>Sau khi xóa, chọn <strong>Delete</strong> để xóa bucket.</li>
+</ol>
+<h2 id="dynamodb">DynamoDB</h2>
+<ol>
+<li>Vào dịch vụ DynamoDB, chọn <strong>Tables</strong> từ menu bên trái.</li>
+<li>Chọn bảng <code>fashion-rcm-table</code> đã tạo trong quá trình thực hiện dự án.</li>
+<li>Chọn <strong>Delete</strong> để xóa bảng.</li>
+<li>Xác nhận việc xóa bảng bằng cách nhập <code>confirm</code> và bấm <strong>Delete</strong>.</li>
+</ol>
+<h2 id="glue">Glue</h2>
+<ol>
+<li>
+<p>Vào dịch vụ Glue, chọn <strong>ETL jobs</strong> từ menu bên trái.</p>
+</li>
+<li>
+<p>Chọn job <code>fashion-datalake-etl</code> rồi bấm vào <strong>Actions</strong> chọn <strong>Delete jobs</strong>.</p>
+</li>
+<li>
+<p>Chọn <strong>Databases</strong> từ thanh menu bên trái.</p>
+</li>
+<li>
+<p>Chọn database <code>fashion-clean-zone</code> bấm <strong>Delete</strong>.</p>
+</li>
+<li>
+<p>Chọn <strong>Crawlers</strong> từ menu bên trái.</p>
+</li>
+<li>
+<p>Chọn crawler đã tạo, bấm <strong>Actions</strong> và chọn <strong>Delete crawler</strong>. Gõ <code>Delete</code> để xác nhận và bấm <strong>Delete</strong>.</p>
+</li>
+</ol>
+<h2 id="rds">RDS</h2>
+<ol>
+<li>Vào dịch vụ RDS, chọn <strong>Databases</strong> từ menu bên trái.</li>
+<li>Chọn database <code>fashion-db</code> đã tạo trong quá trình thực hiện dự án. Bấm vào <strong>Actions</strong> và chọn <strong>Delete</strong>.</li>
+</ol>
+<p><img src="/images/clean/img.png" alt="image"></p>
+<h2 id="lambda">Lambda</h2>
+<ol>
+<li>Vào dịch vụ Lambda, chọn <strong>Functions</strong> từ menu bên trái.</li>
+<li>Chọn các Lambda function đã tạo <code>fashion-rds-to-s3</code>, <code>kinesis-to-dynamodb</code>.</li>
+<li>Bấm vào <strong>Actions</strong> và chọn <strong>Delete</strong>. Xác nhận việc xóa bằng cách nhập <code>confirm</code> và bấm <strong>Delete</strong>.</li>
+</ol>
+<h2 id="eventbridge">EventBridge</h2>
+<ol>
+<li>Vào dịch vụ EventBridge, chọn <strong>Schedules</strong> từ menu bên trái.</li>
+<li>Chon rule đã tạo <code>fashion-rds-to-s3-scheduler</code>. Bấm <strong>Delete</strong>.</li>
+</ol>
+<h2 id="ec2">EC2</h2>
+<ol>
+<li>Vào dịch vụ EC2, chọn <strong>Instances</strong> từ menu bên trái.</li>
+<li>Chọn instance <code>fashion-webapp</code> đã tạo.</li>
+<li>Bấm vào <strong>Instance state</strong> và chọn <strong>Terminate instance</strong>. Bấm <strong>Terminate (delete)</strong> để xác nhận việc xóa instance.</li>
+</ol>
+<h2 id="ecr">ECR</h2>
+<ol>
+<li>Vào dịch vụ ECR, chọn <strong>Repositories</strong> từ menu bên trái.</li>
+<li>Chọn repository <code>fashion-ecr-repository</code> đã tạo.</li>
+<li>Bấm <strong>Delete</strong></li>
+</ol>
+<h2 id="iam">IAM</h2>
+<ol>
+<li>Vào dịch vụ IAM, chọn <strong>Roles</strong> từ menu bên trái.</li>
+<li>Chọn các role đã tạo:
+<ul>
+<li>AWS-Glue-S3-Full-Access</li>
+<li>AWSGlueServiceRole-FashionCrawlerRole</li>
+<li>ec2-kinesis-role</li>
+<li>lambda-s3-full-access</li>
+<li>lambda-kinesis-dynamodb-role</li>
+<li>Xóa các role Kinesis Firehose và EventBridge nếu có.</li>
+</ul>
+</li>
+<li>Bấm <strong>Delete</strong> gõ <code>delete</code> để xác nhận và bấm <strong>Delete</strong>.</li>
+</ol>
+<h2 id="network-interfaces">Network Interfaces</h2>
+<ul>
+<li>Các Network Interfaces được tạo ra bởi Lambda Function sẽ được tự động xóa khi Lambda Function bị xóa khoảng 20-40 phút.</li>
+<li>Bạn sẽ không thể xóa VPC nếu vẫn còn Network Interfaces đang hoạt động. Do đó, bạn cần đợi cho đến khi các Network Interfaces này được xóa.</li>
+<li>Nếu bạn muốn xóa Network Interfaces ngay lập tức, hãy xem trên <a href="https://repost.aws/knowledge-center/lambda-eni-find-delete">https://repost.aws/knowledge-center/lambda-eni-find-delete</a></li>
+</ul>
+<h2 id="vpc">VPC</h2>
+<ol>
+<li>Sau khi các Network Interfaces đã được xóa, bạn có thể xóa VPC <code>fashion-vpc</code> đã tạo trong quá trình thực hiện dự án.</li>
+<li>Vào dịch vụ VPC, chọn <strong>Your VPCs</strong> từ menu bên trái.</li>
+<li>Chọn VPC <code>fashion-vpc</code> đã tạo.</li>
+<li>Bấm vào <strong>Actions</strong> và chọn <strong>Delete VPC</strong>. Xác nhận việc xóa bằng cách nhập <code>delete</code> và bấm <strong>Delete</strong>.</li>
+</ol>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="R-logo" href="/vi/index.html">
+    <img src="https://freepnglogo.com/images/all_img/1726309795amazon-web-services-logo-png.png" alt="brand logo" width="100" height="50" class="logo" loading="lazy" style="width: 84px; height: 50px; margin: 0 auto; display: block; text-align: center;" />
+  </a>
+        </div>
+        <search><form action="/vi/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Tìm kiếm (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Tìm kiếm</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Tìm kiếm...">
+            <button class="search-clear" type="button" data-search-clear="" title="Xóa tìm kiếm"><i class="fas fa-times" title="Xóa tìm kiếm"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vi/overview/index.html"><a class="padding" href="/vi/overview/index.html">1. Giới thiệu<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/index.html"><input type="checkbox" id="R-section-5d3dc0156e97e93929ea76c794397c6c" aria-controls="R-subsections-5d3dc0156e97e93929ea76c794397c6c"><label for="R-section-5d3dc0156e97e93929ea76c794397c6c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 2. Các bước chuẩn bị</span></label><a class="padding" href="/vi/preparation/index.html">2. Các bước chuẩn bị<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-5d3dc0156e97e93929ea76c794397c6c" class="collapsible-menu">
+            <li class="" data-nav-id="/vi/preparation/setup-role/index.html"><a class="padding" href="/vi/preparation/setup-role/index.html">2.1 Tạo các Role cần thiết<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-env/index.html"><a class="padding" href="/vi/preparation/setup-env/index.html">2.2 Tạo VPC, Subnet, ...<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-ec2/index.html"><a class="padding" href="/vi/preparation/setup-ec2/index.html">2.3 Tạo EC2 Instance<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-rds/index.html"><a class="padding" href="/vi/preparation/setup-rds/index.html">2.4 Tạo RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-s3/index.html"><a class="padding" href="/vi/preparation/setup-s3/index.html">2.5 Tạo S3 Bucket<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-kinesis/index.html"><a class="padding" href="/vi/preparation/setup-kinesis/index.html">2.6 Tạo Kinesis Data Stream<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/preparation/setup-firehose/index.html"><a class="padding" href="/vi/preparation/setup-firehose/index.html">2.7 Tạo Kinesis Firehose<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/vi/generate-data/index.html"><a class="padding" href="/vi/generate-data/index.html">3. Tạo môi trường ứng dụng<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/rds-to-s3/index.html"><a class="padding" href="/vi/rds-to-s3/index.html">4. Trích xuất dữ liệu từ RDS vào S3<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/test-connection/index.html"><input type="checkbox" id="R-section-1a0528a68276c9c3c0d85cb2378ffaf7" aria-controls="R-subsections-1a0528a68276c9c3c0d85cb2378ffaf7"><label for="R-section-1a0528a68276c9c3c0d85cb2378ffaf7"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 5. Test dữ liệu</span></label><a class="padding" href="/vi/test-connection/index.html">5. Test dữ liệu<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-1a0528a68276c9c3c0d85cb2378ffaf7" class="collapsible-menu">
+            <li class="" data-nav-id="/vi/test-connection/test-rds/index.html"><a class="padding" href="/vi/test-connection/test-rds/index.html">5.1 Kiểm tra dữ liệu trong RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/test-connection/test-kinesis/index.html"><a class="padding" href="/vi/test-connection/test-kinesis/index.html">5.2 Kiểm tra dữ liệu trong Kinesis Data Stream<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/test-connection/test-lambda/index.html"><a class="padding" href="/vi/test-connection/test-lambda/index.html">5.3 Test Lambda Function<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/vi/transform/index.html"><input type="checkbox" id="R-section-ad48a38de39639a847a07445355daa50" aria-controls="R-subsections-ad48a38de39639a847a07445355daa50"><label for="R-section-ad48a38de39639a847a07445355daa50"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 6. Chuyển đổi dữ liệu</span></label><a class="padding" href="/vi/transform/index.html">6. Chuyển đổi dữ liệu<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ad48a38de39639a847a07445355daa50" class="collapsible-menu">
+            <li class="" data-nav-id="/vi/transform/transform/index.html"><a class="padding" href="/vi/transform/transform/index.html">6.1 Tạo Glue Job<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/transform/glue-catalog/index.html"><a class="padding" href="/vi/transform/glue-catalog/index.html">6.2 Tạo Catalog cho Clean Zone<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/vi/recommended/index.html"><input type="checkbox" id="R-section-e646fd60eba26f99a0ef2b5b51f059e0" aria-controls="R-subsections-e646fd60eba26f99a0ef2b5b51f059e0"><label for="R-section-e646fd60eba26f99a0ef2b5b51f059e0"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Menu con 7. Tạo hệ thống gợi ý sản phẩm</span></label><a class="padding" href="/vi/recommended/index.html">7. Tạo hệ thống gợi ý sản phẩm<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e646fd60eba26f99a0ef2b5b51f059e0" class="collapsible-menu">
+            <li class="" data-nav-id="/vi/recommended/1-create-dynamodb-table/index.html"><a class="padding" href="/vi/recommended/1-create-dynamodb-table/index.html">7.1 Tạo DynamoDB Table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/recommended/2-create-ecr-image/index.html"><a class="padding" href="/vi/recommended/2-create-ecr-image/index.html">7.2 Tạo ECR Image cho Lambda Function<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/recommended/3-create-lambda-func/index.html"><a class="padding" href="/vi/recommended/3-create-lambda-func/index.html">7.3 Tạo Lambda Function<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/vi/recommended/4-test/index.html"><a class="padding" href="/vi/recommended/4-test/index.html">7.4 Kiểm tra hệ thống gợi ý sản phẩm<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/vi/event-bridge/index.html"><a class="padding" href="/vi/event-bridge/index.html">8. Lên lịch cho các nhiệm vụ định kỳ<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/vi/clean/index.html"><a class="padding" href="/vi/clean/index.html">9. Dọn dẹp các tài nguyên<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+			<li class="R-languageswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-language"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-language">Ngôn ngữ</label>
+                  <select id="R-select-language">
+                    <option id="R-select-language-en" value="en" data-url="/clean/index.html" lang="en">English</option>
+                    <option id="R-select-language-vi" value="vi" data-url="/vi/clean/index.html" lang="vi" selected data-selected>Vietnamese</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Xóa lịch sử..</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built by Dzung Luong</a></p>
+</div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1750352180" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750352180" defer></script>
+    <script src="/js/theme.js?1750352180" defer></script>
+  </body>
+</html>

@@ -12,7 +12,7 @@ weight = 3
 
 3. Vì mục đích của Lambda theo yêu cầu của sếp là sau một ngày thì sẽ chạy một lần, nên đoạn code sẽ chạy vào đầu ngày hôm sau
 tức là lúc 00:01 ngày hôm sau. 
-   - Nên muốn test thì phải thêm Event JSON và `DATE_EXECUTION` là ngày bạn chạy lab theo định dạng `Năm-Tháng-Ngày`. Ví dụ "2025-17-04"
+   - Nên muốn test thì phải thêm Event JSON và `DATE_EXECUTION` là ngày bạn chạy lab theo định dạng `Năm-Tháng-Ngày`. Ví dụ "2025-04-17"
    - Trong phần Test:
      - Chọn **Create new event**
      - Nhập tên cho event là `test`

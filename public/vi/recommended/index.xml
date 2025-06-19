@@ -3,9 +3,37 @@
   <channel>
     <title>7. Tạo hệ thống gợi ý sản phẩm :: AWS Fashion Pipeline</title>
     <link>http://localhost:1313/vi/recommended/index.html</link>
-    <description>Các bước thực hiện Tạo DynamoDB Table để hiện gợi ý sản phẩm cho người dùng</description>
+    <description>Giới thiệu Trong phần này, chúng ta sẽ xây dựng một hệ thống gợi ý sản phẩm dựa trên dữ liệu đã được chuyển đổi và lưu trữ trong S3 bucket fashion-clean-zone. Hệ thống này sẽ sử dụng Amazon DynamoDB để lưu trữ các gợi ý sản phẩm cho người dùng.&#xA;Hệ thống này hoạt động dựa trên phân tích dữ liệu người dùng theo gần thời gian thực, bằng cách mỗi khi nguười dùng thao tác với sản phẩm như xem, thêm vaào giỏ hàng thì hệ thống sẽ ghi nhận và đưa ra những gợi ý cho các sản phẩm liên quan</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <atom:link href="http://localhost:1313/vi/recommended/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>7.1 Tạo DynamoDB Table</title>
+      <link>http://localhost:1313/vi/recommended/1-create-dynamodb-table/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/recommended/1-create-dynamodb-table/index.html</guid>
+      <description>Các bước thực hiện Truy cập vào AWS Management Console và tìm kiếm dịch vụ DynamoDB. Tại giao diện DynamoDB, chọn “Create table”. Tại giao diện tạo bảng, điền các thông tin sau: Table name: fashion-rcm-table Partition key: user_id Chọn Number Bấm Create table để tạo bảng.</description>
+    </item>
+    <item>
+      <title>7.2 Tạo ECR Image cho Lambda Function</title>
+      <link>http://localhost:1313/vi/recommended/2-create-ecr-image/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/recommended/2-create-ecr-image/index.html</guid>
+      <description>Chuẩn bị Trong phần này yêu cầu trên máy tính của bạn đã cài đặt Docker và AWS CLI. Bạn có thể tham khảo hướng dẫn cài đặt Docker tại Docker Installation và AWS CLI tại AWS CLI Installation.&#xA;Các bước thực hiện Truy cập vào AWS Management Console và tìm kiếm dịch vụ Amazon ECR bằng cách gõ ECR. Trong giao diện Amazon ECR, chọn Create từ menu bên trái. Tại giao diện tạo kho chứa (repository), điền các thông tin sau: Repository name: fashion-ecr-repository Sau đó bấm Create để tạo kho chứa. Tại giao diện kho chứa vừa tạo, chọn repository vừa tạo và bấm vào View push commands để xem các lệnh cần thiết để đẩy Docker Image lên kho chứa.</description>
+    </item>
+    <item>
+      <title>7.3 Tạo Lambda Function</title>
+      <link>http://localhost:1313/vi/recommended/3-create-lambda-func/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/recommended/3-create-lambda-func/index.html</guid>
+      <description>Các bước thực hiện Truy cập vào AWS Management Console và tìm kiếm dịch vụ Lambda bằng cách gõ Lambda. Trong giao diện Lambda, chọn Create function.&#xA;Tại giao diện Create function, chọn Container image.&#xA;Function name: kinesis-to-dynamodb Container image URI: Chọn Browse images và chọn kho chứa ECR fashion-ecr-repository và Docker Image đã tạo ở bước trước. Nhớ chọn image vơới tag là lastest. Execution role: Chọn Use an existing role và chọn role lambda-kinesis-dynamodb-role đã tạo ở bước trước. Chọn Create function để tạo Lambda Function.</description>
+    </item>
+    <item>
+      <title>7.4 Kiểm tra hệ thống gợi ý sản phẩm</title>
+      <link>http://localhost:1313/vi/recommended/4-test/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vi/recommended/4-test/index.html</guid>
+      <description>Chạy thử hệ thống gợi ý sản phẩm Kết nối với EC2 instance fashion-webapp đã tạo ở bước trước. Và chạy lệnh sau: python data-generator.py Lưu ý: Đảm bảo người dùng là root user bằng cách dùng sudo su trước khi chạy lệnh trên.&#xA;Chọn dịch vụ CloudWatch chọn Log groups chọn /aws/lambda/kinesis-to-dynamodb để xem log của Lambda Function kinesis-to-dynamodb. Chọn dịch vụ DynamoDB bấm chọn Tables bên góc trái màn hình và bấm vào fashion-rcm-table Trong giao diện của bảng, chọn Explore table items để xem các gợi ý sản phẩm đã được lưu trữ.</description>
+    </item>
   </channel>
 </rss>

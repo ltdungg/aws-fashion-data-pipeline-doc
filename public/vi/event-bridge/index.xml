@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>8. Lên lịch cho các nhiệm vụ định kỳ :: AWS Fashion Pipeline</title>
+    <link>http://localhost:1313/vi/event-bridge/index.html</link>
+    <description>Giới thiệu Trong phần này, chúng ta sẽ thiết lập các nhiệm vụ định kỳ để tự động hóa quá trình cập nhật dữ liệu và gợi ý sản phẩm trong hệ thống. Chúng ta sẽ sử dụng Amazon EventBridge để lên lịch cho các nhiệm vụ này.&#xA;Các bước thực hiện Trong AWS Management Console, tìm kiếm và chọn dịch vụ EventBridge. Chọn EventBridge Schedule rồi chọn Create rules ở thanh bên trái.</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <atom:link href="http://localhost:1313/vi/event-bridge/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2. Preparation Steps :: AWS Fashion Pipeline</title>
+    <link>http://localhost:1313/preparation/index.html</link>
+    <description>Overview First, create a virtual environment, considering this as the application environment of the store. The EC2 Instance will act as a mock server, where data for the lab is generated. The RDS Instance will serve as the database, used for transactions… The S3 Bucket will be the Data Lake, including the following buckets: fashion-landing-zone: Where raw data from various sources is stored. fashion-clean-zone: Where processed data is stored and prepared for analysis. fashion-logic-zone: Where Lambda scripts and source code for ETL (Extract, Transform, Load) processes are stored. The Kinesis Stream will store customer interaction event streams. Deployment Steps Before getting started, you need to prepare the code for the deployment steps. The project’s GitHub link is: aws-fashion-data-pipeline</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/preparation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2.1 Creating Required Roles</title>
+      <link>http://localhost:1313/preparation/setup-role/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/preparation/setup-role/index.html</guid>
+      <description>Overview In this section, we will create the necessary IAM Roles for the AWS services used in this project. These roles will allow AWS services to access different resources within your AWS account.&#xA;The roles include:&#xA;Role for Lambda to access S3 Role for EC2 to access Kinesis Role for Lambda to access Kinesis and DynamoDB Role for Glue to access S3 Create a Role for Lambda to Access S3 Go to the AWS Console and select IAM from the services menu.</description>
+    </item>
+    <item>
+      <title>2.2 Create VPC, Subnet, ...</title>
+      <link>http://localhost:1313/preparation/setup-env/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/preparation/setup-env/index.html</guid>
+      <description>Create VPC (Virtual Private Cloud) Access the Amazon Management Console Search for the VPC service Select VPC from the search results In the VPC interface, select Create VPC In the Create VPC interface: Choose VPC and more For name tag auto-generation, enter: fashion IPv4 CIDR block: 10.10.0.0/16 Leave the remaining settings as default, and select Create VPC at the bottom of the screen.</description>
+    </item>
+    <item>
+      <title>2.3 Create EC2 Instance</title>
+      <link>http://localhost:1313/preparation/setup-ec2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/preparation/setup-ec2/index.html</guid>
+      <description>Overview In this step, we will create an EC2 Instance to simulate a web store application. This section covers creating the EC2 Instance and setting up the environment for the application, including:&#xA;Python environment PostgreSQL environment Git environment Installing required libraries for the application Create Elastic Compute Cloud (EC2) Instance Access the Amazon Management Console Search for the EC2 service Select EC2 from the search results Select Launch Instance</description>
+    </item>
+    <item>
+      <title>2.4 Create RDS</title>
+      <link>http://localhost:1313/preparation/setup-rds/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/preparation/setup-rds/index.html</guid>
+      <description>Setting up Relational Database Service (RDS) Access the Amazon Management Console Search for the RDS service Select Aurora and RDS from the search results Click Create database In the Create RDS interface, select Standard Create Engine options: PostgreSQL Version: PostgreSQL 17.2-R2 Templates: Free Tier DB instance identifier: fashion-db Master password: Set your own password DB instance class: db.t4g.micro In the Connectivity section, click Edit VPC: fashion-vpc Subnet group: fashion-subnet-group Public access: No VPC security group: Select Create new Security group name: fashion-db-sg Availability zone: ap-southeast-1a</description>
+    </item>
+    <item>
+      <title>2.5 Create S3 Bucket</title>
+      <link>http://localhost:1313/preparation/setup-s3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/preparation/setup-s3/index.html</guid>
+      <description>Introduction In this section, we will create S3 Buckets to serve as a Data Lake for the Data Pipeline. We will create the following buckets:&#xA;fashion-landing-zone: This is where raw, unprocessed data is stored. fashion-clean-zone: This is where transformed data, ready for analytical tasks, is stored. fashion-logic-zone: This is where Lambda Functions and Airflow DAGs for AWS MWAA are stored. Setup Access the Amazon Management Console Search for the S3 service Select S3 from the search results Then click Create bucket</description>
+    </item>
+    <item>
+      <title>2.6 Create Kinesis Data Stream</title>
+      <link>http://localhost:1313/preparation/setup-kinesis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/preparation/setup-kinesis/index.html</guid>
+      <description>Create Kinesis Data Stream Access the Amazon Management Console Search for the Kinesis service Select Kinesis from the search results In the Kinesis interface, select Kinesis Data Streams and then choose Create data stream In the Create data stream interface Set Name to fashion-ds Select Provisioned For Provisioned shards, enter 1 Click Create data stream After creation, you will see the following interface. Save the ARN of this Kinesis Data Stream for use in later steps.</description>
+    </item>
+    <item>
+      <title>2.7 Create Kinesis Firehose</title>
+      <link>http://localhost:1313/preparation/setup-firehose/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/preparation/setup-firehose/index.html</guid>
+      <description>Create Kinesis Firehose Access the Amazon Management Console Search for the Firehose service Select Amazon Data Firehose from the search results In the Kinesis Firehose interface, select Create Firehose stream In the Create Firehose stream interface: Select Source as Amazon Kinesis Data Stream Select Destination as Amazon S3 Set Name to fashion-ds-firehose In source settings, click Browse and select the Kinesis Data Stream created in the previous step. In the Destination setting, click Browse and select the fashion-landing-zone bucket. For New line delimiter: Select Enabled In the S3 bucket prefix, enter clickstreams/ Under buffer hints, compression, file extension and encryption: Leave the default buffer size as 5MB Leave the default buffer interval as 300s Click Create Firehose stream</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.143.1">
+    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="description" content="Introduction In this section, we will create S3 Buckets to serve as a Data Lake for the Data Pipeline. We will create the following buckets:
+fashion-landing-zone: This is where raw, unprocessed data is stored. fashion-clean-zone: This is where transformed data, ready for analytical tasks, is stored. fashion-logic-zone: This is where Lambda Functions and Airflow DAGs for AWS MWAA are stored. Setup Access the Amazon Management Console Search for the S3 service Select S3 from the search results Then click Create bucket">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="2.5 Create S3 Bucket :: AWS Fashion Pipeline">
+    <meta name="twitter:description" content="Introduction In this section, we will create S3 Buckets to serve as a Data Lake for the Data Pipeline. We will create the following buckets:
+fashion-landing-zone: This is where raw, unprocessed data is stored. fashion-clean-zone: This is where transformed data, ready for analytical tasks, is stored. fashion-logic-zone: This is where Lambda Functions and Airflow DAGs for AWS MWAA are stored. Setup Access the Amazon Management Console Search for the S3 service Select S3 from the search results Then click Create bucket">
+    <meta property="og:url" content="http://localhost:1313/preparation/setup-s3/index.html">
+    <meta property="og:site_name" content="AWS Fashion Pipeline">
+    <meta property="og:title" content="2.5 Create S3 Bucket :: AWS Fashion Pipeline">
+    <meta property="og:description" content="Introduction In this section, we will create S3 Buckets to serve as a Data Lake for the Data Pipeline. We will create the following buckets:
+fashion-landing-zone: This is where raw, unprocessed data is stored. fashion-clean-zone: This is where transformed data, ready for analytical tasks, is stored. fashion-logic-zone: This is where Lambda Functions and Airflow DAGs for AWS MWAA are stored. Setup Access the Amazon Management Console Search for the S3 service Select S3 from the search results Then click Create bucket">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="2. Preparation Steps">
+    <meta itemprop="name" content="2.5 Create S3 Bucket :: AWS Fashion Pipeline">
+    <meta itemprop="description" content="Introduction In this section, we will create S3 Buckets to serve as a Data Lake for the Data Pipeline. We will create the following buckets:
+fashion-landing-zone: This is where raw, unprocessed data is stored. fashion-clean-zone: This is where transformed data, ready for analytical tasks, is stored. fashion-logic-zone: This is where Lambda Functions and Airflow DAGs for AWS MWAA are stored. Setup Access the Amazon Management Console Search for the S3 service Select S3 from the search results Then click Create bucket">
+    <meta itemprop="wordCount" content="116">
+    <title>2.5 Create S3 Bucket :: AWS Fashion Pipeline</title>
+    <link href="http://localhost:1313/preparation/setup-s3/index.html" rel="alternate" hreflang="x-default">
+    <link href="http://localhost:1313/preparation/setup-s3/index.html" rel="alternate" hreflang="en">
+    <link href="http://localhost:1313/vi/preparation/setup-s3/index.html" rel="alternate" hreflang="vi"><link rel="icon" href="https://static-00.iconduck.com/assets.00/aws-icon-512x512-4v2f55fn.png" type="image/png">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750351584" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750351584" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750351584" rel="stylesheet">
+    <link href="/css/theme.css?1750351584" rel="stylesheet">
+    <link href="/css/format-html.css?1750351584" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1750351584" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1750351584" defer></script>
+    <script src="/js/lunr/lunr.min.js?1750351584" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1750351584" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1750351584" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1750351584" defer></script>
+    <script src="/js/search.js?1750351584" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/preparation\/setup-s3\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.index_js_url="/searchindex.en.js?1750351584";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'my-branding' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+:root {
+    --MAIN-WIDTH-MAX: 1000rem;
+}
+</style>
+  </head>
+  <body class="mobile-support html" data-url="/preparation/setup-s3/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#setup">Setup</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">AWS Fashion Pipeline</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/preparation/index.html"><span itemprop="name">2. Preparation Steps</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">2.5 Create S3 Bucket</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/preparation/setup-rds/index.html" title="2.4 Create RDS (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/preparation/setup-kinesis/index.html" title="2.6 Create Kinesis Data Stream (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable preparation" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="25-create-s3-bucket">2.5 Create S3 Bucket</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>In this section, we will create S3 Buckets to serve as a Data Lake for the Data Pipeline.
+We will create the following buckets:</p>
+<ul>
+<li>fashion-landing-zone: This is where raw, unprocessed data is stored.</li>
+<li>fashion-clean-zone: This is where transformed data, ready for analytical tasks, is stored.</li>
+<li>fashion-logic-zone: This is where Lambda Functions and Airflow DAGs for AWS MWAA are stored.</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<ol>
+<li>Access the <strong>Amazon Management Console</strong>
+<ul>
+<li>Search for the S3 service</li>
+<li>Select <strong>S3</strong> from the search results</li>
+<li>Then click <strong>Create bucket</strong></li>
+</ul>
+</li>
+</ol>
+<p><img src="/images/preparation/s3-1.png" alt="alt">
+<img src="/images/preparation/s3-2.png" alt="alt"></p>
+<ol start="2">
+<li>In the Create bucket interface
+<ul>
+<li>Set <strong>Bucket name</strong> to <code>fashion-landing-zone</code></li>
+<li>Leave the other parameters as default</li>
+<li>Click <strong>Create bucket</strong></li>
+</ul>
+</li>
+</ol>
+<p><img src="/images/preparation/s3-3.png" alt="alt"></p>
+<ol start="3">
+<li>Repeat step 2 for the following buckets:
+<ul>
+<li><code>fashion-clean-zone</code></li>
+<li><code>fashion-logic-zone</code></li>
+</ul>
+</li>
+</ol>
+<p><img src="/images/preparation/s3-4.png" alt="alt"></p>
+<p>You have successfully created 3 S3 buckets.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="R-logo" href="/index.html">
+    <img src="https://freepnglogo.com/images/all_img/1726309795amazon-web-services-logo-png.png" alt="brand logo" width="100" height="50" class="logo" loading="lazy" style="width: 84px; height: 50px; margin: 0 auto; display: block; text-align: center;" />
+  </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/overview/index.html"><a class="padding" href="/overview/index.html">1. Introduction<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="parent " data-nav-id="/preparation/index.html"><input type="checkbox" id="R-section-5d3dc0156e97e93929ea76c794397c6c" aria-controls="R-subsections-5d3dc0156e97e93929ea76c794397c6c" checked><label for="R-section-5d3dc0156e97e93929ea76c794397c6c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 2. Preparation Steps</span></label><a class="padding" href="/preparation/index.html">2. Preparation Steps<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-5d3dc0156e97e93929ea76c794397c6c" class="collapsible-menu">
+            <li class="" data-nav-id="/preparation/setup-role/index.html"><a class="padding" href="/preparation/setup-role/index.html">2.1 Creating Required Roles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/preparation/setup-env/index.html"><a class="padding" href="/preparation/setup-env/index.html">2.2 Create VPC, Subnet, ...<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/preparation/setup-ec2/index.html"><a class="padding" href="/preparation/setup-ec2/index.html">2.3 Create EC2 Instance<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/preparation/setup-rds/index.html"><a class="padding" href="/preparation/setup-rds/index.html">2.4 Create RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/preparation/setup-s3/index.html"><a class="padding" href="/preparation/setup-s3/index.html">2.5 Create S3 Bucket<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/preparation/setup-kinesis/index.html"><a class="padding" href="/preparation/setup-kinesis/index.html">2.6 Create Kinesis Data Stream<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/preparation/setup-firehose/index.html"><a class="padding" href="/preparation/setup-firehose/index.html">2.7 Create Kinesis Firehose<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/generate-data/index.html"><a class="padding" href="/generate-data/index.html">3. Create Application Environment<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/rds-to-s3/index.html"><a class="padding" href="/rds-to-s3/index.html">4. Extract Data from RDS to S3<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/test-connection/index.html"><input type="checkbox" id="R-section-1a0528a68276c9c3c0d85cb2378ffaf7" aria-controls="R-subsections-1a0528a68276c9c3c0d85cb2378ffaf7"><label for="R-section-1a0528a68276c9c3c0d85cb2378ffaf7"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 5. Test Data</span></label><a class="padding" href="/test-connection/index.html">5. Test Data<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-1a0528a68276c9c3c0d85cb2378ffaf7" class="collapsible-menu">
+            <li class="" data-nav-id="/test-connection/test-rds/index.html"><a class="padding" href="/test-connection/test-rds/index.html">5.1 Check Data in RDS<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/test-connection/test-kinesis/index.html"><a class="padding" href="/test-connection/test-kinesis/index.html">5.2 Check Data in Kinesis Data Stream<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/test-connection/test-lambda/index.html"><a class="padding" href="/test-connection/test-lambda/index.html">5.3 Test Lambda Function<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/transform/index.html"><input type="checkbox" id="R-section-ad48a38de39639a847a07445355daa50" aria-controls="R-subsections-ad48a38de39639a847a07445355daa50"><label for="R-section-ad48a38de39639a847a07445355daa50"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 6. Data Transformation</span></label><a class="padding" href="/transform/index.html">6. Data Transformation<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ad48a38de39639a847a07445355daa50" class="collapsible-menu">
+            <li class="" data-nav-id="/transform/transform/index.html"><a class="padding" href="/transform/transform/index.html">6.1 Create Glue Job<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/transform/glue-catalog/index.html"><a class="padding" href="/transform/glue-catalog/index.html">6.2 Create Catalog for Clean Zone<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/recommended/index.html"><input type="checkbox" id="R-section-e646fd60eba26f99a0ef2b5b51f059e0" aria-controls="R-subsections-e646fd60eba26f99a0ef2b5b51f059e0"><label for="R-section-e646fd60eba26f99a0ef2b5b51f059e0"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 7. Tạo hệ thống gợi ý sản phẩm</span></label><a class="padding" href="/recommended/index.html">7. Tạo hệ thống gợi ý sản phẩm<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e646fd60eba26f99a0ef2b5b51f059e0" class="collapsible-menu">
+            <li class="" data-nav-id="/recommended/1-create-dynamodb-table/index.html"><a class="padding" href="/recommended/1-create-dynamodb-table/index.html">7.1 Tạo DynamoDB Table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/recommended/2-create-ecr-image/index.html"><a class="padding" href="/recommended/2-create-ecr-image/index.html">7.2 Tạo ECR Image cho Lambda Function<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/recommended/3-create-lambda-func/index.html"><a class="padding" href="/recommended/3-create-lambda-func/index.html">7.3 Tạo Lambda Function<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/recommended/4-test/index.html"><a class="padding" href="/recommended/4-test/index.html">7.4 Kiểm tra hệ thống gợi ý sản phẩm<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/event-bridge/index.html"><a class="padding" href="/event-bridge/index.html">8. Lên lịch cho các nhiệm vụ định kỳ<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/clean/index.html"><a class="padding" href="/clean/index.html">9. Dọn dẹp các tài nguyên<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+			<li class="R-languageswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-language"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-language">Language</label>
+                  <select id="R-select-language">
+                    <option id="R-select-language-en" value="en" data-url="/preparation/setup-s3/index.html" lang="en" selected data-selected>English</option>
+                    <option id="R-select-language-vi" value="vi" data-url="/vi/preparation/setup-s3/index.html" lang="vi">Vietnamese</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Clear History</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built by Dzung Luong</a></p>
+</div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1750351584" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750351584" defer></script>
+    <script src="/js/theme.js?1750351584" defer></script>
+  </body>
+</html>

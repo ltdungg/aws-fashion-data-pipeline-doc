@@ -2,60 +2,153 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/vi/overview/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/overview/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/overview/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/overview/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/preparation/setup-role/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/preparation/setup-role/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/preparation/setup-role/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/preparation/setup-role/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/test-connection/test-rds/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/test-connection/test-rds/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/test-connection/test-rds/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/test-connection/test-rds/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/transform/transform/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/transform/transform/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/transform/transform/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/transform/transform/index.html" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/recommended/1-create-dynamodb-table/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/recommended/1-create-dynamodb-table/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/recommended/1-create-dynamodb-table/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/recommended/1-create-dynamodb-table/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/preparation/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/preparation/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/preparation/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/preparation/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/preparation/setup-env/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/preparation/setup-env/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/preparation/setup-env/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/preparation/setup-env/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/test-connection/test-kinesis/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/test-connection/test-kinesis/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/test-connection/test-kinesis/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/test-connection/test-kinesis/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/transform/glue-catalog/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/transform/glue-catalog/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/transform/glue-catalog/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/transform/glue-catalog/index.html" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/recommended/2-create-ecr-image/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/recommended/2-create-ecr-image/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/recommended/2-create-ecr-image/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/recommended/2-create-ecr-image/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/preparation/setup-ec2/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/preparation/setup-ec2/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/preparation/setup-ec2/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/preparation/setup-ec2/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/generate-data/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/generate-data/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/generate-data/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/generate-data/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/test-connection/test-lambda/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/test-connection/test-lambda/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/test-connection/test-lambda/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/test-connection/test-lambda/index.html" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/recommended/3-create-lambda-func/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/recommended/3-create-lambda-func/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/recommended/3-create-lambda-func/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/recommended/3-create-lambda-func/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/preparation/setup-rds/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/preparation/setup-rds/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/preparation/setup-rds/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/preparation/setup-rds/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/rds-to-s3/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/rds-to-s3/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/rds-to-s3/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/rds-to-s3/index.html" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/recommended/4-test/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/recommended/4-test/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/recommended/4-test/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/recommended/4-test/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/preparation/setup-s3/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/preparation/setup-s3/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/preparation/setup-s3/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/preparation/setup-s3/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/test-connection/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/test-connection/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/test-connection/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/test-connection/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/preparation/setup-kinesis/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/preparation/setup-kinesis/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/preparation/setup-kinesis/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/preparation/setup-kinesis/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/transform/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/transform/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/transform/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/transform/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/preparation/setup-firehose/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/preparation/setup-firehose/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/preparation/setup-firehose/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/preparation/setup-firehose/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/recommended/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/recommended/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/recommended/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/recommended/index.html" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/event-bridge/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/event-bridge/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/event-bridge/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/event-bridge/index.html" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/vi/clean/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/clean/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/clean/index.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="http://localhost:1313/vi/clean/index.html" />
   </url>
   <url>
     <loc>http://localhost:1313/vi/categories/index.html</loc>

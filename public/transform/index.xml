@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>6. Data Transformation :: AWS Fashion Pipeline</title>
+    <link>http://localhost:1313/transform/index.html</link>
+    <description>Steps to Perform In this section, we will use Glue ETL to transform data from the S3 bucket fashion-landing-zone to the S3 bucket fashion-clean-zone. The goal is to prepare the data for analysis and storage.&#xA;This section will include the following steps:&#xA;Create a Glue Job to transform data from the S3 bucket fashion-landing-zone to the S3 bucket fashion-clean-zone Create a Glue Trigger to automatically run the Glue Job Check the data in the S3 bucket fashion-clean-zone Create a Glue Crawler to automatically generate a Glue Data Catalog for the data in the S3 bucket fashion-clean-zone</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/transform/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>6.1 Create Glue Job</title>
+      <link>http://localhost:1313/transform/transform/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/transform/transform/index.html</guid>
+      <description>Overview In this section, we will create a Glue Job to transform data from the S3 bucket fashion-landing-zone to the S3 bucket fashion-clean-zone[1].&#xA;Create Glue Job Log in to the AWS Management Console and search for the AWS Glue service. In the AWS Glue interface, select “Go to ETL jobs” from the left menu. In the ETL jobs interface, select Create job from a blank graph or Visual ETL to create a new Glue Job.</description>
+    </item>
+    <item>
+      <title>6.2 Create Catalog for Clean Zone</title>
+      <link>http://localhost:1313/transform/glue-catalog/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/transform/glue-catalog/index.html</guid>
+      <description>Create Glue Data Catalog for Clean Zone Access the Amazon Management Console Search for the Glue service Select Glue from the search results Create a Database for the Glue Data Catalog In the Glue Data Catalog section, select Databases then choose Add database Enter the database name as fashion-clean-zone Click Create Create a table for the Glue Data Catalog Click on the fashion-clean-zone database you just created Select Add table then choose Add tables using a crawler</description>
+    </item>
+  </channel>
+</rss>

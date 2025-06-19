@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>7. Build a Product Recommendation System :: AWS Fashion Pipeline</title>
+    <link>http://localhost:1313/recommended/index.html</link>
+    <description>Introduction In this section, we will build a product recommendation system based on data that has been transformed and stored in the S3 bucket fashion-clean-zone. This system will use Amazon DynamoDB to store product recommendations for users[1].&#xA;The system works by analyzing user data in near real-time: whenever a user interacts with a product (such as viewing or adding to cart), the system records the interaction and generates recommendations for related products.</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/recommended/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>7.1 Create DynamoDB Table</title>
+      <link>http://localhost:1313/recommended/1-create-dynamodb-table/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/recommended/1-create-dynamodb-table/index.html</guid>
+      <description>Steps to Implement Access the AWS Management Console and search for the DynamoDB service. In the DynamoDB interface, select “Create table.” In the create table interface, enter the following information: Table name: fashion-rcm-table Partition key: user_id Select Number Click Create table to create the table.</description>
+    </item>
+    <item>
+      <title>7.2 Create ECR Image for Lambda Function</title>
+      <link>http://localhost:1313/recommended/2-create-ecr-image/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/recommended/2-create-ecr-image/index.html</guid>
+      <description>Preparation For this section, your computer must have Docker and AWS CLI installed. You can refer to the Docker installation guide at Docker Installation and AWS CLI at AWS CLI Installation[1].&#xA;Steps to Implement Go to the AWS Management Console and search for the Amazon ECR service by typing ECR. In the Amazon ECR interface, select Create from the left menu. In the repository creation interface, enter the following information:&#xA;Repository name: fashion-ecr-repository Then click Create to create the repository. In the interface of the newly created repository, select the repository and click View push commands to see the necessary commands for pushing a Docker Image to the repository.</description>
+    </item>
+    <item>
+      <title>7.3 Create Lambda Function</title>
+      <link>http://localhost:1313/recommended/3-create-lambda-func/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/recommended/3-create-lambda-func/index.html</guid>
+      <description>Steps to Implement Go to the AWS Management Console and search for the Lambda service by typing Lambda. In the Lambda interface, select Create function.&#xA;In the Create function interface, select Container image.&#xA;Function name: kinesis-to-dynamodb Container image URI: Click Browse images and select the ECR repository fashion-ecr-repository and the Docker Image you created in the previous step. Make sure to select the image with the latest tag. Execution role: Select Use an existing role and choose the role lambda-kinesis-dynamodb-role created in the previous step. Click Create function to create the Lambda Function.</description>
+    </item>
+    <item>
+      <title>7.4 Test the Product Recommendation System</title>
+      <link>http://localhost:1313/recommended/4-test/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/recommended/4-test/index.html</guid>
+      <description>Run the Product Recommendation System Test Connect to the fashion-webapp EC2 instance created in the previous steps. Then run the following command: Note: Ensure you are the root user by running sudo su before executing the above command. python data-generator.py Go to the CloudWatch service, select Log groups, and choose /aws/lambda/kinesis-to-dynamodb to view the logs of the kinesis-to-dynamodb Lambda Function. Go to the DynamoDB service, click on Tables in the left sidebar, and select fashion-rcm-table. In the table interface, select Explore table items to view the stored product recommendations.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,11 +1,74 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My Website</title>
+    <title>AWS Fashion Pipeline</title>
     <link>http://localhost:1313/index.html</link>
-    <description></description>
+    <description>In this workshop, we will build a Data Lake on AWS for an online clothing store with the following system:</description>
     <generator>Hugo</generator>
     <language>en</language>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1. Introduction</title>
+      <link>http://localhost:1313/overview/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/overview/index.html</guid>
+      <description>A Data Pipeline for Fashion Store Data This workshop includes the following data:&#xA;Clothing product data sourced from Kaggle User, purchase, and clickstream data generated using Python’s Faker Context Suppose you are a Data Engineer at an online clothing store. Your manager wants to know which products customers are interested in, as well as analyze current fashion trends.&#xA;Your manager has the following requirements:&#xA;When a user clicks on or adds a product to the cart, the event must be sent directly to storage, then transformed and enriched so that ML can predict current fashion trends and provide real-time product recommendations to users. These recommendations for each user are then stored in a place where they can be directly suggested to users on the website. The second requirement is that after a user makes a purchase, at the end of the day, the data needs to be aggregated, cleaned, and stored, ready for analysis to determine the direction for the next marketing strategy. Right after, you come up with an idea to implement this on Amazon Web Services as follows.</description>
+    </item>
+    <item>
+      <title>2. Preparation Steps</title>
+      <link>http://localhost:1313/preparation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/preparation/index.html</guid>
+      <description>Overview First, create a virtual environment, considering this as the application environment of the store. The EC2 Instance will act as a mock server, where data for the lab is generated. The RDS Instance will serve as the database, used for transactions… The S3 Bucket will be the Data Lake, including the following buckets: fashion-landing-zone: Where raw data from various sources is stored. fashion-clean-zone: Where processed data is stored and prepared for analysis. fashion-logic-zone: Where Lambda scripts and source code for ETL (Extract, Transform, Load) processes are stored. The Kinesis Stream will store customer interaction event streams. Deployment Steps Before getting started, you need to prepare the code for the deployment steps. The project’s GitHub link is: aws-fashion-data-pipeline</description>
+    </item>
+    <item>
+      <title>3. Create Application Environment</title>
+      <link>http://localhost:1313/generate-data/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/generate-data/index.html</guid>
+      <description>Overview In this section, we will create the application environment for the Data Pipeline. The environment includes: EC2 Instance: Where mock data is generated and database tables are initialized. RDS: PostgreSQL database for storing mock data. The database model consists of 4 tables:&#xA;products, users, orders, and order_details Deployment Steps Return to the RDS interface Select Databases from the left menu Click on fashion-db In the fashion-db interface, save the Endpoint of the database somewhere safe.</description>
+    </item>
+    <item>
+      <title>4. Extract Data from RDS to S3</title>
+      <link>http://localhost:1313/rds-to-s3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/rds-to-s3/index.html</guid>
+      <description>Overview In this section, we will use AWS Lambda to extract data from Amazon RDS and save it to Amazon S3. We will use a simple Lambda function to accomplish this. The Lambda function will be triggered to connect to Amazon RDS, execute an SQL query to retrieve data, and then save the data to Amazon S3 as a CSV file. First, download the Lambda function zip file here. Click the download raw file button at the top right of the screen to download. Access S3 Go to the AWS Console, search for and select S3 from the services menu. Click on the fashion-logic-zone bucket that we created earlier. In the bucket interface, click Upload. 4. In the Upload interface:</description>
+    </item>
+    <item>
+      <title>5. Test Data</title>
+      <link>http://localhost:1313/test-connection/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/test-connection/index.html</guid>
+      <description>Generate Data for Testing Return to the terminal connected to your EC2 Instance. Run the following command to navigate to the directory containing the data generation script: cd /home/ec2-user/project/ec2 Run the following command to generate data: python data-generator.py After running for a while (about 5 minutes), press Ctrl + C to stop. You should see output data in the terminal as shown below. You may observe the following: “Order data insert successfully” indicates that order data has been pushed to RDS. The remaining output shows customer interaction data being pushed to the Kinesis stream, with events such as page_view, add_to_cart, and product_view.</description>
+    </item>
+    <item>
+      <title>6. Data Transformation</title>
+      <link>http://localhost:1313/transform/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/transform/index.html</guid>
+      <description>Steps to Perform In this section, we will use Glue ETL to transform data from the S3 bucket fashion-landing-zone to the S3 bucket fashion-clean-zone. The goal is to prepare the data for analysis and storage.&#xA;This section will include the following steps:&#xA;Create a Glue Job to transform data from the S3 bucket fashion-landing-zone to the S3 bucket fashion-clean-zone Create a Glue Trigger to automatically run the Glue Job Check the data in the S3 bucket fashion-clean-zone Create a Glue Crawler to automatically generate a Glue Data Catalog for the data in the S3 bucket fashion-clean-zone</description>
+    </item>
+    <item>
+      <title>7. Build a Product Recommendation System</title>
+      <link>http://localhost:1313/recommended/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/recommended/index.html</guid>
+      <description>Introduction In this section, we will build a product recommendation system based on data that has been transformed and stored in the S3 bucket fashion-clean-zone. This system will use Amazon DynamoDB to store product recommendations for users[1].&#xA;The system works by analyzing user data in near real-time: whenever a user interacts with a product (such as viewing or adding to cart), the system records the interaction and generates recommendations for related products.</description>
+    </item>
+    <item>
+      <title>8. Schedule Recurring Tasks</title>
+      <link>http://localhost:1313/event-bridge/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/event-bridge/index.html</guid>
+      <description>Introduction In this section, we will set up recurring tasks to automate the process of updating data and generating product recommendations in the system. We will use Amazon EventBridge to schedule these tasks.&#xA;Steps to Implement In the AWS Management Console, search for and select the EventBridge service. Select EventBridge Schedule and then choose Create rules from the left sidebar. In the Create rule interface, fill in the following information: Name: fashion-rds-to-s3-scheduler Description: Rule to trigger Lambda function for ETL process Under Schedule Pattern, select Recurring schedule Timezone: (UTC +07:00) Asia/Saigon Cron expression: cron(0 0 * * ? *) (this means the task will run every day at 00:00 Vietnam time) Flexible time window: Leave as 5 minutes Click Next</description>
+    </item>
+    <item>
+      <title>9. Clean Up Resources</title>
+      <link>http://localhost:1313/clean/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/clean/index.html</guid>
+      <description>S3 Go to the S3 service and select the buckets created during the project. Choose Empty to delete all objects in the bucket. After emptying, select Delete to remove the bucket. DynamoDB Go to the DynamoDB service and select Tables from the left menu. Select the fashion-rcm-table table created during the project. Click Delete to remove the table. Confirm deletion by typing confirm and clicking Delete. Glue Go to the Glue service and select ETL jobs from the left menu.</description>
+    </item>
   </channel>
 </rss>

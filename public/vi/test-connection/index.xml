@@ -26,7 +26,7 @@
       <link>http://localhost:1313/vi/test-connection/test-lambda/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vi/test-connection/test-lambda/index.html</guid>
-      <description>Chạy thử Lambda Function Vào trang của Lambda Function lambda-rds-to-s3 trong AWS Console của bạn. Bấm vào Test Vì mục đích của Lambda theo yêu cầu của sếp là sau một ngày thì sẽ chạy một lần, nên đoạn code sẽ chạy vào đầu ngày hôm sau tức là lúc 00:01 ngày hôm sau. Nên muốn test thì phải thêm Event JSON và DATE_EXECUTION là ngày bạn chạy lab theo định dạng Năm-Tháng-Ngày. Ví dụ “2025-17-04” Trong phần Test: Chọn Create new event Nhập tên cho event là test Event JSON như sau: { &#34;DATE_EXECUTION&#34;: &#34;&lt;Ngày chạy workshop&gt;&#34; }</description>
+      <description>Chạy thử Lambda Function Vào trang của Lambda Function lambda-rds-to-s3 trong AWS Console của bạn. Bấm vào Test Vì mục đích của Lambda theo yêu cầu của sếp là sau một ngày thì sẽ chạy một lần, nên đoạn code sẽ chạy vào đầu ngày hôm sau tức là lúc 00:01 ngày hôm sau. Nên muốn test thì phải thêm Event JSON và DATE_EXECUTION là ngày bạn chạy lab theo định dạng Năm-Tháng-Ngày. Ví dụ “2025-04-17” Trong phần Test: Chọn Create new event Nhập tên cho event là test Event JSON như sau: { &#34;DATE_EXECUTION&#34;: &#34;&lt;Ngày chạy workshop&gt;&#34; }</description>
     </item>
   </channel>
 </rss>

@@ -64,5 +64,26 @@ Các role này sẽ bao gồm:
 ![img.png](/images/preparation/iam-8.png)
 
 ## Tạo role cho Lambda truy cập vào Kinesis và DynamoDB
+1. Tương tự như cách tạo role cho các bước trên, tạo role với use case là **Lambda**.
+2. Tại phần Add permissions
+    - Tìm kiếm và chọn **AmazonKinesisFullAccess** từ danh sách chính sách.
+    - Tìm kiếm và chọn **AmazonDynamoDBFullAccess** từ danh sách chính sách.
+    - Tìm kiếm và chọn **AmazonAthenaFullAccess** từ danh sách chính sách
+    - Tìm kiếm và chọn **AWSLambdaBasicExecutionRole** từ danh sách chính sách.
+    - Tim kiếm và chọn **AmazonS3FullAccess** từ danh sách chính sách.
+    - Bấm **Next**.
+3. Tại phần Name, review, and create
+   - Nhập tên cho role là `lambda-kinesis-dynamodb-role`.
+   - Phần description nhập `Allow Lambda access Kinesis and DynamoDB and S3 with Full Access`.
+   - Bấm **Create role**.
 
 ## Tạo role cho Glue truy cập vào S3
+1. Tương tự như cách tạo role cho các bước trên, tạo role với use case là **Glue**.
+2. Tại phần Add permissions
+    - Tìm kiếm và chọn **AmazonS3FullAccess** từ danh sách chính sách.
+    - Tìm kiếm và chọn **AWSGlueServiceRole** từ danh sách chính sách.
+    - Bấm **Next**.
+3. Tại phần Name, review, and create
+   - Nhập tên cho role là `AWS-Glue-S3-Full-Access `.
+   - Phần description nhập `Allow Glue access to S3 with Full Access` .
+   - Bấm **Create role**.
